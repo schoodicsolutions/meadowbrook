@@ -3,7 +3,7 @@ export interface LogoProps {
   variant?: 'light' | 'dark';
 }
 
-export const Logo = function ({ size, variant }: LogoProps) {
+export default function Logo ({ size, variant }: LogoProps) {
   let width = '270px';
 
   if (size === 'small') {
