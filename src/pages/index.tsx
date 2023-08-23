@@ -1,5 +1,4 @@
 
-import Layout from "~/components/Layout";
 import { api } from "~/utils/api";
 
 export default function Home() {
@@ -7,9 +6,7 @@ export default function Home() {
 
   return (
     <>
-      <Layout>
-        Hello world!
-      </Layout>
+      Hello world!
     </>
   );
 }

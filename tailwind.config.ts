@@ -6,6 +6,9 @@ export default {
     extend: {
       colors: {
         'scarlet': '#F10D0C'
+      },
+      fontFamily: {
+        'body': ['raleway', 'sans-serif']
       }
     },
   },
