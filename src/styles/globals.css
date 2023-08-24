@@ -20,6 +20,22 @@ body {
     @apply font-body text-lg;
 }
 
+@layer components {
+    .logo {
+        @apply text-black;
+    }
+
+    .logo.large, .logo {
+        @apply w-[270px];
+    }
+    .logo.small {
+        @apply w-[156px];
+    }
+    .logo.medium {
+        @apply w-[200px];
+    }
+}
+
 @layer utilities {
     .a11y-hidden { 
         position: absolute; 
