@@ -1,9 +1,10 @@
+import dynamic from "next/dynamic";
 
-import { api } from "~/utils/api";
 
 export default function Home() {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
+  const FlexText = dynamic(() => import('../components/FlexText'), { ssr: false });
+  
   return (
     <>
       <section
@@ -13,22 +14,15 @@ export default function Home() {
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
         }}
-        className="bg-cover py-[175px] text-white"
+        className="hero text-white"
       >
-        <h1 className="font-bold text-[64px] leading-normal">
-          Your Trusted Redi-Mix Concrete <br />
-          And Aggregate Supplier
-        </h1>
-        <h2 className="font-body font-normal">
-          <em className="font-bold">Excellence for Generations.</em> Building Washington County With <br/>
-          Superior Concrete And Unparalleled Service
-        </h2>
-        <div className="flex gap-5">
-          <button className="bg-scarlet text-white border-transparent border-2 px-[70px] py-5 rounded-full">
+        <FlexText />
+        <div className="flex pt-2.5 px-0 items-stretch md:items-center md:justify-center lg:justify-normal lg:pt-0 gap-4 lg:gap-5 flex-col md:flex-row">
+          <button className="contained">
             Contact Us
           </button>
-          <button className="bg-transparent text-white border-white border-2 px-[70px] py-5 rounded-full">
-            Contact Us
+          <button className="outlined">
+            Learn More
           </button>
         </div>
       </section>

@@ -25,11 +25,20 @@ body {
 
 @layer components {
     h1, h2, h3, h4, h5, h6 {
-        @apply font-headings font-semibold mb-4;
+        @apply font-headings font-semibold mb-4 leading-normal;
+        @apply text-center lg:text-left;
+    }
+
+    h1 {
+        @apply text-[32px] lg:text-[64px];
     }
 
     section {
         @apply px-6 lg:px-12;
+    }
+
+    section.hero {
+        @apply py-[75px] lg:py-[175px];
     }
 
     header {
@@ -47,11 +56,30 @@ body {
     .logo.large, .logo {
         @apply w-[270px];
     }
+
     .logo.small {
         @apply w-[156px];
     }
+
     .logo.medium {
         @apply w-[200px];
+    }
+
+    button {
+        @apply px-[70px] py-5 rounded-full border-transparent border-2;
+        @apply text-[20px];
+    }
+
+    button.icon {
+        @apply p-2 -mr-2 border-none rounded-full;
+    }
+
+    button.contained {
+        @apply bg-scarlet text-white;
+    }
+
+    button.outlined {
+        @apply border-white bg-transparent text-white;
     }
 }
 

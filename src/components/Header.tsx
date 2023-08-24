@@ -13,7 +13,7 @@ export default function Header() {
       <div className="flex justify-between items-center px-6 lg:px-12 py-5 2xl:py-0 2xl:px-0">
         <Logo className="small sm:medium xl:large" />
         <Navbar className="hidden sm:block 2xl:pt-10" />
-        <button className="rounded-md sm:hidden">
+        <button className="icon sm:hidden">
           <Bars3 className="h-6 w-6" />
         </button>
       </div>

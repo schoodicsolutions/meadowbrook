@@ -8,8 +8,13 @@ export default {
         'scarlet': '#F10D0C'
       },
       fontFamily: {
-        'body': ['raleway', 'sans-serif']
-      }
+        'body': ['Raleway', 'sans-serif'],
+        'headings': ['"Source Sans 3"', 'sans-serif'],
+      },
+      screens: {
+        'xs': '520px',
+        'sm': '720px',
+      },
     },
   },
   plugins: [],
