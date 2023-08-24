@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { NAV_ITEMS } from '~/constants/Navbar';
 
@@ -23,7 +24,7 @@ export default memo(function Navbar({ className }: NavbarProps) {
           const className = classes.join(' ');
           return (
             <li className={className} key={key}>
-              <a href={path}>{label}</a>
+              <Link href={path}>{label}</Link>
             </li>
           );
         })}
