@@ -10,7 +10,7 @@ export default function TopStripe() {
     const PhoneBadge = () => (<div className="flex gap-1 sm:gap-3.5 items-center shrink-0">
         <PhoneIcon className="h-6 w-6 inline"/>
         <span>(207) 259-6068</span>
-    </div>);
+    </div>)
 
     return (
         <div className="flex w-full 2xl:absolute 2xl:top-0 2xl:right-0 2xl:w-fit text-base sm:text-lg font-headings font-semibold justify-around">

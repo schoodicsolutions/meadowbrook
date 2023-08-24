@@ -8,7 +8,7 @@ const LazyLoadTopStripe = dynamic(() => import('./TopStripe'), { ssr: false });
 
 export default function Header() {
   return (
-    <header className="h-[132px] 2xl:px-[167px] 2xl:pt-2.5 xl:pb-3 xl:relative">
+    <header className="h-[132px] 2xl:pt-8 xl:pb-9 xl:relative">
       <LazyLoadTopStripe />
       <div className="flex justify-between items-center px-6 pt-5 2xl:pt-0 2xl:px-0 2xl:items-baseline">
         <Logo className="small sm:medium xl:large" />
