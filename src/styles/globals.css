@@ -3,12 +3,37 @@
 @tailwind utilities;
 
 @import "@fontsource/raleway";
+@import "@fontsource/raleway/600";
+@import "@fontsource/source-sans-3";
+@import "@fontsource/source-sans-3/600";
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     @apply font-body text-lg;
 }
 
-@components {
-    .nav-active {
+@layer utilities {
+    .a11y-hidden { 
+        position: absolute; 
+        overflow: hidden; 
+        clip: rect(0 0 0 0); 
     }
+
+    .a11y-visible {
+        position: static;
+        overflow: visible;
+        clip: auto;
+    }
+}
+
+.navlink.active {
+    @apply font-semibold text-scarlet;
 }

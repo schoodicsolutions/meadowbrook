@@ -4,7 +4,7 @@ import TopStripe from './TopStripe';
 
 export default function Header() {
   return (
-    <header className="h-[132px] lg:px-[167px] pt-2.5 pb-3 lg:relative">
+    <header className="h-[132px] lg:px-[167px] lg:pt-2.5 lg:pb-3 lg:relative">
       <TopStripe />
       <div className="flex justify-between">
         <Logo />
