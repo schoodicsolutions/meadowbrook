@@ -4,8 +4,11 @@
 
 @import "@fontsource/raleway";
 @import "@fontsource/raleway/600";
+@import "@fontsource/raleway/700";
+
 @import "@fontsource/source-sans-3";
 @import "@fontsource/source-sans-3/600";
+@import "@fontsource/source-sans-3/700";
 
 * {
     box-sizing: border-box;
@@ -22,11 +25,15 @@ body {
 
 @layer components {
     h1, h2, h3, h4, h5, h6 {
-        @apply font-headings font-semibold;
+        @apply font-headings font-semibold mb-4;
     }
 
     section {
-        @apply px-6;
+        @apply px-6 lg:px-12;
+    }
+
+    header {
+        @apply 2xl:h-[136px] 2xl:pt-8 2xl:pb-9 2xl:relative;
     }
 
     header, section {
