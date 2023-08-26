@@ -6,6 +6,7 @@ export default {
     extend: {
       colors: {
         scarlet: '#F10D0C',
+        onyx: '#13171B',
       },
       fontFamily: {
         body: ['Raleway', 'sans-serif'],
