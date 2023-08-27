@@ -45,12 +45,12 @@ export default function Home() {
         }}
         className="py-12"
       >
-        <div className="bg-black/50 p-12 w-[780px] m-auto rounded-lg text-white flex flex-col gap-14 items-center">
+        <div className="bg-black/50 p-12 max-w-[780px] m-auto rounded-lg text-white flex flex-col gap-14 items-center">
           <div>
             <h2 className="no-stripe text-center font-bold">Our Experience At A Glance</h2>
             <p className="text-center">Experience the Unmatched Power of Tailored Redi-Mix Deliveries, Backed By Decades of Expertise and Cutting-Edge Technology.</p>
           </div>
-          <div className="flex gap-16 justify-center">
+          <div className="flex gap-16 justify-center flex-col lg:flex-row">
             <ExperienceStatement value={200} caption="projects completed" />
             <ExperienceStatement value={40} caption="clients served" />
             <ExperienceStatement value={10000} caption="hours worked" />
