@@ -76,6 +76,7 @@ body {
   button {
     @apply rounded-full border-2 border-transparent px-[70px] py-5;
     @apply text-[20px];
+    @apply transition-colors;
   }
 
   button.icon {
@@ -84,10 +85,12 @@ body {
 
   button.contained {
     @apply bg-scarlet text-white;
+    @apply hover:bg-blush;
   }
 
   button.outlined {
     @apply border-white bg-transparent text-white;
+    @apply hover:bg-white/[.1];
   }
 }
 

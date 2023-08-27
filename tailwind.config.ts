@@ -6,6 +6,7 @@ export default {
     extend: {
       colors: {
         scarlet: '#F10D0C',
+        blush: '#f75555',
         onyx: '#13171B',
       },
       fontFamily: {

@@ -10,7 +10,7 @@ export default function Home() {
       <section
         style={{
           background:
-            'linear-gradient(0deg, rgba(0, 0, 0, 0.47) 0%, rgba(0, 0, 0, 0.47) 100%), url("/img/truck-flipped.jpg"), lightgray -209px -77.204px / 110.885% 135.324% no-repeat',
+            'linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("/img/truck-flipped.jpg"), gray no-repeat',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
@@ -22,6 +22,9 @@ export default function Home() {
           <button className="contained">Contact Us</button>
           <button className="outlined">Learn More</button>
         </div>
+      </section>
+      <section>
+        <h3>Check Out The List Of Benefits We Offer To Our Clients</h3>
       </section>
     </>
   );
