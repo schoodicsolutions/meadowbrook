@@ -3,9 +3,9 @@ import Logo from "./Logo";
 export default function Footer() {
     return (
         <footer className="bg-onyx text-white ">
-            <div className="px-[275px] py-16 flex justify-between w-full">
-                <div className="flex flex-col gap-6 ">
-                    <Logo className="text-white large" />
+            <div className="inner py-16 flex flex-col lg:flex-row justify-between w-full">
+                <div className="flex flex-col gap-6">
+                    <Logo className="text-white small sm:medium xl:large" />
                     <p>
                         We Work On All Make/Model Of Trucks.
                         Give Us A Call When You Need Us. You'll

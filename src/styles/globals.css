@@ -52,8 +52,9 @@ body {
     @apply text-[20px] lg:text-[32px]
   }
 
-  section {
+  section, footer .inner {
     @apply px-6 lg:px-12;
+    @apply mt-8 lg:mt-14;
   }
 
   section.hero {
@@ -64,12 +65,8 @@ body {
     @apply 2xl:relative 2xl:h-[136px] 2xl:pb-9 2xl:pt-8;
   }
 
-  header, section {
+  header, section, footer .inner {
     @apply 2xl:px-[167px];
-  }
-
-  footer, section {
-    @apply mt-8 lg:mt-14;
   }
 
   .logo {

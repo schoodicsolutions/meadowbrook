@@ -50,7 +50,7 @@ export default function Home() {
             <h2 className="no-stripe text-center font-bold">Our Experience At A Glance</h2>
             <p className="text-center">Experience the Unmatched Power of Tailored Redi-Mix Deliveries, Backed By Decades of Expertise and Cutting-Edge Technology.</p>
           </div>
-          <div className="flex gap-16 justify-center flex-col lg:flex-row">
+          <div className="flex gap-8 lg:gap-16 justify-center flex-col lg:flex-row">
             <ExperienceStatement value={200} caption="projects completed" />
             <ExperienceStatement value={40} caption="clients served" />
             <ExperienceStatement value={10000} caption="hours worked" />
