@@ -9,6 +9,7 @@
 @import '@fontsource/source-sans-3';
 @import '@fontsource/source-sans-3/600';
 @import '@fontsource/source-sans-3/700';
+@import '@fontsource/source-sans-3/900';
 
 * {
   box-sizing: border-box;
@@ -31,7 +32,7 @@ body {
   h4,
   h5,
   h6 {
-    @apply mb-4 font-headings font-semibold leading-normal;
+    @apply mb-4 font-headings font-bold leading-normal;
     @apply text-center lg:text-left;
   }
 
@@ -39,21 +40,36 @@ body {
     @apply text-[32px] lg:text-[64px];
   }
 
+  h2 {
+    @apply text-[30px] lg:text-[48px] font-extrabold;
+  }
+
+  h2:not(.hero h2, h2.no-stripe):after {
+    @apply w-[174px] h-[2px] bg-scarlet block m-auto lg:m-0 content-[''];
+  }
+
+  h3 {
+    @apply text-[20px] lg:text-[32px]
+  }
+
   section {
     @apply px-6 lg:px-12;
   }
 
   section.hero {
-    @apply py-[75px] lg:py-[175px];
+    @apply py-[75px] lg:py-[175px] mt-0;
   }
 
   header {
     @apply 2xl:relative 2xl:h-[136px] 2xl:pb-9 2xl:pt-8;
   }
 
-  header,
-  section {
+  header, section {
     @apply 2xl:px-[167px];
+  }
+
+  footer, section {
+    @apply mt-8 lg:mt-14;
   }
 
   .logo {
@@ -87,6 +103,12 @@ body {
     @apply bg-scarlet text-white;
     @apply hover:bg-blush;
   }
+
+  button.contained.white {
+    @apply bg-white text-black;
+    @apply hover:bg-gray-200;
+  }
+
 
   button.outlined {
     @apply border-white bg-transparent text-white;

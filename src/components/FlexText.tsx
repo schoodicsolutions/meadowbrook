@@ -9,7 +9,7 @@ export default function FlexText() {
         {isLg ? <br /> : null}
         And {isLg ? null : <br />} Aggregate Supplier
       </h1>
-      <h2 className="font-body font-normal">
+      <h2 className="font-body font-normal text-lg">
         <em className="font-bold">Excellence for Generations.</em>&nbsp;
         Building {isLg ? null : <br />} Washington County With{' '}
         {isLg ? <br /> : null}
