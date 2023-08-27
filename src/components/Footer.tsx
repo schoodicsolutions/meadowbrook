@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import SchoodicLogo from "./SchoodicLogo";
 
 export default function Footer() {
     return (
@@ -39,7 +40,13 @@ export default function Footer() {
                 </div>
             </div>
             <div id="copyright-banner" className="bg-black py-2.5">
-                <p className="font-headings w-fit m-auto">Copyright &copy; 2023 Meadowbrook Materials LLC. | Designed by Schoodic Solutions</p>
+                <p className="font-headings w-fit m-auto flex items-center">
+                    Copyright &copy; 2023 Meadowbrook Materials LLC. | 
+                    Designed by 
+                    <a href="https://www.schoodic.io/">
+                        <SchoodicLogo className="inline-block h-5 ml-2"/>
+                    </a>
+                </p>
             </div>
         </footer>
     )
