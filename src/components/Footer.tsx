@@ -44,7 +44,7 @@ export default function Footer() {
                     Copyright &copy; 2023 Meadowbrook Materials LLC. | 
                     Designed by 
                     <a href="https://www.schoodic.io/">
-                        <SchoodicLogo className="inline-block h-5 ml-2"/>
+                        <SchoodicLogo className="inline-block h-4 ml-1 mb-1"/>
                     </a>
                 </p>
             </div>
