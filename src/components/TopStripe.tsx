@@ -1,10 +1,7 @@
 import MapPinIcon from '@heroicons/react/24/outline/MapPinIcon';
 import PhoneIcon from '@heroicons/react/24/outline/PhoneIcon';
-import { useBreakpoint } from '~/hooks/useBreakpoint';
 
 export default function TopStripe() {
-  const isSm = useBreakpoint('sm');
-
   const PhoneBadge = () => (
     <div className="flex shrink-0 items-center gap-1 sm:gap-3.5">
       <PhoneIcon className="inline h-6 w-6" />
@@ -28,13 +25,9 @@ export default function TopStripe() {
               </div>
             </div>
           </a>
-          {isSm ? (
+          <a href="tel:+12072596068" className="sm:pointer-events-none">
             <PhoneBadge />
-          ) : (
-            <a href="tel:+12072596068">
-              <PhoneBadge />
-            </a>
-          )}
+          </a>
         </div>
       </div>
     </div>

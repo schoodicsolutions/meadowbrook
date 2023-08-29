@@ -1,11 +1,6 @@
-import dynamic from 'next/dynamic';
 import ExperienceStatement from '~/components/ExperienceStatement';
 
 export default function Home() {
-  const FlexText = dynamic(() => import('../components/FlexText'), {
-    ssr: false,
-  });
-
   return (
     <>
       <section
@@ -18,7 +13,17 @@ export default function Home() {
         }}
         className="hero text-white"
       >
-        <FlexText />
+      <h1 className="font-bold">
+        Your Trusted Redi-Mix <br className="inline lg:hidden" /> Concrete{' '}
+        <br className="hidden lg:inline" />
+        And <br className="inline lg:hidden" /> Aggregate Supplier
+      </h1>
+      <h2 className="font-body font-normal text-lg">
+        <em className="font-bold">Excellence for Generations.</em>&nbsp;
+        Building <br className="inline lg:hidden" /> Washington County With{' '}
+        <br className="hidden lg:inline" />
+        Superior <br className="inline lg:hidden" /> Concrete And Unparalleled Service
+      </h2>
         <div className="flex flex-col items-stretch gap-4 px-0 pt-2.5 md:flex-row md:items-center md:justify-center lg:justify-normal lg:gap-5 lg:pt-0">
           <button className="contained">Contact Us</button>
           <button className="outlined">Learn More</button>
