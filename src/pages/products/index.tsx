@@ -1,7 +1,14 @@
 export default function Products() {
   return (
     <>
-      <div className="flex h-[435px] items-center justify-center bg-orange-500">
+      <div
+        className="flex h-[435px] items-center justify-center"
+        style={{
+          background:
+            'linear-gradient(0deg, rgba(0, 0, 0, 0.57) 0%, rgba(0, 0, 0, 0.57) 100%), url(img/products/page-heading.jpeg), lightgray 50% / contain no-repeat',
+          backgroundPosition: 'center',
+        }}
+      >
         <h1 className="text-white">Landscaping Service</h1>
       </div>
       <div className="flex flex-col justify-evenly px-40 py-10 xl:flex-row">
@@ -9,19 +16,51 @@ export default function Products() {
           <h2 className="py-1 pb-5">The Landscaping Service Includes</h2>
           {/* divs are placeholders for images here as well */}
           <div className="flex max-w-7xl flex-wrap gap-6">
-            <a className="flex h-[297px] w-[482px] flex-col justify-end bg-green-800 p-8 text-white">
+            <a
+              className="flex h-[297px] w-[482px] flex-col justify-end p-8 text-white"
+              style={{
+                background:
+                  'linear-gradient(0deg, rgba(0, 0, 0, 0.33) 0%, rgba(0, 0, 0, 0.33) 100%), url(img/products/stump-grinding.jpeg), lightgray 50% / cover no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: '100% 100%',
+              }}
+            >
               <p>LANDSCAPING SERVICE</p>
               <h3>Stump Grinding</h3>
             </a>
-            <a className="flex h-[297px] w-[482px] flex-col justify-end bg-blue-800 p-8 text-white">
+            <a
+              className="flex h-[297px] w-[482px] flex-col justify-end p-8 text-white"
+              style={{
+                background:
+                  'linear-gradient(0deg, rgba(0, 0, 0, 0.33) 0%, rgba(0, 0, 0, 0.33) 100%), url(img/products/tree-removal.png), lightgray 50% / cover no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: '100% 100%',
+              }}
+            >
               <p>LANDSCAPING SERVICE</p>
               <h3>Tree Removal</h3>
             </a>
-            <a className="flex h-[297px] w-[482px] flex-col justify-end bg-purple-800 p-8 text-white">
+            <a
+              className="flex h-[297px] w-[482px] flex-col justify-end p-8 text-white"
+              style={{
+                background:
+                  'linear-gradient(0deg, rgba(0, 0, 0, 0.33) 0%, rgba(0, 0, 0, 0.33) 100%), url(img/products/land-lot-clearing.jpeg), lightgray 50% / cover no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: '100% 100%',
+              }}
+            >
               <p>LANDSCAPING SERVICE</p>
               <h3>Land / Lot Clearing</h3>
             </a>
-            <a className="flex h-[297px] w-[482px] flex-col justify-end bg-red-800 p-8 text-white">
+            <a
+              className="flex h-[297px] w-[482px] flex-col justify-end p-8 text-white"
+              style={{
+                background:
+                  'linear-gradient(0deg, rgba(0, 0, 0, 0.33) 0%, rgba(0, 0, 0, 0.33) 100%), url(img/products/rataining-walls.png), lightgray 50% / cover no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: '100% 100%',
+              }}
+            >
               <p>LANDSCAPING SERVICE</p>
               <h3>Retaining Walls</h3>
             </a>
