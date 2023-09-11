@@ -1,5 +1,8 @@
 import dynamic from 'next/dynamic';
 import ExperienceStatement from '~/components/ExperienceStatement';
+import ContactForm from '../components/Form1';
+
+
 
 export default function Home() {
   const FlexText = dynamic(() => import('../components/FlexText'), {
@@ -58,6 +61,15 @@ export default function Home() {
           <button className="contained white uppercase py-4">View More</button>
         </div>
       </section>
+
+      
+      <section className="py-12">
+
+      <ContactForm />
+      
+</section>
+
+
     </>
   );
 }
