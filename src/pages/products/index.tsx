@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import ContactForm2 from '../../components/Form2';
+import SliceHero from '~/components/SliceHero';
 
 export default function Product() {
   const ProductFlex = dynamic(() => import('../../components/FlexText'), {
@@ -7,21 +8,7 @@ export default function Product() {
   });
   return (
     <>
-      <section
-        style={{
-          background:
-            'linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("../../../public/img/aa.webp"), gray no-repeat',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
-        className="hero text-white"
-      >
-        {/* <ProductFlex /> */}
-        <div className="flex flex-col items-stretch gap-4 px-0 pt-2.5 md:flex-row md:items-center md:justify-center lg:justify-normal lg:gap-5 lg:pt-0">
-          
-        </div>
-      </section>
+      <SliceHero />
 
       <section>
      
