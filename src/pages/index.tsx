@@ -61,15 +61,7 @@ export default function Home() {
           <button className="contained white uppercase py-4">View More</button>
         </div>
       </section>
-
-      
-      <section className="py-12">
-
       <ContactForm />
-      
-</section>
-
-
     </>
   );
 }

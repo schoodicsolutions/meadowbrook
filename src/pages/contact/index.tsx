@@ -137,6 +137,14 @@ export default function Contact() {
           </div>
         </div>
       </section>
+<section>
+<div>
+      <h2 className="no-stripe text-center">Why Choose Us ?</h2>
+      <p className="text-center" style={{ fontSize: '16px' }}>Your Trusted Partner for Quality and Innovation.</p>
+    </div>
+  
+</section>
+
     </>
   );
 }
