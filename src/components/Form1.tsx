@@ -22,7 +22,7 @@ function ContactForm() {
       </div>
   
       <div className="mb-6 form-input">
-        <textarea id="message" name="message" rows="1" placeholder="Message" required></textarea>
+        <textarea id="message" name="message" rows={1} placeholder="Message" required></textarea>
       </div>
   
       <button className="contained red uppercase py-2" style={{ fontSize: '16px', paddingLeft: '150px', paddingRight: '150px' }}>Book Your Slot</button>

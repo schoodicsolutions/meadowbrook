@@ -3,9 +3,6 @@ import ContactForm2 from '../../components/Form2';
 import SliceHero from '~/components/SliceHero';
 
 export default function Product() {
-  const ProductFlex = dynamic(() => import('../../components/FlexText'), {
-    ssr: false,
-  });
   return (
     <>
       <SliceHero />

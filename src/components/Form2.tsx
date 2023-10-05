@@ -22,7 +22,7 @@ function ContactForm2() {
         </div>
 
         <div className="mb-6 form-input2">
-          <textarea id="message" name="message" rows="1" placeholder="Message" required></textarea>
+          <textarea id="message" name="message" rows={1} placeholder="Message" required></textarea>
         </div>
 
         <button className="contained red uppercase py-2" style={{ fontSize: '16px', paddingLeft: '140px', paddingRight: '150px' }}>Submit</button>

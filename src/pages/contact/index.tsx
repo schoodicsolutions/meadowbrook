@@ -2,9 +2,6 @@ import dynamic from 'next/dynamic';
 import ContactForm2 from '../../components/Form2';
 
 export default function Contact() {
-  const ProductFlex = dynamic(() => import('../../components/FlexText'), {
-    ssr: false,
-  });
   return (
     <>
       <section
