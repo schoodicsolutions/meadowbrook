@@ -8,6 +8,7 @@ export default {
         scarlet: '#F10D0C',
         blush: '#f75555',
         onyx: '#13171B',
+        midnight: '#05011C',
       },
       fontFamily: {
         body: ['Raleway', 'sans-serif'],

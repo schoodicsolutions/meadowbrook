@@ -1,4 +1,7 @@
 import ExperienceStatement from '~/components/ExperienceStatement';
+import ContactForm from '../components/Form1';
+
+
 
 export default function Home() {
   return (
@@ -63,6 +66,7 @@ export default function Home() {
           <button className="contained white uppercase py-4">View More</button>
         </div>
       </section>
+      <ContactForm />
     </>
   );
 }
