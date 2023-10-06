@@ -1,55 +1,35 @@
 {
-  "name": "meadowbrook-2",
-  "version": "0.1.0",
+  "name": "meadowbrook",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "postinstall": "prisma generate",
-    "lint": "next lint",
-    "start": "next start"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/raleway": "^5.0.8",
-    "@fontsource/source-sans-3": "^5.0.9",
-    "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^2.0.18",
-    "@prisma/client": "^5.1.1",
-    "@t3-oss/env-nextjs": "^0.3.1",
-    "@tanstack/react-query": "^4.29.25",
-    "@trpc/client": "^10.34.0",
-    "@trpc/next": "^10.34.0",
-    "@trpc/react-query": "^10.34.0",
-    "@trpc/server": "^10.34.0",
-    "next": "^13.4.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "superjson": "^1.13.1",
-    "usehooks-ts": "^2.9.1",
-    "zod": "^3.21.4"
+    "framer-motion": "^10.16.4",
+    "hamburger-react": "^2.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-preloaders": "^3.0.3",
+    "react-router": "^6.16.0",
+    "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
-    "@types/eslint": "^8.37.0",
-    "@types/node": "^18.16.0",
-    "@types/prettier": "^2.7.2",
-    "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
-    "@typescript-eslint/eslint-plugin": "6.0.0",
-    "@typescript-eslint/parser": "6.0.0",
-    "autoprefixer": "^10.4.15",
-    "eslint": "^8.40.0",
-    "eslint-config-next": "^13.4.2",
-    "postcss": "^8.4.28",
-    "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8",
+    "@iconify/react": "^4.1.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.0.4"
-  },
-  "ct3aMetadata": {
-    "initVersion": "7.18.0"
-  },
-  "description": "This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC"
+    "vite": "^4.4.5"
+  }
 }
