@@ -36,21 +36,25 @@ const benefits = [
         title: "24/7 Emergeny Support",
         paragraph: 'Emergency Roadside Assistance for quick response to breakdowns and emergencies',
         image: support,
+        alt: "Support Vecotr"
     },
     {
         title: "Skilled Technician",
         paragraph: 'Skilled technicians trained in diagnosing and fixing mechanical, issues',
         image: skilled,
+        alt: "Technician Vector"
     },
     {
         title: "Safety Checkup",
         paragraph: 'Advanced diagnostic to ensure your vehicle is safe for a long ride',
         image: safety,
+        alt: "Safety Vector"
     },
     {
         title: "Equipment Replacement",
         paragraph: 'Parts sourcing and replacement to ensure timely repairs and minimize downtime',
         image: equipment,
+        alt: "Equipment Vector"
     },
 ];
 

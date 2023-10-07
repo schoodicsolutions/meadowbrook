@@ -1,20 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
-import { Squash as Hamburger } from 'hamburger-react';
 import { navLinks } from '../constants';
 import { logo } from '../assets';
 import { motion } from 'framer-motion';
+import MobileNav from './MobileNav';
 
 function Navbar() {
     const [active, setActive] = useState('');
-    const [ariaExpanded, setAriaExpanded] = useState(false);
-    const [isHamburgerToggled, setHamburgerToggled] = useState(false);
     const navRef = useRef(null);
 
     return (
         <>
-            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.01, transition: 0.1 }}>
+            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }}>
                 <div className="flex w-full bg-cred justify-around text-base font-semibold sm:text-lg 2xl:absolute 2xl:right-0 2xl:top-0 2xl:w-fit">
                     <div class="h-0 w-0 border-white border-b-scarlet border-r-scarlet 2xl:border-[22px]"></div>
                     <div className='flex justify-center 2xl:justify-between items-center px-2 sm:px-6 2xl:pr-[210px] gap-4 sm:gap-20 py-2 w-full'>
@@ -67,39 +65,7 @@ function Navbar() {
                         </ul>
 
                         <div className='sm:hidden flex justify-end items-center flex-col' ref={navRef}>
-                            <Hamburger
-                                rounded
-                                distance='sm'
-                                size={26}
-                                easing='ease'
-                                duration={0.3}
-                                onToggle={(toggled) => {
-                                    setAriaExpanded(toggled);
-                                    setHamburgerToggled(toggled);
-                                }}
-                                aria-expanded={ariaExpanded}
-                                toggled={isHamburgerToggled}
-                            />
-
-                            <div
-                                className={`${ariaExpanded
-                                    ? 'scale-100 opacity-100'
-                                    : 'scale-0 opacity-0'
-                                    } p-6 navBar backdrop-blur-md bg-black/30 rounded-md absolute top-24 left-0 right-0 mx-auto my-2 w-[95%] transition-all`}
-                            >
-                                <ul className='list-none flex justify-end items-center flex-col gap-6'>
-                                    {navLinks.map((link) => (
-                                        <li
-                                            key={link.id}
-                                            className={`${active === link.id ? 'text-[#F10D0C] font-semibold' : 'text-black'
-                                                } hover:text-[#F10D0C] text-[16px] font-noraml transition`}
-                                            onClick={() => setActive(link.id)}
-                                        >
-                                            <Link to={`${link.id}`}>{link.title}</Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                            <MobileNav/>
                         </div>
                     </div>
                 </nav >
