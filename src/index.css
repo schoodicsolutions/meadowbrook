@@ -48,7 +48,6 @@ h6,
 
 /* Apply 'Raleway' to paragraphs, spans, and links */
 p,
-span,
 a {
   font-family: 'Raleway', sans-serif;
 }
@@ -98,4 +97,31 @@ a {
 
 .bg-image {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/truck_flipped.webp');
+}
+
+.scale-hover-in {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+  -webkit-transition-duration: 6s;
+  -o-transition-duration: 6s;
+  transition-duration: 6s;
+  -webkit-transition-timing-function: cubic-bezier(.075, .82, .165, 1);
+  -o-transition-timing-function: cubic-bezier(.075, .82, .165, 1);
+  transition-timing-function: cubic-bezier(.075, .82, .165, 1);
+}
+
+.scale-hover-out {
+  -webkit-transition: -webkit-transform .4s cubic-bezier(.455, .03, .515, .955);
+  transition: -webkit-transform .4s cubic-bezier(.455, .03, .515, .955);
+  -o-transition: transform .4s cubic-bezier(.455, .03, .515, .955);
+  transition: transform .4s cubic-bezier(.455, .03, .515, .955);
+  transition: transform .4s cubic-bezier(.455, .03, .515, .955), -webkit-transform .4s cubic-bezier(.455, .03, .515, .955);
+  transition-duration: 0.4s, 0.4s;
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955), cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+input[type=number]{
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
 }

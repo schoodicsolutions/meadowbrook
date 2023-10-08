@@ -7,5 +7,6 @@ export default defineConfig({
     react({
       include: "**/*.{js,ts,jsx,tsx}",
     }),
+    
   ],
 })

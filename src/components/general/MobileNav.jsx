@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Squash as Hamburger } from 'hamburger-react';
 import { Link } from 'react-router-dom';
-import { navLinks } from '../constants';
+import { navLinks } from '../../constants';
 import { motion } from 'framer-motion';
 
 function MobileNav() {

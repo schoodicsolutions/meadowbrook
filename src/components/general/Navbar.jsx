@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
-import { navLinks } from '../constants';
-import { logo } from '../assets';
+import { navLinks } from '../../constants';
+import { logo } from '../../assets';
 import { motion } from 'framer-motion';
 import MobileNav from './MobileNav';
 
@@ -14,7 +14,7 @@ function Navbar() {
         <>
             <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }}>
                 <div className="flex w-full bg-cred justify-around text-base font-semibold sm:text-lg 2xl:absolute 2xl:right-0 2xl:top-0 2xl:w-fit">
-                    <div class="h-0 w-0 border-white border-b-scarlet border-r-scarlet 2xl:border-[22px]"></div>
+                    <div className="h-0 w-0 border-white border-b-scarlet border-r-scarlet 2xl:border-[22px]"></div>
                     <div className='flex justify-center 2xl:justify-between items-center px-2 sm:px-6 2xl:pr-[210px] gap-4 sm:gap-20 py-2 w-full'>
                         <a href="https://maps.apple.com/?address=Meadowbrook+Materials,888,Main+St,East+Machias,Maine" target='_blank'>
                             <div className='text-white flex justify-center items-center gap-1 sm:gap-2 '>
