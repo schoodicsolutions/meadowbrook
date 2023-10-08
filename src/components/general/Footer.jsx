@@ -1,0 +1,96 @@
+import React, { useState } from 'react'
+import logoWhite from '../../assets/LogoWhite.svg'
+import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom';
+import { Blogs, ProductLinks, navLinks } from '../../constants';
+
+function Footer() {
+    const [active, setActive] = useState('');
+
+    return (
+        <>
+            <section id="footer" className='bg-[#13171B] text-white'>
+                <div className='px-4 md:px-6 2xl:px-0 py-8 sm:py-10 w-full max-w-[95rem] mx-auto'>
+                    <div className='py-8 sm:flex lg:flex-nowrap flex-wrap lg:justify-around justify-start gap-x-24 gap-y-12 lg:gap-0 items-start'>
+                        {/* First Col */}
+                        <div className='sm:pb-0 pb-8'>
+                            <div>
+                                <Link to='/'>
+                                    <img src={logoWhite} alt="MeadowBrook Logo" className='w-full max-w-[250px] sm:w-auto sm:max-w-auto' />
+                                </Link>
+                            </div>
+                            <div className='px-4 py-4 sm:py-6'>
+                                <p className='text-base w-full max-w-xs'>
+                                    We work on all make/model of trucks. Give us a call when you need us. You'll be back on the road in no time.
+                                </p>
+                            </div>
+                            <div className='flex justify-start items-center px-4 gap-4'>
+                                <span><Icon icon="ic:baseline-facebook" className='text-[20px] cursor-pointer hover:text-red-500 transition' /></span>
+                                <span><Icon icon="entypo-social:linkedin-with-circle" className='text-[20px] cursor-pointer hover:text-red-500 transition' /></span>
+                                <span><Icon icon="mdi:github" className='text-[20px] cursor-pointer hover:text-red-500 transition' /></span>
+                            </div>
+                        </div>
+
+                        {/* Second Col */}
+                        <div className='lg:px-0 px-4 sm:pb-0 pb-8'>
+                            <div>
+                                <h1 className='text-[20px] sm:text-[22px] font-semibold'>General</h1>
+                            </div>
+                            <ul className='list-none flex flex-col pt-4 sm:pt-6 gap-5 sm:gap-6'>
+                                {navLinks.map((link) => (
+                                    <li
+                                        key={link.id}
+                                        className={`${active === link.id ? 'text-[#F10D0C] font-semibold' : 'text-white'
+                                            } hover:text-[#F10D0C] w-fit text-sm font-noraml transition`}
+                                        onClick={() => setActive(link.id)}
+                                    >
+                                        <Link to={`${link.id}`}>{link.title}</Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Third Col */}
+                        <div className='px-4 lg:px-0 sm:pb-0 pb-8'>
+                            <div>
+                                <h1 className='text-[20px] sm:text-[22px] font-semibold'>PRODUCTS</h1>
+                            </div>
+                            <ul className='list-none flex flex-col pt-4 sm:pt-6 gap-5 sm:gap-6'>
+                                {ProductLinks.map((link) => (
+                                    <li
+                                        key={link.id}
+                                        className={`${active === link.id ? 'text-[#F10D0C] font-semibold' : 'text-white'
+                                            } hover:text-[#F10D0C] w-fit text-sm font-noraml transition`}
+                                        onClick={() => setActive(link.id)}
+                                    >
+                                        <Link to={`${link.id}`}>{link.title}</Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Fourth Col */}
+                        <div className='lg:px-0 px-4 sm:pb-0 pb-6'>
+                            <div>
+                                <h1 className='text-[20px] sm:text-[22px] font-semibold'>RECENT BLOGS</h1>
+                            </div>
+                            <div className='pt-4 sm:pt-6 gap-5 sm:gap-6 flex flex-col'>
+                                {Blogs.map((blog) => (
+                                    <Link to={blog.link}>
+                                        <p className='hover:text-[#f10D0C] sm:text-base text-sm transition-colors duration-200 ease-out'>{blog.title}</p>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='bg-black'>
+                    <p className='text-sm sm:text-base py-2 text-center w-full'>Copyright © 2023 Meadow Brook | <Link to='/'>Privacy Policy</Link> | <Link to='/'>Terms and Conditions</Link> </p>
+                </div>
+            </section >
+
+        </>
+    )
+}
+
+export default Footer

@@ -8,6 +8,7 @@ import Experience from './Sections/Experience'
 import Gallery from './Sections/Gallery'
 import Brands from './Sections/Brands'
 import Contact_Form from '../../general/Contact_Form'
+import Footer from '../../general/Footer'
 
 function Home() {
     return (
@@ -21,6 +22,7 @@ function Home() {
             <Gallery />
             <Brands />
             <Contact_Form />
+            <Footer />
         </>
     )
 }

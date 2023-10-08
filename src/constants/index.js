@@ -44,94 +44,29 @@ const navLinks = [
         title: "Contact Us",
     },
 ];
-
-const Gallery1 = [
+const ProductLinks = [
     {
         id: 1,
-        img: image1,
-
+        title: "Stone"
     },
     {
         id: 2,
-        img: image2,
-
+        title: "Gravel"
     },
     {
         id: 3,
-        img: image3,
-
+        title: "Soil"
     },
-
     {
         id: 4,
-        img: image4,
+        title: "Landscaping",
 
     },
     {
-        id: 7,
-        img: image6,
-
-    },
-    {
-        id: 8,
-        img: image7,
-
-    },
-
-    {
-        id: 9,
-        img: image8,
-
-    },
-    {
-        id: 10,
-        img: image9,
+        id: 5,
+        title: "Construction"
     }
-];
-
-const Gallery2 = [
-    {
-        id: 7,
-        img: image6,
-
-    },
-    {
-        id: 8,
-        img: image7,
-
-    },
-
-    {
-        id: 9,
-        img: image8,
-
-    },
-    {
-        id: 10,
-        img: image9,
-    },
-    {
-        id: 1,
-        img: image1,
-
-    },
-    {
-        id: 2,
-        img: image2,
-
-    },
-    {
-        id: 3,
-        img: image3,
-
-    },
-
-    {
-        id: 4,
-        img: image4,
-
-    },
-];
+]
 
 const C_images = [
     {
@@ -224,6 +159,121 @@ const materials = [
     },
 ];
 
+const Gallery1 = [
+    {
+        id: 1,
+        img: image1,
+
+    },
+    {
+        id: 2,
+        img: image2,
+
+    },
+    {
+        id: 3,
+        img: image3,
+
+    },
+
+    {
+        id: 4,
+        img: image4,
+
+    },
+    {
+        id: 7,
+        img: image6,
+
+    },
+    {
+        id: 8,
+        img: image7,
+
+    },
+
+    {
+        id: 9,
+        img: image8,
+
+    },
+    {
+        id: 10,
+        img: image9,
+    }
+];
+
+const Gallery2 = [
+    {
+        id: 7,
+        img: image6,
+
+    },
+    {
+        id: 8,
+        img: image7,
+
+    },
+
+    {
+        id: 9,
+        img: image8,
+
+    },
+    {
+        id: 10,
+        img: image9,
+    },
+    {
+        id: 1,
+        img: image1,
+
+    },
+    {
+        id: 2,
+        img: image2,
+
+    },
+    {
+        id: 3,
+        img: image3,
+
+    },
+
+    {
+        id: 4,
+        img: image4,
+
+    },
+]
+
+const Blogs = [
+    {
+        link: "/",
+        title: "How to get easist and cheapest quality of marble",
+    },
+    {
+        link: "/",
+        title: "10 Ways to start the construction business in no time",
+    },
+    {
+        link: "/",
+        title: "5 myths busters in Landscaping Service",
+    },
+    {
+        link: "/",
+        title: "Top 11 ways to back out the old building",
+    },
+]
+
 export {
-    services, materials, navLinks, benefits, Gallery1, Gallery2, C_images
+    services,
+    materials,
+    navLinks,
+    benefits,
+    Gallery1,
+    Gallery2,
+    C_images,
+    ProductLinks,
+    Blogs
 };

@@ -12,7 +12,7 @@ function Gallery() {
     return (
         <>
             <section className='overflow-hidden'>
-                <div className='px-4 md:px-12 2xl:px-0 my-10 w-full max-w-[95rem] mx-auto'>
+                <div className='px-4 md:px-12 2xl:px-0 mb-10 w-full max-w-[95rem] mx-auto'>
                     <div className='pb-2 text-center'>
                         <h1 className='text-[22px] md:text-[26px] lg:text-[28px] font-bold'>Check out our work</h1>
                     </div>
@@ -78,7 +78,7 @@ function Gallery() {
                                 slidesPerView: 3,
                             },
                             865: {
-                                slidesPerView: 4
+                                slidesPerView: 3.5
                             },
                         }}
                         speed={30000}

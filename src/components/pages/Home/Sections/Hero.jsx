@@ -35,7 +35,7 @@ function Hero() {
                                 </motion.button>
                             </Link>
                             <Link to='/' className='w-full sm:w-auto'>
-                                <button className='bg-transparent border border-white text-white w-full sm:w-[200px] px-4 py-4 sm:py-5 rounded-[56px]'>Learn More</button>
+                                <button className='bg-transparent border hover:bg-white hover:text-black transition duration-200 ease-out border-white text-white w-full sm:w-[200px] px-4 py-4 sm:py-5 rounded-[56px]'>Learn More</button>
                             </Link>
                         </div>
                     </div>
