@@ -3,6 +3,9 @@ import Home from "./components/pages/Home/Home";
 import { useEffect, useState } from "react";
 import Preloader from "./components/general/Preloader";
 import { Sugar } from 'react-preloaders';
+import Products from "./components/pages/Product/Products";
+import Navbar from "./components/general/Navbar";
+import Footer from "./components/general/Footer";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -19,9 +22,15 @@ function App() {
       {loader ?
         (<Preloader />) :
         (
-          <Routes>
-            <Route exact path='/' element={<Home />} />
-          </Routes>
+          <>
+            <Navbar />
+            <Routes>
+              <Route exact path='/' element={<Home />} />
+              <Route path="/products/:serviceName" element={<Products />} />
+              <Route exact path="/products" element={<Products />} />
+            </Routes>
+            < Footer />
+          </>
         )}
     </>
   )

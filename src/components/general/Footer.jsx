@@ -76,7 +76,7 @@ function Footer() {
                             </div>
                             <div className='pt-4 sm:pt-6 gap-5 sm:gap-6 flex flex-col'>
                                 {Blogs.map((blog) => (
-                                    <Link to={blog.link}>
+                                    <Link to={blog.link} key={blog.id}>
                                         <p className='hover:text-[#f10D0C] sm:text-base text-sm transition-colors duration-200 ease-out'>{blog.title}</p>
                                     </Link>
                                 ))}

@@ -1,9 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { services } from '../../../../constants'
+import React, { useState } from 'react';
+import { services } from '../../../../constants/home';
+import { Link, useNavigate } from 'react-router-dom'; // Import useHistory
 
 function Services() {
     const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
+    const navigate = useNavigate(); // Initialize useNavigate
 
+    // Function to handle service click
+    const handleServiceClick = (serviceName) => {
+        navigate(`/products/${serviceName.toLowerCase()}`);
+
+    };
     return (
         <>
             <section>
@@ -20,34 +27,42 @@ function Services() {
 
                     <div className='flex justify-start flex-wrap md:flex-nowrap items-start gap-6 lg:gap-12 mt-6 image overflow-hidden'>
                         {services.map((service, index) => (
-                            <div key={service.id} className='relative overflow-hidden cursor-pointer'>
-                                <div
-                                    className={`${hoveredServiceIndex === index ? 'scale-hover-in' : 'scale-hover-out'
-                                        } overflow-hidden object-cover h-full w-[130%] md:w-[120%] lg:w-full`}
-                                    onMouseEnter={() => {
-                                        setHoveredServiceIndex(index);
-                                    }}
-                                    onMouseLeave={() => {
-                                        setHoveredServiceIndex(null);
-                                    }}
-                                >
-                                    <img src={service.image} alt='' />
-                                    {hoveredServiceIndex === index && (
-                                        <div className='absolute inset-0 bg-black bg-opacity-20'></div>
-                                    )}
-                                </div>
-                                <div
-                                    className='absolute bottom-0 px-4 sm:px-8 lg:px-12 py-6 sm:py-10 lg:py-14 text-white'
-                                    onMouseEnter={() => {
-                                        setHoveredServiceIndex(index);
-                                    }}
-                                    onMouseLeave={() => {
-                                        setHoveredServiceIndex(null);
-                                    }}
-                                >
-                                    <h1 className='text-[18px] sm:text-[20px] lg:text-[24px] pb-0 md:pb-1'>{service.title}</h1>
-                                    <p className='text-sm line-clamp-2 lg:line-clamp-none lg:text-base w-full max-w-full sm:max-w-md lg:max-w-md'>{service.paragraph}</p>
-                                </div>
+                            <div key={service.id} className='relative overflow-hidden cursor-pointer'
+                                onClick={() => handleServiceClick(service.title)}
+                            >
+                                <Link to={`/products/${service.title.toLowerCase()}`}
+                                    onClick={() => {
+                                        window.scrollTo(0, 0);
+                                    }}>
+                                    <div
+                                        className={`${hoveredServiceIndex === index ? 'scale-hover-in' : 'scale-hover-out'
+                                            } overflow-hidden object-cover h-full w-[130%] md:w-[120%] lg:w-full`}
+                                        onMouseEnter={() => {
+                                            setHoveredServiceIndex(index);
+                                        }}
+                                        onMouseLeave={() => {
+                                            setHoveredServiceIndex(null);
+                                        }}
+
+                                    >
+                                        <img src={service.image} alt='' />
+                                        {hoveredServiceIndex === index && (
+                                            <div className='absolute inset-0 bg-black bg-opacity-20'></div>
+                                        )}
+                                    </div>
+                                    <div
+                                        className='absolute bottom-0 px-4 sm:px-8 lg:px-12 py-6 sm:py-10 lg:py-14 text-white'
+                                        onMouseEnter={() => {
+                                            setHoveredServiceIndex(index);
+                                        }}
+                                        onMouseLeave={() => {
+                                            setHoveredServiceIndex(null);
+                                        }}
+                                    >
+                                        <h1 className='text-[18px] sm:text-[20px] lg:text-[24px] pb-0 md:pb-1'>{service.title}</h1>
+                                        <p className='text-sm line-clamp-2 lg:line-clamp-none lg:text-base w-full max-w-full sm:max-w-md lg:max-w-md'>{service.paragraph}</p>
+                                    </div>
+                                </Link>
                             </div>
                         ))}
                     </div>

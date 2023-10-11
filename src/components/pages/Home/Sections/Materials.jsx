@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { materials } from '../../../../constants'
+import { materials } from '../../../../constants/home'
 
 function Materials() {
     const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);

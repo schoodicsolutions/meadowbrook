@@ -7,8 +7,13 @@ import { motion } from 'framer-motion';
 import MobileNav from './MobileNav';
 
 function Navbar() {
-    const [active, setActive] = useState('');
+    const [active, setActive] = useState(window.location.pathname);
     const navRef = useRef(null);
+    
+    useEffect(() => {
+        // Update the active state when the URL changes
+        setActive(window.location.pathname);
+    }, []);
 
     return (
         <>
@@ -41,7 +46,7 @@ function Navbar() {
                             to='/'
                             className='flex items-center gap-3'
                             onClick={() => {
-                                setActive('');
+                                setActive('/');
                                 window.scrollTo(0, 0);
                             }}
                         >
@@ -55,7 +60,7 @@ function Navbar() {
                             {navLinks.map((link) => (
                                 <li
                                     key={link.id}
-                                    className={`${active === link.id ? 'text-[#F10D0C] font-semibold' : 'text-black'
+                                    className={`${active.startsWith(link.id) ? 'text-[#F10D0C] font-semibold' : 'text-black'
                                         } hover:text-[#F10D0C] text-[14px] md:text-[16px] font-noraml transition`}
                                     onClick={() => setActive(link.id)}
                                 >
@@ -65,7 +70,7 @@ function Navbar() {
                         </ul>
 
                         <div className='sm:hidden flex justify-end items-center flex-col' ref={navRef}>
-                            <MobileNav/>
+                            <MobileNav />
                         </div>
                     </div>
                 </nav >

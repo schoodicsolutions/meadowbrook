@@ -1,5 +1,5 @@
 import React from 'react'
-import { C_images } from '../../../../constants'
+import { C_images } from '../../../../constants/home'
 
 function Brands() {
 

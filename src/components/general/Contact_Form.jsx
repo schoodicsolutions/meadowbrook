@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Form from './Form';
+import Form from './FormTemplate';
 
 function Contact_Form() {
 

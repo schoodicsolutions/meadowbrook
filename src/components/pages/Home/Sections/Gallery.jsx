@@ -1,5 +1,5 @@
 import React from 'react'
-import { Gallery1, Gallery2 } from '../../../../constants'
+import { Gallery1, Gallery2 } from '../../../../constants/home'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
@@ -52,8 +52,8 @@ function Gallery() {
                         className='flex gap-2 w-full mySwiper overflow-hidden'>
 
                         {Gallery1.map((imagess) => (
-                            <SwiperSlide className='w-full overflow-hidden'>
-                                <img key={imagess.id} src={imagess.img} className='h-[200px] md:h-[250px] lg:h-[300px] w-full' alt={imagess.id} />
+                            <SwiperSlide className='w-full overflow-hidden' key={imagess.id} >
+                                <img src={imagess.img} className='h-[200px] md:h-[250px] lg:h-[300px] w-full' alt={imagess.id} />
                             </SwiperSlide>
                         ))}
                     </Swiper>

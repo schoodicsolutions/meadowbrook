@@ -1,5 +1,5 @@
 import React from 'react'
-import { benefits } from '../../../../constants'
+import { benefits } from '../../../../constants/home'
 
 function Benefits() {
     return (

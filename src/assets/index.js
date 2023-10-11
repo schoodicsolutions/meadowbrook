@@ -5,6 +5,7 @@ import skilled from "./skilled.svg";
 import support from "./support.svg";
 import equipment from "./equipment.svg";
 
+// ********* Home Page Images Start ********** // 
 import hero from './truck_flipped.webp';
 
 // Service Images Import
@@ -32,6 +33,16 @@ import honda from './logos/honda.svg';
 import cell from './logos/cell.svg';
 import hyundai from './logos/hyndai.svg';
 import motors from './logos/motors.svg';
+// ********* Hero Page Images End ********** // 
+
+
+// ********* Product Page Images Start ********** // 
+import HeroImage from './product_assets/hero-img.png'
+// LandScape Service Imports
+import LsService1 from './product_assets/service_assets/landscape_service/service-1.png'
+import LsService2 from './product_assets/service_assets/landscape_service/service-2.png'
+import LsService3 from './product_assets/service_assets/landscape_service/service-3.png'
+import LsService4 from './product_assets/service_assets/landscape_service/service-4.png'
 
 export {
     // Commong SVGS Export
@@ -40,6 +51,8 @@ export {
     skilled,
     support,
     equipment,
+
+    // **************** Hero Images Export ************** //
     hero,
     // Service Images Export
     construction,
@@ -63,4 +76,12 @@ export {
     cell,
     hyundai,
     motors,
+
+    // ******* Product Images Export *********** //
+    HeroImage,
+    // LandScape Services Export
+    LsService1,
+    LsService2,
+    LsService3,
+    LsService4,
 };

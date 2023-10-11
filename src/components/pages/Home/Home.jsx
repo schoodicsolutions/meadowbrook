@@ -13,7 +13,6 @@ import Footer from '../../general/Footer'
 function Home() {
     return (
         <>
-            <Navbar />
             <Hero />
             <Benefits />
             <Services />
@@ -22,7 +21,6 @@ function Home() {
             <Gallery />
             <Brands />
             <Contact_Form />
-            <Footer />
         </>
     )
 }
