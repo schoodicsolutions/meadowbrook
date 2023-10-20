@@ -13,7 +13,6 @@ function Hero(props) {
                         background: `linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.11) ), url(${HeroImage})`,
                         backgroundPosition: 'center',
                         backgroundSize: "cover",
-                        backgroundRepeat: 'no-repeat'
                     }
                 }>
                     <h1 className='text-4xl md:text-5xl text-white font-bold capitalize'>{props.headline} Service</h1>

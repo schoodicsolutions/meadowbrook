@@ -85,7 +85,7 @@ function Gallery() {
                         modules={[Autoplay]}
                         className='flex gap-2 pt-2 w-full mySwiper overflow-hidden'>
                         {Gallery2.map((imagess) => (
-                            <SwiperSlide className='w-full overflow-hidden'>
+                            <SwiperSlide className='w-full overflow-hidden' key={imagess.id} >
                                 <img key={imagess.id} src={imagess.img} className='h-[180px] md:h-[240px] lg:h-[280px] w-full' alt={imagess.id} />
                             </SwiperSlide>
                         ))}

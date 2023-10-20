@@ -4,9 +4,9 @@ import SideFormTemplate from './SideFormTemplate'
 function SideForm() {
     return (
         <>
-            <div className='hidden 2xl:block -mt-44 sticky top-10 bg-[#F8F8F8] px-4 md:px-12 2xl:px-0 pt-5 mb-10 w-full max-w-[420px] rounded-2xl sm:mx-auto'>
+            <div className='hidden 2xl:block -mt-44 sticky top-10 bg-[#F8F8F8] px-4 md:px-12 2xl:px-0 pt-5 mb-10 w-full max-w-[400px] rounded-2xl sm:mx-auto'>
                 <div className='pb-8'>
-                    <div className='pt-4 pb-0 text-center'>
+                    <div className='text-center'>
                         <h1 className='text-[18px] lg:text-[22px] font-bold capitalize'>Book a Call Now !</h1>
                     </div>
                 </div>

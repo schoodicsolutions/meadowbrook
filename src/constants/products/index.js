@@ -14,19 +14,19 @@ const landScapingServices = [
         title: "stump grinding",
     },
     {
-        id: 'tree removal',
+        id: 'tree-removal',
         root: "landscape service",
         image: LsService2,
         title: "tree removal",
     },
     {
-        id: "land / lot clearing",
+        id: "land/lot-clearing",
         root: "landscape service",
         image: LsService3,
         title: "land / lot clearing",
     },
     {
-        id: "retaining walls",
+        id: "retaining-walls",
         root: "landscape service",
         image: LsService4,
         title: "retaining walls",
@@ -60,11 +60,6 @@ const constructionServices = [
     },
 ]
 
-const stumpGrinding = [
-    {
-        
-    }
-]
 export {
     landScapingServices, constructionServices
 }

@@ -9,7 +9,7 @@ function Footer() {
 
     return (
         <>
-            <section id="footer" className='bg-[#13171B] text-white'>
+            <section className='bg-[#13171B] text-white'>
                 <div className='px-4 md:px-6 2xl:px-0 py-8 sm:py-10 w-full max-w-[95rem] mx-auto'>
                     <div className='py-8 sm:flex lg:flex-nowrap flex-wrap lg:justify-around justify-start gap-x-24 gap-y-12 lg:gap-0 items-start'>
                         {/* First Col */}

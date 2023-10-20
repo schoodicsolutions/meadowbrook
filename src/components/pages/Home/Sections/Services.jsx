@@ -11,6 +11,7 @@ function Services() {
         navigate(`/products/${serviceName.toLowerCase()}`);
 
     };
+
     return (
         <>
             <section>
@@ -30,10 +31,6 @@ function Services() {
                             <div key={service.id} className='relative overflow-hidden cursor-pointer'
                                 onClick={() => handleServiceClick(service.title)}
                             >
-                                <Link to={`/products/${service.title.toLowerCase()}`}
-                                    onClick={() => {
-                                        window.scrollTo(0, 0);
-                                    }}>
                                     <div
                                         className={`${hoveredServiceIndex === index ? 'scale-hover-in' : 'scale-hover-out'
                                             } overflow-hidden object-cover h-full w-[130%] md:w-[120%] lg:w-full`}
@@ -62,7 +59,6 @@ function Services() {
                                         <h1 className='text-[18px] sm:text-[20px] lg:text-[24px] pb-0 md:pb-1'>{service.title}</h1>
                                         <p className='text-sm line-clamp-2 lg:line-clamp-none lg:text-base w-full max-w-full sm:max-w-md lg:max-w-md'>{service.paragraph}</p>
                                     </div>
-                                </Link>
                             </div>
                         ))}
                     </div>

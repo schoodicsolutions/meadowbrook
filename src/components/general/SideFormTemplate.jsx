@@ -19,7 +19,7 @@ function SideFormTemplate({ label, id, type, required }) {
                 htmlFor={id}
                 className={`absolute px-4 transition-all pointer-events-none ${isLabelFloating
                     ? '-top-2 left-0 text-[#5E6771] text-xs'
-                    : 'top-2 left-0 text-[#343434] text-[15px]'
+                    : 'top-3 left-0 text-[#343434] text-[15px]'
                     }`}
             >
                 {label}{required && <span className='text-red-600'>*</span>}

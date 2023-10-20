@@ -6,7 +6,7 @@ import support from "./support.svg";
 import equipment from "./equipment.svg";
 
 // ********* Home Page Images Start ********** // 
-import hero from './truck_flipped.webp';
+import hero from './truck_flipped.jpg';
 
 // Service Images Import
 import construction from './Services/construction_service.png';

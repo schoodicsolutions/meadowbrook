@@ -165,43 +165,43 @@ const Gallery1 = [
 
 const Gallery2 = [
     {
-        id: 7,
+        id: 11,
         img: image6,
 
     },
     {
-        id: 8,
+        id: 12,
         img: image7,
 
     },
 
     {
-        id: 9,
+        id: 13,
         img: image8,
 
     },
     {
-        id: 10,
+        id: 14,
         img: image9,
     },
     {
-        id: 1,
+        id: 15,
         img: image1,
 
     },
     {
-        id: 2,
+        id: 16,
         img: image2,
 
     },
     {
-        id: 3,
+        id: 17,
         img: image3,
 
     },
 
     {
-        id: 4,
+        id: 18,
         img: image4,
 
     },
