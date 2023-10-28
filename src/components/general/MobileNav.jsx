@@ -1,13 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Squash as Hamburger } from 'hamburger-react';
-import { Link } from 'react-router-dom';
 import { navLinks } from '../../constants';
-import { motion } from 'framer-motion';
 
 function MobileNav() {
-    const [active, setActive] = useState('');
     const [ariaExpanded, setAriaExpanded] = useState(false);
     const [isHamburgerToggled, setHamburgerToggled] = useState(false);
+
+    const location = useLocation();
+    const [active, setActive] = useState(location.pathname);
+
+    useEffect(() => {
+        // Update the active state when the URL changes
+        setActive(location.pathname);
+    }, [location.pathname]);
+
+    // Function to check if the current route is a "Products" page or under "Products"
+    const isProductPage = () => {
+        return active.startsWith('/products');
+    };
+
 
     return (
         <>
@@ -36,7 +48,7 @@ function MobileNav() {
                     {navLinks.map((link) => (
                         <li
                             key={link.id}
-                            className={`${active.startsWith(link.id) ? 'text-[#F10D0C] font-semibold' : 'text-black'
+                            className={`${active === link.id || link.id === '/products' && isProductPage() ? 'text-[#F10D0C] font-semibold' : 'text-black'
                                 } hover:text-[#F10D0C] text-[14px] md:text-[16px] font-noraml transition`}
                             onClick={() => setActive(link.id)}
                         >

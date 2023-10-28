@@ -7,6 +7,7 @@ import equipment from "./equipment.svg";
 
 // ********* Home Page Images Start ********** // 
 import hero from './truck_flipped.jpg';
+import AboutHero from './About/about-hero.jpg';
 
 // Service Images Import
 import construction from './Services/construction_service.png';
@@ -54,6 +55,8 @@ export {
 
     // **************** Hero Images Export ************** //
     hero,
+    AboutHero,
+    
     // Service Images Export
     construction,
     landscape,

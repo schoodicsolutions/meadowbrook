@@ -6,6 +6,7 @@ import Preloader from "./components/general/Preloader";
 import Products from "./components/pages/Product/Products";
 import Navbar from "./components/general/Navbar";
 import Footer from "./components/general/Footer";
+import About from "./components/pages/About/About";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -28,6 +29,7 @@ function App() {
               <Route exact path='' element={<Home />} />
               <Route path="/products/:serviceName" element={<Products />} />
               <Route exact path="/products" element={<Products />} />
+              <Route exact path="/about-us" element={<About />} />
             </Routes>
             < Footer />
           </>
