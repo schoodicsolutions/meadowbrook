@@ -1,4 +1,3 @@
-
 const navLinks = [
     {
         id: "/",
@@ -9,7 +8,7 @@ const navLinks = [
         title: "About Us",
     },
     {
-        id: 'products',
+        id: '/products',
         title: "Products",
     },
     {

@@ -85,13 +85,13 @@ const benefits = [
 
 const services = [
     {
-        id: 1,
+        id: 'landscaping',
         title: "Landscaping",
         paragraph: 'Transforming Outdoor Spaces into Breathtaking Retreats with Our Exceptional Landscaping Services',
         image: landscape,
     },
     {
-        id: 2,
+        id: 'construction',
         title: "Construction",
         paragraph: 'Our Construction Services Forge Strong Foundations and Architectural Wonders Alike',
         image: construction,

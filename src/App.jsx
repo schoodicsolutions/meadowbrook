@@ -25,8 +25,8 @@ function App() {
           <>
             <Navbar />
             <Routes>
-              <Route exact path='/' element={<Home />} />
-              <Route exact path="/products/:serviceName" element={<Products />} />
+              <Route exact path='' element={<Home />} />
+              <Route path="/products/:serviceName" element={<Products />} />
               <Route exact path="/products" element={<Products />} />
             </Routes>
             < Footer />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import { navLinks } from '../../constants';
 import { logo } from '../../assets';
@@ -7,13 +7,19 @@ import { motion } from 'framer-motion';
 import MobileNav from './MobileNav';
 
 function Navbar() {
-    const [active, setActive] = useState(window.location.pathname);
+    const location = useLocation();
+    const [active, setActive] = useState(location.pathname);
     const navRef = useRef(null);
-    
+
     useEffect(() => {
         // Update the active state when the URL changes
-        setActive(window.location.pathname);
-    }, []);
+        setActive(location.pathname);
+    }, [location.pathname]);
+
+    // Function to check if the current route is a "Products" page or under "Products"
+    const isProductPage = () => {
+        return active.startsWith('/products');
+    };
 
     return (
         <>
@@ -58,14 +64,16 @@ function Navbar() {
                         </Link>
                         <ul className='list-none hidden 2xl:pt-9 sm:flex flex-row gap-6 md:gap-10'>
                             {navLinks.map((link) => (
+
                                 <li
                                     key={link.id}
-                                    className={`${active.startsWith(link.id) ? 'text-[#F10D0C] font-semibold' : 'text-black'
-                                        } hover:text-[#F10D0C] text-[14px] md:text-[16px] font-noraml transition`}
+                                    className={`${active === link.id || link.id === '/products' && isProductPage() ? 'text-[#F10D0C] font-semibold' : 'text-black'
+                                    } hover:text-[#F10D0C] text-[14px] md:text-[16px] font-noraml transition`}
                                     onClick={() => setActive(link.id)}
                                 >
                                     <Link to={`${link.id}`}>{link.title}</Link>
                                 </li>
+
                             ))}
                         </ul>
 

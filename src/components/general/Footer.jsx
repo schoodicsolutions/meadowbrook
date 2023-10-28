@@ -1,11 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logoWhite from '../../assets/LogoWhite.svg'
 import { Icon } from '@iconify/react';
-import { Link } from 'react-router-dom';
 import { Blogs, ProductLinks, navLinks } from '../../constants';
 
 function Footer() {
-    const [active, setActive] = useState('');
+    const location = useLocation();
+    const [active, setActive] = useState(location.pathname);
+    useEffect(() => {
+        // Update the active state when the URL changes
+        setActive(location.pathname);
+    }, [location.pathname]);
+
+    // Function to check if the current route is a "Products" page or under "Products"
+    const isProductPage = () => {
+        return active.startsWith('/products');
+    };
 
     return (
         <>
@@ -40,9 +50,8 @@ function Footer() {
                                 {navLinks.map((link) => (
                                     <li
                                         key={link.id}
-                                        className={`${active === link.id ? 'text-[#F10D0C] font-semibold' : 'text-white'
+                                        className={`${active === link.id || link.id === '/products' && isProductPage() ? 'text-[#F10D0C] font-semibold' : 'text-white'
                                             } hover:text-[#F10D0C] w-fit text-sm font-noraml transition`}
-                                        onClick={() => setActive(link.id)}
                                     >
                                         <Link to={`${link.id}`}>{link.title}</Link>
                                     </li>

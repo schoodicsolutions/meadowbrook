@@ -1,7 +1,7 @@
 import React from "react";
 import CountUp, { useCountUp } from 'react-countup';
 
-export default function Counter({ number, title }) {
+function Counter({ number, title }) {
     useCountUp({
         ref: 'counter',
         enableScrollSpy: true,
@@ -15,3 +15,6 @@ export default function Counter({ number, title }) {
         </div>
     );
 }
+
+export default Counter
+
