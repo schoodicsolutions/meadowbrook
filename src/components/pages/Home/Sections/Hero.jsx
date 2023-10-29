@@ -8,12 +8,12 @@ function Hero() {
     return (
         <>
             <section>
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.1 }} className='px-4 md:px-12 min-h-[540px] lg:h-[72vh] flex items-center justify-start' style={
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.1 }} className='px-4 md:px-12 min-h-[540px] lg:h-[720px] flex items-center justify-start' style={
                     {
                         background: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7) ), url(${hero})`,
                         backgroundPosition: 'center',
                         backgroundSize: "cover",
-                        backgroundRepeat: 'no-repeat'
+                        backgroundRepeat: 'no-repeat',
                     }
                 }>
                     <div className='w-full max-w-[95rem] m-auto text-white'>

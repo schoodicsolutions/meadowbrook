@@ -45,6 +45,10 @@ import LsService2 from './product_assets/service_assets/landscape_service/servic
 import LsService3 from './product_assets/service_assets/landscape_service/service-3.png'
 import LsService4 from './product_assets/service_assets/landscape_service/service-4.png'
 
+// ********* About Page Images Start ********** // 
+import Mission from './About/mission-img.jpg';
+import Vision from './About/vision-img.jpg';
+
 export {
     // Commong SVGS Export
     logo,
@@ -56,14 +60,16 @@ export {
     // **************** Hero Images Export ************** //
     hero,
     AboutHero,
-    
+
     // Service Images Export
     construction,
     landscape,
+
     // Product Images Export
     stones,
     gravel,
     soil,
+
     // Gallery Images Export
     image1,
     image2,
@@ -73,6 +79,7 @@ export {
     image7,
     image8,
     image9,
+
     // Companny Logos Export
     lg,
     honda,
@@ -82,9 +89,14 @@ export {
 
     // ******* Product Images Export *********** //
     HeroImage,
+    
     // LandScape Services Export
     LsService1,
     LsService2,
     LsService3,
     LsService4,
+
+    // ******* About Images Export *********** //
+    Mission,
+    Vision
 };
