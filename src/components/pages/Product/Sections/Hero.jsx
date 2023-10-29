@@ -8,7 +8,7 @@ function Hero(props) {
     return (
         <>
             <section>
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.1 }} className='px-4 md:px-12 min-h-[42vh] md:min-h-[46vh] flex items-center justify-center mb-10' style={
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.1 }} className='px-4 md:px-12 min-h-[36vh] md:min-h-[46vh] flex items-center justify-center md:mb-10' style={
                     {
                         background: `linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.11) ), url(${HeroImage})`,
                         backgroundPosition: 'center',

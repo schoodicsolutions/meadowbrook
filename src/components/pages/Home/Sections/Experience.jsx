@@ -15,7 +15,7 @@ function Experience() {
                         <h1 className='text-[26px] md:text-[28px] lg:text-[42px] text-center font-bold'>Our Experience at a Glance</h1>
                     </div>
                     <div className='text-center w-full'>
-                        <p className='text-sm sm:text-base w-full max-w-xl m-auto'>
+                        <p className='text-sm sm:text-lg w-full max-w-xl m-auto'>
                             Experience the Unmatched Power of Tailored Redi-Mix Deliveries, Backed by Decades of Expertise and Cutting-Edge Technology.
                         </p>
                     </div>

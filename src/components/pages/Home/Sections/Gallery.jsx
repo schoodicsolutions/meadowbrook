@@ -17,7 +17,7 @@ function Gallery() {
                         <h1 className='text-[22px] md:text-[26px] lg:text-[28px] font-bold'>Check out our work</h1>
                     </div>
                     <div className='text-center'>
-                        <p className='text-sm sm:text-base'>
+                        <p className='text-sm sm:text-lg'>
                             Discover Our Proven and Transparent Process, Unravel the Magic Behind Our Unmatched Work Ethic
                         </p>
                     </div>

@@ -20,7 +20,7 @@ const landScapingServices = [
         title: "tree removal",
     },
     {
-        id: "land/lot-clearing",
+        id: "land-lot-clearing",
         root: "landscape service",
         image: LsService3,
         title: "land / lot clearing",

@@ -12,7 +12,7 @@ function Contact_Form() {
                             <h1 className='text-[22px] md:text-[26px] lg:text-[28px] font-bold capitalize'>contact us now</h1>
                         </div>
                         <div className='text-center w-full'>
-                            <p className='text-sm sm:text-base w-full max-w-md mx-auto'>
+                            <p className='text-base sm:text-lg w-full max-w-[18rem] sm:max-w-md mx-auto'>
                                 We work on all make/model of trucks. Give us a call when you need us. You'll be back on the road in no time.
                             </p>
                         </div>

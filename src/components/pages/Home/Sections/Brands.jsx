@@ -12,7 +12,7 @@ function Brands() {
                         <h1 className='text-[22px] md:text-[26px] lg:text-[28px] font-bold'>Brands we have worked with</h1>
                     </div>
                     <div className='text-center'>
-                        <p className='text-sm sm:text-base'>
+                        <p className='text-sm sm:text-lg'>
                             "Trusted by Top Brands with Our Impressive Portfolio of Collaborations"
                         </p>
                     </div>

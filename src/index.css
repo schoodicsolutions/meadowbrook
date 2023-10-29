@@ -33,6 +33,10 @@ html {
   border-bottom-color: rgb(241 13 12 / var(--tw-border-opacity));
 }
 
+.fill-scarlet {
+  fill: #f10d0c;
+}
+
 /* Apply 'Source Sans 3' to headings */
 h1,
 h2,
@@ -120,7 +124,7 @@ a {
   transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955), cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
-input[type=number]{
+input[type=number] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
 }

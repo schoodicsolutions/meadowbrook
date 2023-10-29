@@ -44,6 +44,15 @@ import LsService1 from './product_assets/service_assets/landscape_service/servic
 import LsService2 from './product_assets/service_assets/landscape_service/service-2.png'
 import LsService3 from './product_assets/service_assets/landscape_service/service-3.png'
 import LsService4 from './product_assets/service_assets/landscape_service/service-4.png'
+// Landscape Service Detail Hero Image
+import LandDetailHero from './product_assets/productDetail-hero.jpg'
+
+// Service Details Hero Images
+import StumpGrind from './product_assets/service_detail/StumpGrind.jpg'
+import TreeRemoval from './product_assets/service_detail/treeRemoval.jpg'
+import WallRetain from './product_assets/service_detail/wallRetain.jpg'
+import LandLot from './product_assets/service_detail/landLot.jpg'
+
 
 // ********* About Page Images Start ********** // 
 import Mission from './About/mission-img.jpg';
@@ -89,12 +98,21 @@ export {
 
     // ******* Product Images Export *********** //
     HeroImage,
-    
+
     // LandScape Services Export
     LsService1,
     LsService2,
     LsService3,
     LsService4,
+
+    // Service Detail Images Export
+    StumpGrind,
+    TreeRemoval,
+    WallRetain,
+    LandLot,
+    
+    // Landscape Service Detail Hero Image
+    LandDetailHero,
 
     // ******* About Images Export *********** //
     Mission,
