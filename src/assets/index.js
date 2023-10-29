@@ -48,7 +48,7 @@ import LsService4 from './product_assets/service_assets/landscape_service/servic
 import LandDetailHero from './product_assets/productDetail-hero.jpg'
 
 // Service Details Hero Images
-import StumpGrind from './product_assets/service_detail/StumpGrind.jpg'
+import StumpGrind from './product_assets/service_detail/stumpGrind.jpg'
 import TreeRemoval from './product_assets/service_detail/treeRemoval.jpg'
 import WallRetain from './product_assets/service_detail/wallRetain.jpg'
 import LandLot from './product_assets/service_detail/landLot.jpg'
