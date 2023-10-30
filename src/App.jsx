@@ -7,7 +7,7 @@ import Products from "./components/pages/Product/Products";
 import Navbar from "./components/general/Navbar";
 import Footer from "./components/general/Footer";
 import About from "./components/pages/About/About";
-import ServiceDetails from "./components/pages/Product/Sections/ServiceDetails";
+import ServiceDetails from "./components/pages/Product/Sections//Service_Detail/ServiceDetails";
 
 function App() {
   const [loader, setLoader] = useState(true);

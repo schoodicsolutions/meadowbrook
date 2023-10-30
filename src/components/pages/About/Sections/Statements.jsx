@@ -16,7 +16,7 @@ function Statements() {
                                     <p className='text-black uppercase text-sm tracking-[0.3em] font-black'>{state.title}</p>
                                     <h1 className='font-black text-[30px] md:text-[36px] 2xl:text-[48px] leading-snug py-2 lg:py-3'>
                                         {state.head.split(' ').map((word, wordIndex) => (
-                                            <span key={wordIndex} className={(index === 0 && (wordIndex === 1 || wordIndex === 3)) || (index === 1 && (wordIndex === 1)) ? 'text-red-600' : ''}>
+                                            <span key={wordIndex} className={(index === 0 && (wordIndex === 1 || wordIndex === 3)) || (index === 1 && (wordIndex === 1)) ? 'text-cred' : ''}>
                                                 {word}
                                                 {' '}
                                             </span>

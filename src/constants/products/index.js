@@ -23,7 +23,7 @@ const landScapingServices = [
         id: "land-lot-clearing",
         root: "landscape service",
         image: LsService3,
-        title: "land / lot clearing",
+        title: "land lot clearing",
     },
     {
         id: "retaining-walls",

@@ -19,8 +19,21 @@ html {
   overflow-x: clip;
 }
 
+::selection {
+  background-color: #e54a4a;
+  color: #fff;
+}
+
 .bg-cred {
   background-color: #F10D0C;
+}
+
+.text-cred {
+  color: #F10D0C;
+}
+
+.hover-textred:hover {
+  color: #F10D0C;
 }
 
 .border-r-scarlet {

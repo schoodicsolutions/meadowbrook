@@ -16,10 +16,7 @@ function Products() {
     return (
         <>
             <Hero headline={serviceName || "Landscaping / Construction"} />
-            <div className='relative flex justify-between items-center gap-24 w-full max-w-[95rem] mx-auto'>
-                <Services serviceName={serviceName || "Landscaping / Construction"} />
-                <Side_Form />
-            </div>
+            <Services serviceName={serviceName || "Landscaping / Construction"} />
         </>
     )
 }

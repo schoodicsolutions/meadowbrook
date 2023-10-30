@@ -55,8 +55,8 @@ function MobileNav() {
                     {navLinks.map((link) => (
                         <li
                             key={link.id}
-                            className={`${active === link.id || link.id === '/products' && isProductPage() ? 'text-[#F10D0C] font-semibold' : 'text-black'
-                                } hover:text-[#F10D0C] text-[14px] md:text-[16px] font-noraml transition`}
+                            className={`${active === link.id || link.id === '/products' && isProductPage() ? 'text-cred font-semibold' : 'text-black'
+                                } hover-textred text-[14px] md:text-[16px] font-noraml transition`}
                             onClick={() => {
                                 setActive(link.id);
                             }}

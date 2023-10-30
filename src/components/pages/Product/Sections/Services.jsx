@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import { landScapingServices, constructionServices } from '../../../../constants/products'
 import { Link } from 'react-router-dom';
+import SideForm from '../../../general/SideForm';
 
 function Services(props) {
     const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
 
-    
+
 
     return (
         <>
-            <section>
-                <div className='px-4 md:px-12 2xl:px-0 my-10 w-full max-w-[95rem] mx-auto pt-0 md:pt-5'>
+            <section className='relative flex justify-between px-4 md:px-16 2xl:px-0 mb-10 w-full max-w-[95rem] mx-auto'>
+                <div className='flex-[1 auto]'>
                     <div className='relative mb-8 2xl:mb-12'>
                         <h1 className='text-[22px] lg:text-[28px]'>The {props.serviceName} service includes</h1>
                         <span className='w-28 h-[2px] bg-cred block'></span>
@@ -53,6 +54,9 @@ function Services(props) {
                             </Link>
                         ))}
                     </div>
+                </div>
+                <div className='flex-auto'>
+                    <SideForm />
                 </div>
             </section>
         </>

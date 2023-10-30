@@ -22,7 +22,7 @@ function SideFormTemplate({ label, id, type, required }) {
                     : 'top-3 left-0 text-[#343434] text-[15px]'
                     }`}
             >
-                {label}{required && <span className='text-red-600'>*</span>}
+                {label}{required && <span className='text-cred'>*</span>}
             </label>
             {type === 'textarea' ? (
                 <textarea

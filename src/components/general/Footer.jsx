@@ -35,9 +35,9 @@ function Footer() {
                                 </p>
                             </div>
                             <div className='flex justify-start items-center px-4 gap-4'>
-                                <span><Icon icon="ic:baseline-facebook" className='text-[20px] cursor-pointer hover:text-red-500 transition' /></span>
-                                <span><Icon icon="entypo-social:linkedin-with-circle" className='text-[20px] cursor-pointer hover:text-red-500 transition' /></span>
-                                <span><Icon icon="mdi:github" className='text-[20px] cursor-pointer hover:text-red-500 transition' /></span>
+                                <span><Icon icon="ic:baseline-facebook" className='text-[20px] cursor-pointer hover-textred transition' /></span>
+                                <span><Icon icon="entypo-social:linkedin-with-circle" className='text-[20px] cursor-pointer hover-textred transition' /></span>
+                                <span><Icon icon="mdi:github" className='text-[20px] cursor-pointer hover-textred transition' /></span>
                             </div>
                         </div>
 
@@ -50,8 +50,10 @@ function Footer() {
                                 {navLinks.map((link) => (
                                     <li
                                         key={link.id}
-                                        className={`${active === link.id || link.id === '/products' && isProductPage() ? 'text-[#F10D0C] font-semibold' : 'text-white'
-                                            } hover:text-[#F10D0C] w-fit text-sm font-noraml transition`}
+                                        className={`${active === link.id || link.id === '/products' && isProductPage()
+                                            ? 'text-cred font-semibold'
+                                            : 'text-white'} hover-textred w-fit text-sm font-noraml transition`
+                                        }
                                     >
                                         <Link to={`${link.id}`}>{link.title}</Link>
                                     </li>
@@ -68,8 +70,11 @@ function Footer() {
                                 {ProductLinks.map((link) => (
                                     <li
                                         key={link.id}
-                                        className={`${active === link.id ? 'text-[#F10D0C] font-semibold' : 'text-white'
-                                            } hover:text-[#F10D0C] w-fit text-sm font-noraml transition`}
+                                        className={`${active === link.id
+                                            ? 'text-cred font-semibold'
+                                            : 'text-white'
+                                            } hover-textred w-fit text-sm font-noraml transition`
+                                        }
                                         onClick={() => setActive(link.id)}
                                     >
                                         <Link to={`${link.id}`}>{link.title}</Link>
@@ -86,7 +91,7 @@ function Footer() {
                             <div className='pt-4 sm:pt-6 gap-5 sm:gap-6 flex flex-col'>
                                 {Blogs.map((blog) => (
                                     <Link to={blog.link} key={blog.id}>
-                                        <p className='hover:text-[#f10D0C] sm:text-base text-sm transition-colors duration-200 ease-out'>{blog.title}</p>
+                                        <p className='hover-textred sm:text-base text-sm transition-colors duration-200 ease-out'>{blog.title}</p>
                                     </Link>
                                 ))}
                             </div>
