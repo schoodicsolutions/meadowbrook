@@ -138,7 +138,6 @@ const retaining_walls = [
     }
 ]
 
-
 export {
     stump_grinding,
     tree_removal,

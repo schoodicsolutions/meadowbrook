@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import SideForm from '../../../../general/SideForm';
 import Related_Service from './Related_Service';
 import { land_lot_clearing, retaining_walls, stump_grinding, tree_removal } from '../../../../../Data/products/Landscaping_services';
+import { concrete_supply, culverts, driveways, dump_trucks, excavator_services, foundations, septic_tank_installation } from '../../../../../Data/products/Construction_services';
 
 
 function Details() {
@@ -22,6 +23,21 @@ function Details() {
                 return land_lot_clearing;
             case 'retaining-walls':
                 return retaining_walls;
+            case 'concrete-supply':
+                return concrete_supply;
+            case 'foundations':
+                return foundations;
+            case 'driveways':
+                return driveways;
+            case 'culverts':
+                return culverts;
+            case 'dump-trucks':
+                return dump_trucks;
+            case 'excavator-services':
+                return excavator_services;
+            case 'septic-tank-installation':
+                return septic_tank_installation;
+
             default:
                 return [];
         }
