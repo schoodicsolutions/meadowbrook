@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logoWhite from '../../assets/LogoWhite.svg'
 import { Icon } from '@iconify/react';
-import { Blogs, ProductLinks, navLinks } from '../../constants';
+import { Blogs, ProductLinks, navLinks } from '../../Data';
 
 function Footer() {
     const location = useLocation();

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { materials } from '../../../../constants/home'
+import { materials } from '../../../../Data/home'
 
 function Materials() {
     const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
@@ -7,7 +7,7 @@ function Materials() {
     return (
         <>
             <section>
-                <div className='px-4 md:px-12 2xl:px-0 my-10 w-full max-w-[95rem] mx-auto pt-0 md:pt-5'>
+                <div className='px-4 md:px-12 2xl:px-0 my-10 w-full max-w-custom mx-auto pt-0 md:pt-5'>
                     <div className='relative mb-2 sm:mb-5'>
                         <h1 className='text-[26px] md:text-[28px] lg:text-[38px] font-bold'>Materials we provide</h1>
                         <span className='w-28 hidden sm:block h-[2px] bg-cred'></span>

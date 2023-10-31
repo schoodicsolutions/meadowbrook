@@ -7,7 +7,8 @@ import Products from "./components/pages/Product/Products";
 import Navbar from "./components/general/Navbar";
 import Footer from "./components/general/Footer";
 import About from "./components/pages/About/About";
-import ServiceDetails from "./components/pages/Product/Sections//Service_Detail/ServiceDetails";
+import ServiceDetails from "./components/pages/Product/Service_Detail/ServiceDetails";
+import Product_Static from "./components/pages/Product/Product_Static";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -30,7 +31,7 @@ function App() {
               <Route exact path='' element={<Home />} />
               <Route path="/products/:serviceName" element={<Products />} />
               <Route path="/products/:serviceName/:serviceDetail" element={<ServiceDetails />} />
-              <Route exact path="/products" element={<Products />} />
+              <Route exact path="/products" element={<Product_Static />} />
               <Route exact path="/about-us" element={<About />} />
             </Routes>
             < Footer />

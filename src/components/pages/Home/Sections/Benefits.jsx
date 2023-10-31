@@ -1,11 +1,11 @@
 import React from 'react'
-import { benefits } from '../../../../constants/home'
+import { benefits } from '../../../../Data/home'
 
 function Benefits() {
     return (
         <>
             <section>
-                <div className='px-4 md:px-12 2xl:px-0 my-10 w-full max-w-[95rem] mx-auto'>
+                <div className='px-4 md:px-12 2xl:px-0 my-10 w-full max-w-custom mx-auto'>
                     <div className='pb-2'>
                         <h1 className='text-[22px] md:text-[26px] lg:text-[28px]'>Check out the list of Benefits we offer to our clients</h1>
                     </div>

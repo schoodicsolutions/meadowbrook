@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { services } from '../../../../constants/home';
+import { services } from '../../../../Data/home';
 import { Link } from 'react-router-dom';
 
 function Services() {
@@ -8,7 +8,7 @@ function Services() {
     return (
         <>
             <section>
-                <div className='px-4 md:px-12 2xl:px-0 my-10 w-full max-w-[95rem] mx-auto pt-0 md:pt-5'>
+                <div className='px-4 md:px-12 2xl:px-0 my-10 w-full max-w-custom mx-auto pt-0 md:pt-5'>
                     <div className='relative mb-2 sm:mb-5'>
                         <h1 className='text-[26px] md:text-[28px] lg:text-[38px]'>Our Services</h1>
                         <span className='w-28 h-[2px] bg-cred hidden sm:block'></span>

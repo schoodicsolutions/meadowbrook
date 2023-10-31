@@ -1,5 +1,5 @@
 import React from 'react'
-import { States } from '../../../../constants/About'
+import { States } from '../../../../Data/About'
 
 function Statements() {
 

@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import Hero from '../Product/Sections/Hero'
 import { useParams } from 'react-router-dom';
-import Services from './Sections/Services';
-
-function Products() {
+import Services from './Static_Section/Services';
+function Product_Static() {
 
     const { serviceName } = useParams(); // Get the serviceName from the URL
 
@@ -14,10 +13,11 @@ function Products() {
 
     return (
         <>
-            <Hero headline={serviceName || "Landscaping / Construction"} />
-            <Services serviceName={serviceName || "Landscaping / Construction"} />
+            <Hero headline="Landscaping / Construction" />
+            <Services />
         </>
     )
+
 }
 
-export default Products
+export default Product_Static

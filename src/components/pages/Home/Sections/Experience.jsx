@@ -9,7 +9,7 @@ function Experience() {
             backgroundPosition: "center",
             backgroundSize: "cover"
         }}>
-            <div className='px-4 md:px-12 2xl:px-0 my-16 w-full max-w-[95rem] mx-auto pt-0 md:pt-5 text-white'>
+            <div className='px-4 md:px-12 2xl:px-0 my-16 w-full max-w-custom mx-auto pt-0 md:pt-5 text-white'>
                 <div className='pt-10 pb-8'>
                     <div className='relative mb-2'>
                         <h1 className='text-[26px] md:text-[28px] lg:text-[42px] text-center font-bold'>Our Experience at a Glance</h1>

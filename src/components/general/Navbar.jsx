@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Icon } from '@iconify/react';
-import { navLinks } from '../../constants';
+import { navLinks } from '../../Data';
 import { logo } from '../../assets';
 import { motion } from 'framer-motion';
 import MobileNav from './MobileNav';

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Gallery1, Gallery2 } from '../../../../constants/home'
+import { Gallery1, Gallery2 } from '../../../../Data/home'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
@@ -12,7 +12,7 @@ function Gallery() {
     return (
         <>
             <section className='overflow-hidden'>
-                <div className='px-4 md:px-12 2xl:px-0 mb-10 w-full max-w-[95rem] mx-auto'>
+                <div className='px-4 md:px-12 2xl:px-0 mb-10 w-full max-w-custom mx-auto'>
                     <div className='pb-2 text-center'>
                         <h1 className='text-[22px] md:text-[26px] lg:text-[28px] font-bold'>Check out our work</h1>
                     </div>

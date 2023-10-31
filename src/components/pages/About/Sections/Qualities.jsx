@@ -1,5 +1,5 @@
 import React from 'react'
-import { AboutCards } from '../../../../constants/About'
+import { AboutCards } from '../../../../Data/About'
 import { Icon } from '@iconify/react';
 
 function Qualities() {

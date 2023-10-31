@@ -36,6 +36,14 @@ html {
   color: #F10D0C;
 }
 
+.custom-list {
+  list-style: disc;
+}
+
+.max-w-custom{
+  max-width: 95rem;
+}
+
 .border-r-scarlet {
   --tw-border-opacity: 1;
   border-right-color: rgb(241 13 12 / var(--tw-border-opacity));
@@ -64,7 +72,9 @@ h6,
 
 /* Apply 'Raleway' to paragraphs, spans, and links */
 p,
-a {
+a,
+ul,
+li {
   font-family: 'Raleway', sans-serif;
 }
 

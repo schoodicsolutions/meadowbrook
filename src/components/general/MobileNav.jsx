@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Squash as Hamburger } from 'hamburger-react';
-import { navLinks } from '../../constants';
+import { navLinks } from '../../Data';
 
 function MobileNav() {
     const [ariaExpanded, setAriaExpanded] = useState(false);

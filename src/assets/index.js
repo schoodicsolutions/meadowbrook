@@ -39,19 +39,36 @@ import motors from './logos/motors.svg';
 
 // ********* Product Page Images Start ********** // 
 import HeroImage from './product_assets/hero-img.png'
+
 // LandScape Service Imports
 import LsService1 from './product_assets/service_assets/landscape_service/service-1.png'
 import LsService2 from './product_assets/service_assets/landscape_service/service-2.png'
 import LsService3 from './product_assets/service_assets/landscape_service/service-3.png'
 import LsService4 from './product_assets/service_assets/landscape_service/service-4.png'
-// Landscape Service Detail Hero Image
-import LandDetailHero from './product_assets/productDetail-hero.jpg'
 
-// Service Details Hero Images
+// Construction Service Imports
+import CsService1 from './product_assets/service_assets/construction_service/service-1.jpg'
+import CsService2 from './product_assets/service_assets/construction_service/service-2.jpg'
+import CsService3 from './product_assets/service_assets/construction_service/service-3.jpg'
+import CsService4 from './product_assets/service_assets/construction_service/service-4.jpg'
+import CsService5 from './product_assets/service_assets/construction_service/service-5.jpg'
+import CsService6 from './product_assets/service_assets/construction_service/service-6.jpg'
+import CsService7 from './product_assets/service_assets/construction_service/service-7.jpg'
+
+// Landscaping Service Details Hero Images
 import StumpGrind from './product_assets/service_detail/stumpGrind.jpg'
 import TreeRemoval from './product_assets/service_detail/treeRemoval.jpg'
 import WallRetain from './product_assets/service_detail/wallRetain.jpg'
 import LandLot from './product_assets/service_detail/landLot.jpg'
+
+// Construction Service Details Hero Images
+import ConcreteSupply from './product_assets/service_detail/construction_services/concretesupply.jpg'
+import Culverts from './product_assets/service_detail/construction_services/culverts.jpg'
+import Driveways from './product_assets/service_detail/construction_services/driveways.jpg'
+import Dumptrucks from './product_assets/service_detail/construction_services/dumptrucks.jpg'
+import Excavatorservices from './product_assets/service_detail/construction_services/excavatorservices.jpg'
+import Foundations from './product_assets/service_detail/construction_services/foundations.jpg'
+import Septictank from './product_assets/service_detail/construction_services/septictank.jpg'
 
 
 // ********* About Page Images Start ********** // 
@@ -105,14 +122,29 @@ export {
     LsService3,
     LsService4,
 
-    // Service Detail Images Export
+    // Construction Services Export
+    CsService1,
+    CsService2,
+    CsService3,
+    CsService4,
+    CsService5,
+    CsService6,
+    CsService7,
+
+    //Landscaping Service Detail Images Export
     StumpGrind,
     TreeRemoval,
     WallRetain,
     LandLot,
-    
-    // Landscape Service Detail Hero Image
-    LandDetailHero,
+
+    // Construction Service Detail Images Export
+    ConcreteSupply,
+    Culverts,
+    Driveways,
+    Dumptrucks,
+    Excavatorservices,
+    Foundations,
+    Septictank,
 
     // ******* About Images Export *********** //
     Mission,

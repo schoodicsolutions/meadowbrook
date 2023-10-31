@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { landScapingServices, constructionServices } from '../../../../../../constants/products';
+import { landScapingServices, constructionServices } from '../../../../../Data/products';
 
 function shuffleArray(array) {
     // Create a copy of the array to avoid modifying the original
@@ -18,9 +18,7 @@ function shuffleArray(array) {
 function Related_Service() {
 
     const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
-
     const { serviceDetail, serviceName } = useParams();
-
     const openedService = serviceDetail.replace(/-/g, ' ');
 
     // Create a state variable to store the related services
@@ -31,14 +29,21 @@ function Related_Service() {
     const services = serviceType === 'landscaping' ? landScapingServices : constructionServices;
 
     useEffect(() => {
+
         // Filter the services to exclude the currently opened service
-        const filteredServices = services.filter(service => service.title !== openedService);
+        const filteredServices = services.filter(service =>
+            service.title.toLowerCase() !== openedService.toLowerCase()
+        );
 
         // Shuffle the order of related services
         const shuffledRelatedServices = shuffleArray(filteredServices);
 
-        setRelatedServices(shuffledRelatedServices);
+        // Get only the first four related services
+        const firstFourRelatedServices = shuffledRelatedServices.slice(0, 4);
+
+        setRelatedServices(firstFourRelatedServices);
     }, [serviceDetail, serviceName, openedService, services]);
+
 
     return (
         <>

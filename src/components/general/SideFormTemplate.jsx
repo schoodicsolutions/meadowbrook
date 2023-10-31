@@ -14,7 +14,7 @@ function SideFormTemplate({ label, id, type, required }) {
     };
 
     return (
-        <div className='relative pb-6'>
+        <div className='relative pb-5'>
             <label
                 htmlFor={id}
                 className={`absolute px-4 transition-all pointer-events-none ${isLabelFloating
