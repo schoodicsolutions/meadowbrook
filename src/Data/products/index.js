@@ -86,6 +86,56 @@ const constructionServices = [
     },
 ]
 
+const headlines = [
+    {
+        id: "stump-grinding",
+        heading: "Mastering Stump Grinding: Reclaiming Your Outdoor Space",
+    },
+    {
+        id: "tree-removal",
+        heading: "Tree Removal: Crafting More Beautiful Landscape"
+    },
+    {
+        id: "land-lot-clearing",
+        heading: "The Art of Land and Lot Clearing"
+    },
+    {
+        id: "retaining-walls",
+        heading: "The Magic of Retaining Walls"
+    },
+    {
+        id: 'concrete-supply',
+        heading: "Concrete Supply Made Easy: Your Foundation for Success",
+    },
+    {
+        id: 'foundations',
+        heading: "Solid Foundations: Building the Future Foundations",
+    },
+    {
+        id: 'driveways',
+        heading: "Crafting Stunning Driveways That Welcome You Home",
+    },
+    {
+        id: 'culverts',
+        heading: "Culverts: Water Management, Nature's Way",
+    },
+    {
+        id: 'dump-trucks',
+        heading: "Dump Trucks: Hauling Progress, One Load at a Time",
+    },
+    {
+        id: 'excavator-services',
+        heading: "Unearthing the Potential of Excavator Services",
+    },
+    {
+        id: 'septic-tank-installation',
+        heading: "Septic Tank Installation: A Cleaner, Greener Way Forward",
+    },
+]
+
+
 export {
-    landScapingServices, constructionServices
+    landScapingServices,
+    constructionServices,
+    headlines,
 }

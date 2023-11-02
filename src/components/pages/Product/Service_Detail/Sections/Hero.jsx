@@ -13,6 +13,7 @@ import {
     Foundations,
     Septictank,
 } from '../../../../../assets';
+import { headlines } from '../../../../../Data/products';
 
 function Hero() {
     const { serviceDetail } = useParams();
@@ -39,11 +40,11 @@ function Hero() {
         return serviceComponents[serviceDetailName] || DefaultComponent;
     };
 
-    // Get the image component based on the service name
     const serviceImage = ServiceMatch(ServiceDetailName);
 
+    const selectedHeadline = headlines.find(head => head.id === serviceDetail);
+
     useEffect(() => {
-        // Scroll to the top when the page loads
         window.scrollTo(0, 0);
     }, [serviceDetail]);
 
@@ -60,9 +61,8 @@ function Hero() {
                         </div>
                     </div>
                     <div className='text-white h-auto mt-8 md:mt-12 2xl:mt-16'>
-                        <h1 className='leading-normal text-[28px] sm:text-[36px] lg:text-[38px] 2xl:text-[3rem] font-black w-full max-w-md sm:max-w-lg lg:max-w-full '>
-                            <span className='capitalize'>{ServiceDetailName} Services: </span>
-                            <span >Unearth the Beauty Beneath</span>
+                        <h1 className='leading-normal text-[28px] sm:text-[36px] lg:text-[38px] 2xl:text-[46px] font-black w-full max-w-md sm:max-w-lg lg:max-w-full capitalize'>
+                            {selectedHeadline ? selectedHeadline.heading : "Default Headline"}
                         </h1>
                         <p className='text-lg pt-1'>A Service from meadowbrook</p>
                     </div>

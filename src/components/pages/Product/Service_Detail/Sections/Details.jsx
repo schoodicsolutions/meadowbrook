@@ -13,8 +13,6 @@ function Details() {
     const [serviceData, setServiceData] = useState(null);
 
     useEffect(() => {
-        console.log('serviceName:', serviceName);
-        console.log('SubServices:', SubServices);
 
         import(`../../../../../Data/products/${serviceName}/index.js`)
             .then((module) => {
