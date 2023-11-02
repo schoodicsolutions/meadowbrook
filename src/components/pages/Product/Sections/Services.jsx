@@ -11,7 +11,7 @@ function Services(props) {
             <section className='relative flex justify-between px-4 md:px-16 2xl:px-0 mb-10 w-full max-w-custom mx-auto'>
                 <div className='flex-[1 auto]'>
                     <div className='relative mb-8 2xl:mb-12'>
-                        <h1 className='text-[22px] lg:text-[28px]'>The {props.serviceName} service includes</h1>
+                        <h1 className='text-[22px] lg:text-[28px] capitalize'>{props.serviceName} services</h1>
                         <span className='w-28 h-[2px] bg-cred block'></span>
                     </div>
 

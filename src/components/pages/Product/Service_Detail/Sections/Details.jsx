@@ -1,56 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import SideForm from '../../../../general/SideForm';
 import Related_Service from './Related_Service';
-import { land_lot_clearing, retaining_walls, stump_grinding, tree_removal } from '../../../../../Data/products/Landscaping_services';
-import { concrete_supply, culverts, driveways, dump_trucks, excavator_services, foundations, septic_tank_installation } from '../../../../../Data/products/Construction_services';
-
 
 function Details() {
-
     const { serviceDetail, serviceName } = useParams();
 
     const openedService = serviceDetail.replace(/-/g, ' ');
 
+    const SubServices = serviceDetail.replace(/-/g, '_');
 
-    const getServiceData = () => {
-        switch (serviceDetail) {
-            case 'stump-grinding':
-                return stump_grinding;
-            case 'tree-removal':
-                return tree_removal;
-            case 'land-lot-clearing':
-                return land_lot_clearing;
-            case 'retaining-walls':
-                return retaining_walls;
-            case 'concrete-supply':
-                return concrete_supply;
-            case 'foundations':
-                return foundations;
-            case 'driveways':
-                return driveways;
-            case 'culverts':
-                return culverts;
-            case 'dump-trucks':
-                return dump_trucks;
-            case 'excavator-services':
-                return excavator_services;
-            case 'septic-tank-installation':
-                return septic_tank_installation;
+    const [serviceData, setServiceData] = useState(null);
 
-            default:
-                return [];
-        }
-    };
+    useEffect(() => {
+        console.log('serviceName:', serviceName);
+        console.log('SubServices:', SubServices);
 
-    const serviceData = getServiceData();
+        import(`../../../../../Data/products/${serviceName}/index.js`)
+            .then((module) => {
+                if (module.default) {
+                    const subServiceData = module.default;
+                    const Services = subServiceData[SubServices];
+
+                    if (Services) {
+                        setServiceData(Services);
+                    } else {
+                        console.error('Sub-service not found.');
+                    }
+                } else {
+                    console.error('Main service data is not properly structured.');
+                }
+            })
+            .catch((error) => {
+
+                console.error('Error loading module:', error);
+            });
+
+    }, [serviceName, SubServices]);
+
+
+    if (!serviceData) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <>
             <section className='2xl:flex justify-between px-4 md:px-10 2xl:px-12 mb-10 w-full max-w-custom gap-14 mx-auto'>
                 <div className='lg:flex-[1 auto]'>
                     <div>
-                        <h1 className='bg-cred w-full text-center sm:text-left sm:w-fit pl-4 pr-10 md:pl-8 md:pr-14 py-[6px] lg:py-[5.5px] text-white font-semibold text-[22px] relative' >
+                        <h1 className='bg-cred w-full text-center sm:text-left sm:w-fit pl-4 pr-10 md:pl-8 md:pr-14 py-[6px] lg:py-[5.5px] text-white font-semibold text-[22px] relative'>
                             <div className="h-0 w-0 absolute hidden md:block -right-10 top-0 rotate-180 border-white border-b-scarlet border-r-scarlet border-[22px]"></div>
                             Product Details
                         </h1>
@@ -84,7 +82,7 @@ function Details() {
                 </div>
             </section>
         </>
-    )
+    );
 }
 
 export default Details;

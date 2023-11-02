@@ -138,7 +138,7 @@ const retaining_walls = [
     }
 ]
 
-export {
+export default{
     stump_grinding,
     tree_removal,
     land_lot_clearing,
