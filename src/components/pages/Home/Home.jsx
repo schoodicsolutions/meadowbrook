@@ -1,6 +1,5 @@
 import React from 'react'
 import Hero from './Sections/Hero'
-import Navbar from '../../general/Navbar'
 import Benefits from './Sections/Benefits'
 import Services from './Sections/Services'
 import Materials from './Sections/Materials'

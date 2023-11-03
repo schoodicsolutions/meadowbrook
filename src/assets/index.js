@@ -36,6 +36,9 @@ import hyundai from './logos/hyndai.svg';
 import motors from './logos/motors.svg';
 // ********* Hero Page Images End ********** // 
 
+// ********* About Page Images Start ********** // 
+import Mission from './About/mission-img.jpg';
+import Vision from './About/vision-img.jpg';
 
 // ********* Product Page Images Start ********** // 
 import HeroImage from './product_assets/hero-img.png'
@@ -56,24 +59,31 @@ import CsService6 from './product_assets/service_assets/construction_service/ser
 import CsService7 from './product_assets/service_assets/construction_service/service-7.jpg'
 
 // Landscaping Service Details Hero Images
-import StumpGrind from './product_assets/service_detail/stumpGrind.jpg'
-import TreeRemoval from './product_assets/service_detail/treeRemoval.jpg'
-import WallRetain from './product_assets/service_detail/wallRetain.jpg'
-import LandLot from './product_assets/service_detail/landLot.jpg'
+import stump_grinding from './product_assets/service_hero/landscaping/stump-grinding-hero.jpg'
+import tree_removal from './product_assets/service_hero/landscaping/tree-removal-hero.jpg'
+import retaining_walls from './product_assets/service_hero/landscaping/retaining-walls-hero.jpg'
+import land_lot_clearing from './product_assets/service_hero/landscaping/land-lot-clearing-hero.jpg'
 
 // Construction Service Details Hero Images
-import ConcreteSupply from './product_assets/service_detail/construction_services/concretesupply.jpg'
-import Culverts from './product_assets/service_detail/construction_services/culverts.jpg'
-import Driveways from './product_assets/service_detail/construction_services/driveways.jpg'
-import Dumptrucks from './product_assets/service_detail/construction_services/dumptrucks.jpg'
-import Excavatorservices from './product_assets/service_detail/construction_services/excavatorservices.jpg'
-import Foundations from './product_assets/service_detail/construction_services/foundations.jpg'
-import Septictank from './product_assets/service_detail/construction_services/septictank.jpg'
+import ConcreteSupply from './product_assets/service_hero/construction/concrete-supply-hero.jpg'
+import Culverts from './product_assets/service_hero/construction/culverts-hero.jpg'
+import Driveways from './product_assets/service_hero/construction/driveways-hero.jpg'
+import Dumptrucks from './product_assets/service_hero/construction/dump-trucks-hero.jpg'
+import Excavatorservices from './product_assets/service_hero/construction/excavator-services-hero.jpg'
+import Foundations from './product_assets/service_hero/construction/foundations-hero.jpg'
+import Septictank from './product_assets/service_hero/construction/septic-tank-installation-hero.jpg'
 
+// Material Images Import
+import Inch_0_25 from './product_assets/material_detail/stones/stone_cards/0_25-inch.jpg'
+import Inch_1_25 from './product_assets/material_detail/stones/stone_cards/1_25-inch.jpg'
+import BrickBlock from './product_assets/material_detail/stones/stone_cards/brick-block.jpg'
+import RipRap from './product_assets/material_detail/stones/stone_cards/rip-rap.jpg'
 
-// ********* About Page Images Start ********** // 
-import Mission from './About/mission-img.jpg';
-import Vision from './About/vision-img.jpg';
+// Material Images Import
+import Inch_3_4_hero from './product_assets/service_hero/stones/inch-3-4-hero.jpg'
+import Inch_1_25_hero from './product_assets/service_hero/stones/inch-1-12-hero.jpg'
+import BrickBlock_hero from './product_assets/service_hero/stones/brick-block-hero.jpg'
+import RipRap_hero from './product_assets/service_hero/stones/rip-rap-hero.jpg'
 
 export {
     // Commong SVGS Export
@@ -116,6 +126,10 @@ export {
     // ******* Product Images Export *********** //
     HeroImage,
 
+    // ******* About Images Export *********** //
+    Mission,
+    Vision,
+
     // LandScape Services Export
     LsService1,
     LsService2,
@@ -132,10 +146,10 @@ export {
     CsService7,
 
     //Landscaping Service Detail Images Export
-    StumpGrind,
-    TreeRemoval,
-    WallRetain,
-    LandLot,
+    stump_grinding,
+    tree_removal,
+    retaining_walls,
+    land_lot_clearing,
 
     // Construction Service Detail Images Export
     ConcreteSupply,
@@ -146,7 +160,15 @@ export {
     Foundations,
     Septictank,
 
-    // ******* About Images Export *********** //
-    Mission,
-    Vision
+    // Material Stones Image Export
+    Inch_0_25,
+    Inch_1_25,
+    BrickBlock,
+    RipRap,
+
+    // Material Stones Hero Image Export
+    Inch_3_4_hero,
+    Inch_1_25_hero,
+    BrickBlock_hero,
+    RipRap_hero
 };

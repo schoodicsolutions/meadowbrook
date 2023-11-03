@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { landScapingServices, constructionServices } from '../../../../Data/products';
+import { landscaping, construction } from '../../../../Data/products';
 import { Link } from 'react-router-dom';
 import SideForm from '../../../general/SideForm';
 
@@ -9,29 +9,33 @@ function Services(props) {
 
     // Create a filtered array based on the selected service type
     const filteredServices =
-        selectedServiceType === 'landscaping' ? landScapingServices : constructionServices;
+        selectedServiceType === 'landscaping' ? landscaping : construction;
+
+    const Styles = ['px-6 py-2 rounded-md m-2 w-1/2 sm:w-auto'];
+    const NotActiveStyles = ['bg-gray-300 text-gray-700 '];
+    const ActiveStyles = ['bg-cred text-white'];
 
     return (
         <>
             <section className="relative flex justify-between px-4 md:px-16 2xl:px-0 mb-10 w-full max-w-custom mx-auto">
 
                 <div className="flex-auto">
-                    <div className='mb-4'>
+                    <div className='mb-4 md:pt-0 pt-6'>
                         <button
                             onClick={() => setSelectedServiceType('landscaping')}
                             className={`${selectedServiceType === 'landscaping'
-                                ? 'bg-cred text-white'
-                                : 'bg-gray-300 text-gray-700'
-                                } px-4 py-2 rounded-md m-2`}
+                                ? `${ActiveStyles}`
+                                : `${NotActiveStyles}`
+                                } ${Styles}`}
                         >
                             Landscaping
                         </button>
                         <button
                             onClick={() => setSelectedServiceType('construction')}
                             className={`${selectedServiceType === 'construction'
-                                ? 'bg-cred text-white'
-                                : 'bg-gray-300 text-gray-700'
-                                } px-4 py-2 rounded-md m-2`}
+                                ? `${ActiveStyles}`
+                                : `${NotActiveStyles}`
+                                } ${Styles}`}
                         >
                             Construction
                         </button>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { landScapingServices, constructionServices } from '../../../../../Data/products';
+import serviceData from '../../../../../Data/products/serviceDataLoader.js'; // Adjust the import path
 
 function shuffleArray(array) {
     // Create a copy of the array to avoid modifying the original
@@ -16,49 +16,45 @@ function shuffleArray(array) {
 }
 
 function Related_Service() {
-
-    const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
-    const { serviceDetail, serviceName } = useParams();
+    const { serviceName, serviceDetail } = useParams();
     const openedService = serviceDetail.replace(/-/g, ' ');
 
     // Create a state variable to store the related services
     const [relatedServices, setRelatedServices] = useState([]);
-
-    // Determine the list of services based on the service name
-    const serviceType = serviceName === 'landscaping' ? 'landscaping' : 'construction';
-    const services = serviceType === 'landscaping' ? landScapingServices : constructionServices;
+    const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
 
     useEffect(() => {
+        if (serviceData[serviceName]) {
+            const currentServiceData = serviceData[serviceName];
 
-        // Filter the services to exclude the currently opened service
-        const filteredServices = services.filter(service =>
-            service.title.toLowerCase() !== openedService.toLowerCase()
-        );
+            // Filter the services to exclude the currently opened service
+            const filteredServices = currentServiceData.filter(
+                (service) => service.title.toLowerCase() !== openedService.toLowerCase()
+            );
 
-        // Shuffle the order of related services
-        const shuffledRelatedServices = shuffleArray(filteredServices);
+            const shuffledRelatedServices = shuffleArray(filteredServices);
+      
+            const firstFourRelatedServices = shuffledRelatedServices.slice(0, 3);
 
-        // Get only the first four related services
-        const firstFourRelatedServices = shuffledRelatedServices.slice(0, 4);
+            setRelatedServices(firstFourRelatedServices);
+        }
+    }, [serviceName, serviceDetail, openedService]);
 
-        setRelatedServices(firstFourRelatedServices);
-    }, [serviceDetail, serviceName, openedService, services]);
 
 
     return (
         <>
             <div>
-                <div className='relative mb-3 sm:mb-5'>
-                    <h1 className='text-xl sm:text-2xl'>Related Services</h1>
-                    <span className='w-24 h-[2px] bg-cred hidden sm:block'></span>
+                <div className="relative mb-3 sm:mb-5">
+                    <h1 className="text-xl sm:text-2xl">Related Services</h1>
+                    <span className="w-24 h-[2px] bg-cred hidden sm:block"></span>
                 </div>
-                <div className='grid md:grid-cols-[repeat(2,_minmax(0,_auto))] gap-4 lg:gap-6 justify-items-start items-center w-fit'>
+                <div className="grid md:grid-cols-[repeat(2,_minmax(0,_auto))] gap-4 lg:gap-6 justify-items-start items-center w-fit">
                     {relatedServices.map((service, index) => (
                         <Link to={`/products/${serviceName}/${service.id}`} key={service.id}>
                             <div className='relative overflow-hidden cursor-pointer w-fit'>
                                 <div
-                                    className={`${hoveredServiceIndex === index ? 'scale-hover-in' : 'scale-hover-out'
-                                        } overflow-hidden object-cover h-full`}
+                                    className={`${hoveredServiceIndex === index ? 'scale-hover-in' : 'scale-hover-out'} overflow-hidden object-cover h-full`}
                                     onMouseEnter={() => {
                                         setHoveredServiceIndex(index);
                                     }}
@@ -67,6 +63,7 @@ function Related_Service() {
                                     }}
                                 >
                                     <img src={service.image} alt='' />
+                                    <div className='absolute inset-0 bg-black bg-opacity-30'></div>
                                     {hoveredServiceIndex === index && (
                                         <div className='absolute inset-0 bg-black bg-opacity-20'></div>
                                     )}
@@ -89,7 +86,7 @@ function Related_Service() {
                 </div>
             </div>
         </>
-    )
+    );
 }
 
-export default Related_Service
+export default Related_Service;

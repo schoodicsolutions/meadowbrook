@@ -10,11 +10,15 @@ import {
     CsService5,
     CsService6,
     CsService7,
+    Inch_0_25,
+    Inch_1_25,
+    BrickBlock,
+    RipRap,
 
 } from '../../assets'
 
 
-const landScapingServices = [
+const landscaping = [
     {
         id: "stump-grinding",
         root: "landscape service",
@@ -41,7 +45,7 @@ const landScapingServices = [
     },
 ]
 
-const constructionServices = [
+const construction = [
     {
         id: 'concrete-supply',
         root: "construction service",
@@ -83,6 +87,33 @@ const constructionServices = [
         root: "construction service",
         image: CsService7,
         title: "Septic Tank Installation",
+    },
+]
+
+const stones = [
+    {
+        id: "inch-3-4",
+        root: "Stones",
+        image: Inch_0_25,
+        title: "3/4 Inch Stones",
+    },
+    {
+        id: 'inch-1-12',
+        root: "Stones",
+        image: Inch_1_25,
+        title: "1 1/2 Inch Stones",
+    },
+    {
+        id: "rip-rap",
+        root: "Stones",
+        image: RipRap,
+        title: "Rip Rap",
+    },
+    {
+        id: "brick-block",
+        root: "Stones",
+        image: BrickBlock,
+        title: "Brick Blocks",
     },
 ]
 
@@ -131,11 +162,24 @@ const headlines = [
         id: 'septic-tank-installation',
         heading: "Septic Tank Installation: A Cleaner, Greener Way Forward",
     },
+    {
+        id: "inch-3-4",
+        heading: "3/4 Inch Stone: Small Size, Big Impact in Construction"
+    },
+    {
+        id: 'inch-1-12',
+        heading: "1 1/2 Inch Stone: Building on a Strong Foundation"
+    },
+    {
+        id: 'rip-rap',
+        heading: "Rip Rap: Nature's Armor Against Erosion",
+    },
 ]
 
 
 export {
-    landScapingServices,
-    constructionServices,
+    landscaping,
+    construction,
     headlines,
+    stones,
 }

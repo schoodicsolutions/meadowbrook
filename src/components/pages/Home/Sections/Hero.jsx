@@ -5,6 +5,20 @@ import { motion } from 'framer-motion';
 
 function Hero() {
 
+    function scrollToBottom() {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            const yOffset = contactForm.getBoundingClientRect().top + window.scrollY;
+            const targetY = yOffset - 50;
+            
+            window.scrollTo({
+                top: targetY,
+                behavior: 'smooth', 
+            });
+        }
+    }
+
+
     return (
         <>
             <section>
@@ -27,7 +41,7 @@ function Hero() {
                             </p>
                         </div>
                         <div className='flex justify-start w-full flex-wrap sm:flex-nowrap items-center gap-4 font-medium text-sm'>
-                            <Link to='/' className='w-full sm:w-auto'>
+                            <Link to='/' className='w-full sm:w-auto' onClick={scrollToBottom}>
                                 <motion.button
                                     whileHover={{ scale: 1.08 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 20, velocity: 2 }}

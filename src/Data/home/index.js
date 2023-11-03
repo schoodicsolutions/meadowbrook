@@ -101,19 +101,19 @@ const services = [
 const materials = [
     {
         id: 1,
-        title: "Stone",
+        title: "Stones",
         paragraph: 'Experience the Unmatched Power of Tailore RTechnology.',
         image: stones,
     },
     {
         id: 2,
-        title: "Gravel ",
+        title: "Gravel",
         paragraph: 'Experience the Unmatched Power of Tailore RTechnology.',
         image: gravel,
     },
     {
         id: 3,
-        title: "Soil  ",
+        title: "Soil",
         paragraph: 'Experience the Unmatched Power of Tailore RTechnology.',
         image: soil,
     },

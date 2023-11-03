@@ -5,7 +5,7 @@ function Contact_Form() {
 
     return (
         <>
-            <section className='mx-2'>
+            <section className='mx-2' id='contactForm'>
                 <div className=' bg-[#F8F8F8] px-4 md:px-12 2xl:px-0 pt-5 mt-16 mb-10 w-full max-w-[560px] rounded-2xl sm:mx-auto'>
                     <div className='pb-8'>
                         <div className='pt-4 pb-2 text-center'>

@@ -38,7 +38,9 @@ function Details() {
 
 
     if (!serviceData) {
-        return <div>Loading...</div>;
+        return <div className='text-center mb-10 w-full text-cred text-white'>
+            <h1 className='text-4xl py-3'>No Data Found Related to this Field</h1>
+        </div>;
     }
 
     return (

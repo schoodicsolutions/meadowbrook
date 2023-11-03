@@ -9,6 +9,7 @@ import Footer from "./components/general/Footer";
 import About from "./components/pages/About/About";
 import ServiceDetails from "./components/pages/Product/Service_Detail/ServiceDetails";
 import Product_Static from "./components/pages/Product/Product_Static";
+import Popup_Form from "./components/general/Popup_Form";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -27,6 +28,7 @@ function App() {
         (
           <>
             <Navbar />
+            <Popup_Form />
             <Routes>
               <Route exact path='' element={<Home />} />
               <Route path="/products/:serviceName" element={<Products />} />
