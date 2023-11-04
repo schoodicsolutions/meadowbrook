@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
-import { headlines } from '../../../../../Data/products';
+import { headlines } from '../../../../../Data/headlines';
 
 
 function Breadcrumbs({ serviceName, serviceDetail }) {

@@ -14,6 +14,11 @@ import {
     Inch_1_25,
     BrickBlock,
     RipRap,
+    BanRunGravel,
+    Inch_2_Screened,
+    Inch_4_Screened,
+    ScreenedLoam,
+    ScreenedTopSoil,
 
 } from '../../assets'
 
@@ -110,76 +115,53 @@ const stones = [
         title: "Rip Rap",
     },
     {
-        id: "brick-block",
+        id: "concrete-waste-blocks",
         root: "Stones",
         image: BrickBlock,
-        title: "Brick Blocks",
+        title: "Concrete Waste Blocks",
     },
 ]
 
-const headlines = [
+const gravel = [
     {
-        id: "stump-grinding",
-        heading: "Mastering Stump Grinding: Reclaiming Your Outdoor Space",
+        id: "bank-run-gravel",
+        root: "Gravel",
+        image: BanRunGravel,
+        title: "Bank Run Gravel",
     },
     {
-        id: "tree-removal",
-        heading: "Tree Removal: Crafting More Beautiful Landscape"
+        id: 'inch-2-screened-gravel',
+        root: "Stones",
+        image: Inch_2_Screened,
+        title: "2 Inch Screened Gravel",
     },
     {
-        id: "land-lot-clearing",
-        heading: "The Art of Land and Lot Clearing"
+        id: 'inch-4-screened-gravel',
+        root: "Stones",
+        image: Inch_4_Screened,
+        title: "4 Inch Screened Gravel",
+    },
+];
+
+const soil = [
+    {
+        id: "screened-loam",
+        root: "Soil",
+        image: ScreenedLoam,
+        title: "Screened Loam",
     },
     {
-        id: "retaining-walls",
-        heading: "The Magic of Retaining Walls"
-    },
-    {
-        id: 'concrete-supply',
-        heading: "Concrete Supply Made Easy: Your Foundation for Success",
-    },
-    {
-        id: 'foundations',
-        heading: "Solid Foundations: Building the Future Foundations",
-    },
-    {
-        id: 'driveways',
-        heading: "Crafting Stunning Driveways That Welcome You Home",
-    },
-    {
-        id: 'culverts',
-        heading: "Culverts: Water Management, Nature's Way",
-    },
-    {
-        id: 'dump-trucks',
-        heading: "Dump Trucks: Hauling Progress, One Load at a Time",
-    },
-    {
-        id: 'excavator-services',
-        heading: "Unearthing the Potential of Excavator Services",
-    },
-    {
-        id: 'septic-tank-installation',
-        heading: "Septic Tank Installation: A Cleaner, Greener Way Forward",
-    },
-    {
-        id: "inch-3-4",
-        heading: "3/4 Inch Stone: Small Size, Big Impact in Construction"
-    },
-    {
-        id: 'inch-1-12',
-        heading: "1 1/2 Inch Stone: Building on a Strong Foundation"
-    },
-    {
-        id: 'rip-rap',
-        heading: "Rip Rap: Nature's Armor Against Erosion",
-    },
+        id: "screened-top-soil",
+        root: "Soil",
+        image: ScreenedTopSoil,
+        title: "Screened Top Soil"
+    }
 ]
 
-
-export {
+export default {
     landscaping,
     construction,
-    headlines,
     stones,
+    gravel,
+    soil,
 }

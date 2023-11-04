@@ -9,7 +9,7 @@ function Details() {
     const openedService = serviceDetail.replace(/-/g, ' ');
 
     const SubServices = serviceDetail.replace(/-/g, '_');
-
+    
     const [serviceData, setServiceData] = useState(null);
 
     useEffect(() => {

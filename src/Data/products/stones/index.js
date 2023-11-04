@@ -86,9 +86,117 @@ const inch_1_12 = [
         head: "Strength in Every Stone",
         para: "In the world of construction, strength begins with the choice of materials. 1 1/2 inch stone embodies that strength, offering the reliability and stability needed for durable structures. It's a reminder that the foundation is where it all begins.",
     }
+];
+
+const rip_rap = [
+    {
+        id: 3_03,
+        para: "When nature collides with the man-made, erosion becomes an adversary. Rip rap, a formidable solution of large, sturdy stones, stands as the guardians of our shorelines, providing vital protection against the relentless forces of wind and water. In this article, we'll explore the crucial role of rip rap in preventing erosion and safeguarding the stability of our coastlines.",
+    },
+    {
+        id: 3_03_02,
+        head: "Rip Rap: The Bulwark Against Erosion",
+        para: "Rip rap is celebrated for its unique attributes:",
+    },
+    {
+        id: 3_03_02_01,
+        list1: "*Durable* *Defense*: Its substantial size and weight make it an enduring barrier against erosion.",
+        list2: "*Natural* *Aesthetics*: Rip rap blends harmoniously with the environment, preserving the natural beauty of shorelines.",
+        list3: "*Erosion* *Control*: It effectively dissipates the energy of waves and currents, preventing the loss of soil and the degradation of coastlines."
+    },
+    {
+        id: 3_03_03,
+        head: "Erosion, a Natural Challenge",
+        para: "Erosion is an age-old challenge, particularly for properties situated near water bodies. It threatens not only the stability of the land but also the preservation of natural habitats. Rip rap steps in as a powerful solution.",
+    },
+    {
+        id: 3_03_04,
+        head: "Applications in Erosion Control",
+        para: "Rip rap serves as the front line in preventing erosion:"
+    },
+    {
+        id: 3_03_04_01,
+        list1: "*Coastal* *Protection*: It's used extensively along shorelines, harbors, and riverbanks to absorb wave and water energy.",
+        list2: "*Stream* *Bank* *Stabilization*: Rip rap safeguards riverbanks from erosion caused by the relentless flow of water.",
+        list3: "*Stormwater* *Management*: In urban areas, rip rap plays a role in managing stormwater and controlling erosion around drainage systems."
+    },
+    {
+        id: 3_03_05,
+        head: "Professional Rip Rap Installation",
+        para: "Professional rip rap installation offers several advantages:"
+    },
+    {
+        id: 3_03_05_01,
+        list1: "*Erosion* *Expertise*: Professionals understand the intricacies of erosion control and ensure rip rap is placed strategically.",
+        list2: "*Environmental* *Considerations*: They prioritize the preservation of local ecosystems while combating erosion.",
+        list3: "*Efficiency*: Professional services handle all aspects, from material sourcing to installation, making the process hassle-free."
+    },
+    {
+        id: 3_03_06,
+        head: "Nature's Silent Protectors",
+        para: "Rip rap is more than just a man-made solution; it's a guardian of our coastlines. It works in harmony with nature to protect the delicate balance of our ecosystems while preserving the beauty of our landscapes. Rip rap is a testament to human ingenuity and environmental stewardship.",
+    }
+];
+
+const concrete_waste_blocks = [
+    {
+        id: 3_04,
+        para: "In the construction world, every material counts. Even what might be considered waste can find new life and purpose. Concrete waste blocks, often formed from recycled materials, are an excellent example of this sustainable approach to construction. In this article, we'll explore the innovative use of concrete waste blocks in building eco-friendly retaining walls.",
+    },
+    {
+        id: 3_04_02,
+        head: "Concrete Waste Blocks: Transforming the Discarded",
+        para: "Concrete waste blocks are forged from recycled materials, giving them unique qualities:",
+    },
+    {
+        id: 3_04_02_01,
+        list1: "*Sustainability*: They reduce the environmental impact by repurposing waste.",
+        list2: "*Durability*: These blocks retain the durability of conventional concrete while offering a sustainable twist.",
+        list3: "*Variety*: They come in various shapes and sizes, providing flexibility in retaining wall design.",
+    },
+    {
+        id: 3_04_03,
+        head: "The Sustainable Advantages",
+        para: "Concrete waste blocks offer a range of eco-friendly benefits:",
+    },
+    {
+        id: 3_04_03_01,
+        list1: "*Resource* *Conservation*: They reduce the need for fresh concrete, conserving natural resources.",
+        list2: "*Energy* *Savings*: The recycling process requires less energy compared to producing new concrete.",
+        list3: "*Waste* *Reduction*: They divert concrete waste from landfills, reducing the burden on waste disposal.",
+    },
+    {
+        id: 3_04_04,
+        head: "Applications in Retaining Walls",
+        para: "Concrete waste blocks find their place in eco-friendly retaining walls:",
+    },
+    {
+        id: 3_04_04_01,
+        list1: "*Erosion* *Control*: They create effective erosion control structures while supporting sustainability.",
+        list2: "*Landscape* *Design*: These blocks offer a green alternative for landscaping, preserving the environment's integrity.",
+        list3: "*Garden* *and* *Yard* *Projects*: Sustainable retaining walls are the perfect addition to garden and yard projects.",
+    },
+    {
+        id: 3_04_05,
+        head: "Professional Installation of Sustainable Solutions",
+        para: "Professional concrete waste block installation brings eco-friendly advantages:",
+    },
+    {
+        id: 3_04_05_01,
+        list1: "*Expertise*: Professionals understand the unique properties of these blocks and their applications.",
+        list2: "*Design* *Excellence*: They create retaining walls that not only serve their purpose but also enhance the aesthetics of the landscape.",
+        list3: "*Sustainability* *Focus*: Professionals are committed to sustainable building practices.",
+    },
+    {
+        id: 3_04_06,
+        head: "Sustainable Walls for a Sustainable Future",
+        para: "Concrete waste blocks are more than just building materials; they are a statement of sustainable construction. By giving discarded concrete a second life, they pave the way for a greener future, one block at a time.",
+    },
 ]
 
-export default {
+export default{
     inch_3_4,
     inch_1_12,
+    rip_rap,
+    concrete_waste_blocks,
 }

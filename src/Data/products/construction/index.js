@@ -270,7 +270,7 @@ const septic_tank_installation = [
     },
 ]
 
-export default {
+export default{
     concrete_supply,
     foundations,
     driveways,

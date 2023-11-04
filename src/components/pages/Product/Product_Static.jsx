@@ -13,7 +13,7 @@ function Product_Static() {
 
     return (
         <>
-            <Hero headline="Landscaping / Construction" />
+            <Hero headline="Our Services" />
             <Services />
         </>
     )

@@ -14,7 +14,7 @@ function Products() {
 
     return (
         <>
-            <Hero headline={serviceName || "Landscaping / Construction"} />
+            <Hero headline={`${serviceName} service` || "Our Services"} />
             <Services serviceName={serviceName || "Landscaping / Construction"} />
         </>
     )

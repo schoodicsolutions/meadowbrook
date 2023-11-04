@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import serviceData from '../../../../../Data/products/serviceDataLoader.js'; // Adjust the import path
+import serviceData from '../../../../../Data/products/serviceDataLoader.js';
 
 function shuffleArray(array) {
-    // Create a copy of the array to avoid modifying the original
     const shuffledArray = [...array];
-
-    // Perform Fisher-Yates (Knuth) shuffle
     for (let i = shuffledArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
     }
-
     return shuffledArray;
 }
 
@@ -19,26 +15,25 @@ function Related_Service() {
     const { serviceName, serviceDetail } = useParams();
     const openedService = serviceDetail.replace(/-/g, ' ');
 
-    // Create a state variable to store the related services
     const [relatedServices, setRelatedServices] = useState([]);
     const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
+
+    let contentToRender = null;
 
     useEffect(() => {
         if (serviceData[serviceName]) {
             const currentServiceData = serviceData[serviceName];
-
             // Filter the services to exclude the currently opened service
             const filteredServices = currentServiceData.filter(
                 (service) => service.title.toLowerCase() !== openedService.toLowerCase()
             );
 
             const shuffledRelatedServices = shuffleArray(filteredServices);
-      
-            const firstFourRelatedServices = shuffledRelatedServices.slice(0, 3);
-
-            setRelatedServices(firstFourRelatedServices);
+            const firstThreeRelatedServices = shuffledRelatedServices.slice(0, 3);
+            setRelatedServices(firstThreeRelatedServices);
         }
     }, [serviceName, serviceDetail, openedService]);
+
 
 
 

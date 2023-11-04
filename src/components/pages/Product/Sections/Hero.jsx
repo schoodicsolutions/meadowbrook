@@ -15,7 +15,7 @@ function Hero(props) {
                         backgroundSize: "cover",
                     }
                 }>
-                    <h1 className='text-4xl md:text-5xl text-white font-bold capitalize'>{props.headline} Service</h1>
+                    <h1 className='text-4xl md:text-5xl text-white font-bold capitalize'>{props.headline}</h1>
                 </motion.div >
             </section>
 

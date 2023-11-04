@@ -1,28 +1,50 @@
-import React, { useState } from 'react';
-import { landscaping, construction, stones } from '../../../../Data/products';
+import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import SideForm from '../../../general/SideForm';
 
 function Services() {
     const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
-    const { serviceName } = useParams(); // Get the serviceName from the URL
+    const { serviceName } = useParams();
+    const [servicesArray, setServicesArray] = useState(null);
 
-    // Determine the array of services based on the selected serviceName
-    let servicesArray = [];
-    if (serviceName === 'landscaping') {
-        servicesArray = landscaping;
-    } else if (serviceName === 'construction') {
-        servicesArray = construction;
-    } else if (serviceName === 'stones') {
-        servicesArray = stones;
+    useEffect(() => {
+
+        import(`../../../../Data/products/index.js`)
+            .then((module) => {
+                if (module.default) {
+                    const subServiceData = module.default;
+                    const Services = subServiceData[serviceName];
+
+                    if (Services) {
+                        setServicesArray(Services);
+                    } else {
+                        console.error('Sub-service not found.');
+                    }
+                } else {
+                    console.error('Main service data is not properly structured.');
+                }
+            })
+            .catch((error) => {
+
+                console.error('Error loading module:', error);
+            });
+
+    }, [serviceName]);
+
+
+    if (!servicesArray) {
+        return <div className='text-center mb-10 w-full text-cred text-white'>
+            <h1 className='text-4xl py-3'>No Data Found Related to this Field</h1>
+        </div>;
     }
+
 
     return (
         <>
-            <section className='relative flex justify-between px-4 md:px-16 2xl:px-0 mb-10 w-full max-w-custom mx-auto'>
+            <section className='relative flex justify-between px-4 pt-6  md:px-16 lg:pt-0 2xl:px-0 mb-10 w-full max-w-custom mx-auto'>
                 <div className='flex-[1 auto]'>
-                    <div className='relative mb-4 2xl:mb-8'>
-                        <h1 className='text-[22px] lg:text-[28px] capitalize'>{serviceName} services</h1>
+                    <div className='relative mb-6 2xl:mb-8'>
+                        <h1 className='text-[24px] lg:text-[28px] capitalize'>{serviceName} services</h1>
                         <span className='w-28 h-[2px] bg-cred block'></span>
                     </div>
 
