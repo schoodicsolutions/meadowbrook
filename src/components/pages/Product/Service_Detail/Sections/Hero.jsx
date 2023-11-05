@@ -61,7 +61,7 @@ function Hero() {
     return (
         <>
             <section className='bg-[#05011C] relative lg:flex mb-10 flex-wrap lg:flex-nowrap'>
-                <div className='px-6 md:px-16 2xl:px-12 pb-8 lg:pb-28 2xl:pb-0 w-full lg:max-w-[47rem] ml-auto pt-5 md:pt-5'>
+                <div className='px-6 md:px-16 2xl:px-12 pb-8 lg:pb-28 2xl:pb-0 w-full lg:max-w-[54rem] ml-auto pt-5 md:pt-5'>
                     {/* BreadCrumbs */}
                     <Breadcrumbs serviceName={serviceName} serviceDetail={ServiceDetailName} />
                     <div className='text-white h-auto mt-8 md:mt-12 2xl:mt-16'>

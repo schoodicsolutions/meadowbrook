@@ -45,7 +45,7 @@ function Details() {
 
     return (
         <>
-            <section className='2xl:flex justify-between px-4 md:px-10 2xl:px-12 mb-10 w-full max-w-custom gap-14 mx-auto'>
+            <section className='2xl:flex justify-between px-4 mb-10 w-full max-w-custom gap-14 mx-auto'>
                 <div className='lg:flex-[1 auto]'>
                     <div>
                         <h1 className='bg-cred w-full text-center sm:text-left sm:w-fit pl-4 pr-10 md:pl-8 md:pr-14 py-[6px] lg:py-[5.5px] text-white font-semibold text-[22px] relative'>

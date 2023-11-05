@@ -10,21 +10,31 @@ function Navbar() {
     const location = useLocation();
     const [active, setActive] = useState(location.pathname);
     const navRef = useRef(null);
-
     const [sticky, stickyActive] = useState(false);
+    const [ariaExpanded, setAriaExpanded] = useState(false);
 
-    useEffect(() => {
-        // Update the active state when the URL changes
-        setActive(location.pathname);
-    }, [location.pathname]);
-
-    // Function to check if the current route is a "Products" page or under "Products"
-    const isProductPage = () => {
-        return active.startsWith('/products');
+    const updateAriaExpanded = (newAriaExpanded) => {
+        setAriaExpanded(newAriaExpanded);
     };
 
     useEffect(() => {
-        
+
+        setActive(location.pathname);
+
+    }, [location.pathname]);
+
+    const isProductPage = () => {
+
+        return active.startsWith('/products');
+
+    };
+
+    const CloseNav = () => {
+        setAriaExpanded(false);
+    }
+
+    useEffect(() => {
+
         const handleScroll = () => {
             if (window.innerWidth < 600 && window.scrollY > 200) {
                 stickyActive(true);
@@ -45,7 +55,18 @@ function Navbar() {
 
     return (
         <>
-            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }} className={`${sticky ? 'sticky top-0 z-20 backdrop-blur-md bg-white/90 border-b-2 ' : ''} w-full`}
+            {ariaExpanded === true ?
+                <>
+                    <div className="backdrop-blur-[1px] fixed inset-0 z-[22] h-screen w-full flex items-center justify-center bg-black bg-opacity-60" onClick={CloseNav}>
+                    </div>
+                </>
+                :
+                <>
+
+                </>
+            }
+
+            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }} className={`${sticky ? 'sticky top-0 backdrop-blur-md bg-white/90 border-b-2 ' : ''} w-full relative bg-white z-[24]`}
             >
                 <div className={`${sticky ? "hidden" : "block"} flex w-full bg-cred justify-around text-base font-semibold sm:text-lg 2xl:absolute 2xl:right-0 2xl:top-0 2xl:w-fit`}>
                     <div className="h-0 w-0 border-white border-b-scarlet border-r-scarlet 2xl:border-[22px]"></div>
@@ -101,7 +122,7 @@ function Navbar() {
                         </ul>
 
                         <div className='sm:hidden flex justify-end items-center flex-col' ref={navRef}>
-                            <MobileNav stickyActive={sticky} />
+                            <MobileNav stickyActive={sticky} updateAriaExpanded={updateAriaExpanded} />
                         </div>
                     </div>
                 </nav >

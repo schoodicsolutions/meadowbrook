@@ -4,17 +4,21 @@ import serviceData from '../../../../Data/products/index.js'; // Update the path
 
 function Services() {
     const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
-    const [selectedServiceType, setSelectedServiceType] = useState('All_Products');
+    const [selectedServiceType, setSelectedServiceType] = useState('All Products');
     const [servicesArray, setServicesArray] = useState([]);
     const [page, setPage] = useState(1);
 
     const itemsPerPage = 6;
 
-    const serviceTypes = ['All_Products', 'landscaping', 'construction', 'stones', 'soil', 'gravel'];
+    const GetProducts = "All_Products"
+
+    const SubServices = GetProducts.replace(/_/g, ' ');
+
+    const serviceTypes = [SubServices, 'landscaping', 'construction', 'stones', 'soil', 'gravel'];
 
     useEffect(() => {
         // Check if the selected service type is "show_all"
-        if (selectedServiceType === 'All_Products') {
+        if (selectedServiceType.replace(/_/g, ' ') === SubServices) {
             // Combine all services
             const allServices = [].concat(
                 serviceData.landscaping,
@@ -73,12 +77,12 @@ function Services() {
             <section className="relative flex justify-between px-4 md:px-16 2xl:px-0 mb-10 w-full max-w-custom mx-auto">
                 <div className="w-full">
                     <div className="relative lg:pt-0 pt-8 mb-0 2xl:mb-5">
-                        <h1 className="text-[22px] lg:text-4xl mb-1 capitalize">
+                        <h1 className=" text-2xl md:text-3xl lg:text-5xl mb-1 capitalize">
                             Products
                         </h1>
                         <span className="w-28 h-[2px] bg-cred block"></span>
                         <p className="w-full 2xl:w-auto text-base md:text-lg pt-4">
-                            At Meadowbrook, we offer a full spectrum of services, from landscaping expertise, including stump grinding, tree removal, land clearing, and retaining walls, to top-quality materials, such as stone, gravel, and soil. We're also your go-to for construction solutions, covering concrete supply, foundations, driveways, culverts, dump trucks, excavator services, and septic tank installation. Simplify your projects with us."
+                            At Meadowbrook, we cover all your landscaping, construction, and material needs. Simplify your projects with us.
                         </p>
                     </div>
                     <div className="mb-8 2xl:pt-0 pt-6">
@@ -114,7 +118,7 @@ function Services() {
                                             <div className="absolute inset-0 bg-black bg-opacity-20"></div>
                                         )}
                                     </div>
-                                    <div className='absolute z-10 bottom-0 left-0 w-full text-white'>
+                                    <div className='absolute bottom-0 left-0 w-full text-white'>
                                         <p className="text-center left-0 py-1 md:py-2 bg-cred capitalize text-base font-bold w-full">
                                             {Service.root}
                                         </p>
