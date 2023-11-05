@@ -40,7 +40,11 @@ html {
   list-style: disc;
 }
 
-.max-w-custom{
+.disable-scroll {
+  overflow: hidden;
+}
+
+.max-w-custom {
   max-width: 95rem;
 }
 

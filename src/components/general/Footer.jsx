@@ -14,9 +14,14 @@ function Footer() {
 
     // Function to check if the current route is a "Products" page or under "Products"
     const isProductPage = () => {
+        console.log(active)
         return active.startsWith('/products');
     };
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
+    
     return (
         <>
             <section className='bg-[#13171B] text-white'>
@@ -70,14 +75,12 @@ function Footer() {
                                 {ProductLinks.map((link) => (
                                     <li
                                         key={link.id}
-                                        className={`${active === link.id
+                                        className={`${(active === link.id || (active.startsWith(`/products/${link.id}`) && isProductPage()))
                                             ? 'text-cred font-semibold'
-                                            : 'text-white'
-                                            } hover-textred w-fit text-sm font-noraml transition`
+                                            : 'text-white'} hover-textred w-fit text-sm font-noraml transition`
                                         }
-                                        onClick={() => setActive(link.id)}
                                     >
-                                        <Link to={`${link.id}`}>{link.title}</Link>
+                                        <Link to={`/products/${link.id}`}>{link.title}</Link>
                                     </li>
                                 ))}
                             </ul>
@@ -99,7 +102,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className='bg-black'>
-                    <p className='text-sm sm:text-base py-2 text-center w-full'>Copyright © 2023 Meadow Brook | <Link to='/'>Privacy Policy</Link> | <Link to='/'>Terms and Conditions</Link> </p>
+                    <p className='text-sm sm:text-base py-2 text-center w-full'>Copyright © 2023 Meadow Brook | <Link to='/' className='hover-textred'>Privacy Policy</Link> | <Link to='/' className='hover-textred'>Terms and Conditions</Link> </p>
                 </div>
             </section >
 

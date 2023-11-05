@@ -11,6 +11,8 @@ function Navbar() {
     const [active, setActive] = useState(location.pathname);
     const navRef = useRef(null);
 
+    const [sticky, stickyActive] = useState(false);
+
     useEffect(() => {
         // Update the active state when the URL changes
         setActive(location.pathname);
@@ -21,10 +23,31 @@ function Navbar() {
         return active.startsWith('/products');
     };
 
+    useEffect(() => {
+        
+        const handleScroll = () => {
+            if (window.innerWidth < 600 && window.scrollY > 200) {
+                stickyActive(true);
+            } else if (window.innerWidth >= 600 && window.scrollY > 50) {
+                stickyActive(true);
+            } else {
+                stickyActive(false);
+            };
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            // Remove the event listener when the component unmounts
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
         <>
-            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }}>
-                <div className="flex w-full bg-cred justify-around text-base font-semibold sm:text-lg 2xl:absolute 2xl:right-0 2xl:top-0 2xl:w-fit">
+            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }} className={`${sticky ? 'sticky top-0 z-20 backdrop-blur-md bg-white/90 border-b-2 ' : ''} w-full`}
+            >
+                <div className={`${sticky ? "hidden" : "block"} flex w-full bg-cred justify-around text-base font-semibold sm:text-lg 2xl:absolute 2xl:right-0 2xl:top-0 2xl:w-fit`}>
                     <div className="h-0 w-0 border-white border-b-scarlet border-r-scarlet 2xl:border-[22px]"></div>
                     <div className='flex justify-center 2xl:justify-between items-center px-2 sm:px-6 2xl:pr-[210px] gap-4 sm:gap-20 py-2 w-full'>
                         <a href="https://maps.apple.com/?address=Meadowbrook+Materials,888,Main+St,East+Machias,Maine" target='_blank'>
@@ -45,7 +68,7 @@ function Navbar() {
                 {/* NavBar Starts here */}
 
                 <nav
-                    className='px-4 md:px-12 w-full flex items-center sm:py-5 py-3 z-20 bg-primary'
+                    className={`${sticky ? "sm:py-3" : "sm:py-5"} px-4 md:px-12 w-full flex items-center py-3 z-20 bg-primary`}
                 >
                     <div className='w-full flex justify-between items-center max-w-[95rem] mx-auto'>
                         <Link
@@ -59,16 +82,16 @@ function Navbar() {
                             <img
                                 src={logo}
                                 alt='Logo'
-                                className='w-[10rem] sm:w-[12rem] md:w-full logo h-full object-contain transition-transform select-none'
+                                className={`${sticky ? " w-[12rem] md:w-[80%]" : "md:w-full w-[10rem]"} sm:w-[12rem] logo h-full object-contain transition-transform select-none`}
                             />
                         </Link>
-                        <ul className='list-none hidden 2xl:pt-9 sm:flex flex-row gap-6 md:gap-10'>
+                        <ul className={`${sticky ? "2xl:pt-0" : "2xl:pt-9"} list-none hidden sm:flex flex-row gap-6 md:gap-10`}>
                             {navLinks.map((link) => (
 
                                 <li
                                     key={link.id}
                                     className={`${active === link.id || link.id === '/products' && isProductPage() ? 'text-cred font-semibold' : 'text-black'
-                                    } hover-textred text-[14px] md:text-[16px] font-noraml transition`}
+                                        } hover-textred text-[14px] md:text-[16px] font-noraml transition`}
                                     onClick={() => setActive(link.id)}
                                 >
                                     <Link to={`${link.id}`}>{link.title}</Link>
@@ -78,7 +101,7 @@ function Navbar() {
                         </ul>
 
                         <div className='sm:hidden flex justify-end items-center flex-col' ref={navRef}>
-                            <MobileNav />
+                            <MobileNav stickyActive={sticky} />
                         </div>
                     </div>
                 </nav >

@@ -9,7 +9,7 @@ function Hero() {
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             const yOffset = contactForm.getBoundingClientRect().top + window.scrollY;
-            const targetY = yOffset - 50;
+            const targetY = yOffset - 250;
             
             window.scrollTo({
                 top: targetY,
@@ -48,7 +48,7 @@ function Hero() {
                                     className='bg-cred text-white border border-transparent px-4 py-4 sm:py-5 w-full sm:w-[220px] rounded-[56px]'>Contact Us
                                 </motion.button>
                             </Link>
-                            <Link to='/' className='w-full sm:w-auto'>
+                            <Link to='/about-us' className='w-full sm:w-auto'>
                                 <button className='bg-transparent border hover:bg-white hover:text-black transition duration-200 ease-out border-white text-white w-full sm:w-[200px] px-4 py-4 sm:py-5 rounded-[56px]'>Learn More</button>
                             </Link>
                         </div>

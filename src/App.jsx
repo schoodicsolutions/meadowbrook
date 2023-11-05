@@ -21,6 +21,9 @@ function App() {
       }, 2500);
     }
   }, [])
+
+
+
   return (
     <>
       {loader ?

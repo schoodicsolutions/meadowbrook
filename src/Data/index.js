@@ -19,24 +19,24 @@ const navLinks = [
 
 const ProductLinks = [
     {
-        id: 1,
+        id: 'stones',
         title: "Stone"
     },
     {
-        id: 2,
+        id: 'gravel',
         title: "Gravel"
     },
     {
-        id: 3,
+        id: 'soil',
         title: "Soil"
     },
     {
-        id: 4,
+        id: 'landscaping',
         title: "Landscaping",
 
     },
     {
-        id: 5,
+        id: 'construction',
         title: "Construction"
     }
 ]

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Squash as Hamburger } from 'hamburger-react';
 import { navLinks } from '../../Data';
 
-function MobileNav() {
+function MobileNav({ stickyActive }) {
     const [ariaExpanded, setAriaExpanded] = useState(false);
     const [isHamburgerToggled, setHamburgerToggled] = useState(false);
 
@@ -11,11 +11,11 @@ function MobileNav() {
     const [active, setActive] = useState(location.pathname);
 
     useEffect(() => {
-        // Update the active state when the URL changes
         setActive(location.pathname);
+
     }, [location.pathname]);
 
-    // Function to check if the current route is a "Products" page or under "Products"
+
     const isProductPage = () => {
         return active.startsWith('/products');
     };
@@ -24,6 +24,14 @@ function MobileNav() {
         setAriaExpanded(false);
         setHamburgerToggled(false);
     };
+
+    useEffect(() => {
+        if (ariaExpanded === true) {
+            document.documentElement.classList.add('disable-scroll');
+        } else {
+            document.documentElement.classList.remove('disable-scroll');
+        }
+    });
 
     return (
         <>
@@ -41,17 +49,30 @@ function MobileNav() {
                 toggled={isHamburgerToggled}
             />
 
+            {ariaExpanded === true ?
+                <>
+                    <div className="fixed inset-0 h-screen w-full flex items-center justify-center bg-black bg-opacity-40" onClick={closeNavigation}>
+                    </div>
+                </>
+                :
+                <>
+
+                </>
+            }
+
             <div
                 className={`${ariaExpanded
                     ? 'scale-100 opacity-100'
                     : 'scale-0 opacity-0'
-                    } p-6 navBar z-10 backdrop-blur-md bg-white/80 rounded-md absolute top-28 left-0 right-0 mx-auto my-2 w-[95%] transition-all`}
+                    } p-6 navBar z-10 backdrop-blur-md bg-white rounded-md absolute ${stickyActive ? "top-[88px]" : "top-[7.5rem]"} left-0 right-0 mx-auto my-2 w-[98%] transition-all`}
                 onClick={() => {
                     closeNavigation();
                 }}
 
             >
+
                 <ul className='list-none flex justify-end items-center flex-col gap-6'>
+
                     {navLinks.map((link) => (
                         <li
                             key={link.id}
