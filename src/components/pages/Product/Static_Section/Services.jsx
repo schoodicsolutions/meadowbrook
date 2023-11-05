@@ -77,7 +77,7 @@ function Services() {
                             Products
                         </h1>
                         <span className="w-28 h-[2px] bg-cred block"></span>
-                        <p className="w-full 2xl:w-auto text-lg pt-4">
+                        <p className="w-full 2xl:w-auto text-base md:text-lg pt-4">
                             At Meadowbrook, we offer a full spectrum of services, from landscaping expertise, including stump grinding, tree removal, land clearing, and retaining walls, to top-quality materials, such as stone, gravel, and soil. We're also your go-to for construction solutions, covering concrete supply, foundations, driveways, culverts, dump trucks, excavator services, and septic tank installation. Simplify your projects with us."
                         </p>
                     </div>
@@ -115,12 +115,12 @@ function Services() {
                                         )}
                                     </div>
                                     <div className='absolute z-10 bottom-0 left-0 w-full text-white'>
-                                        <p className="text-center left-0 py-1 md:py-2 pl-10 pr-20 bg-cred capitalize text-base font-bold w-full">
+                                        <p className="text-center left-0 py-1 md:py-2 bg-cred capitalize text-base font-bold w-full">
                                             {Service.root}
                                         </p>
                                     </div>
                                     <div
-                                        className="absolute w-full bottom-8 text-center py-8 sm:py-10 lg:py-12 text-white"
+                                        className="absolute w-full bottom-8 text-center py-8 lg:py-10 text-white"
                                         onMouseEnter={() => {
                                             setHoveredServiceIndex(Service.id);
                                         }}
