@@ -12,7 +12,7 @@ function Breadcrumbs({ serviceName, serviceDetail }) {
 
     return (
         <div className="text-white capitalize pt-2">
-            <div className="text-lg">
+            <div className="text-base md:text-lg">
                 {breadcrumbs.map((item, index) => (
                     <span key={index}>
                         {item.link ? (
@@ -61,14 +61,14 @@ function Hero() {
     return (
         <>
             <section className='bg-[#05011C] relative lg:flex mb-10 flex-wrap lg:flex-nowrap'>
-                <div className='px-6 md:px-16 2xl:px-12 pb-8 lg:pb-28 2xl:pb-0 w-full lg:max-w-[54rem] ml-auto pt-5 md:pt-5'>
+                <div className='px-6 md:px-16 2xl:px-12 pb-8 lg:pb-28 2xl:pb-0 w-full lg:max-w-[750px] ml-auto pt-5 md:pt-5'>
                     {/* BreadCrumbs */}
                     <Breadcrumbs serviceName={serviceName} serviceDetail={ServiceDetailName} />
                     <div className='text-white h-auto mt-8 md:mt-12 2xl:mt-16'>
-                        <h1 className='leading-normal text-[28px] sm:text-[36px] lg:text-[38px] 2xl:text-[46px] font-black w-full max-w-md sm:max-w-lg lg:max-w-full capitalize'>
+                        <h1 className='leading-normal text-[26px] sm:text-[36px] lg:text-[38px] 2xl:text-[46px] font-black w-full max-w-md sm:max-w-lg lg:max-w-full capitalize'>
                             {selectedHeadline ? selectedHeadline.heading : "Default Headline"}
                         </h1>
-                        <p className='text-lg pt-1'>A Service from meadowbrook</p>
+                        <p className='text-base md:text-lg pt-1'>A {serviceName} Service from meadowbrook</p>
                     </div>
                 </div>
                 <div className='relative h-auto'>
