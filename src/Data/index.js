@@ -8,8 +8,44 @@ const navLinks = [
         title: "About Us",
     },
     {
+        id: '/concrete',
+        title: "Concrete",
+        submenu: [
+            { 
+                id: '/concrete',
+                title: 'Redi-Mix Concrete'
+            },
+            { 
+                id: '/concrete#precast',
+                title: 'Pre-Cast Concrete'
+            }
+        ]
+    },
+    {
+        id: '/construction',
+        title: "Construction",
+    },
+    {
         id: '/products',
-        title: "Products",
+        title: "Materials",
+        subMenu: [
+            {
+                id: '/products/stones',
+                title: "Stones",
+            },
+            {
+                id: '/products/gravel',
+                title: "Gravel",
+            },
+            {
+                id: '/products/soil',
+                title: "Soil",
+            },
+        ],
+    },
+    {
+        id: '/products',
+        title: "Careers",
     },
     {
         id: "/contact-us",

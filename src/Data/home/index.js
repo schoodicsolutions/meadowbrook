@@ -85,16 +85,22 @@ const benefits = [
 
 const services = [
     {
-        id: 'landscaping',
-        title: "Landscaping",
-        paragraph: 'Transforming Outdoor Spaces into Breathtaking Retreats with Our Exceptional Landscaping Services',
-        image: landscape,
+        id: 1,
+        title: "Concrete Supply",
+        paragraph: 'We Offer All Varieties of Stones for Your Construction and Landscaping Needs',
+        image: stones,
     },
     {
-        id: 'construction',
-        title: "Construction",
-        paragraph: 'Our Construction Services Forge Strong Foundations and Architectural Wonders Alike',
-        image: construction,
+        id: 2,
+        title: "Driveways",
+        paragraph: 'Explore Our Comprehensive Range of Gravel for Construction and Landscaping.',
+        image: gravel,
+    },
+    {
+        id: 3,
+        title: "Culverts",
+        paragraph: 'Elevate Your Landscaping with Our Finest Screened Loam and Top Soil Selections.',
+        image: soil,
     },
 ];
 
@@ -102,19 +108,19 @@ const materials = [
     {
         id: 1,
         title: "Stones",
-        paragraph: 'Experience the Unmatched Power of Tailore RTechnology.',
+        paragraph: 'We Offer All Varieties of Stones for Your Construction and Landscaping Needs',
         image: stones,
     },
     {
         id: 2,
         title: "Gravel",
-        paragraph: 'Experience the Unmatched Power of Tailore RTechnology.',
+        paragraph: 'Explore Our Comprehensive Range of Gravel for Construction and Landscaping.',
         image: gravel,
     },
     {
         id: 3,
         title: "Soil",
-        paragraph: 'Experience the Unmatched Power of Tailore RTechnology.',
+        paragraph: 'Elevate Your Landscaping with Our Finest Screened Loam and Top Soil Selections.',
         image: soil,
     },
 ];

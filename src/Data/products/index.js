@@ -1,10 +1,7 @@
 import {
-    LsService1,
-    LsService2,
     LsService3,
     LsService4,
     CsService1,
-    CsService2,
     CsService3,
     CsService4,
     CsService5,
@@ -23,30 +20,7 @@ import {
 } from '../../assets'
 
 const landscaping = [
-    {
-        id: "stump-grinding",
-        root: "landscaping",
-        image: LsService1,
-        title: "stump grinding",
-    },
-    {
-        id: 'tree-removal',
-        root: "landscaping",
-        image: LsService2,
-        title: "tree removal",
-    },
-    {
-        id: "land-lot-clearing",
-        root: "landscaping",
-        image: LsService3,
-        title: "land lot clearing",
-    },
-    {
-        id: "retaining-walls",
-        root: "landscaping",
-        image: LsService4,
-        title: "retaining walls",
-    },
+
 ]
 
 const construction = [
@@ -55,12 +29,6 @@ const construction = [
         root: "construction",
         image: CsService1,
         title: "Concrete Supply",
-    },
-    {
-        id: 'foundations',
-        root: "construction",
-        image: CsService2,
-        title: "Foundations",
     },
     {
         id: 'driveways',
@@ -91,6 +59,18 @@ const construction = [
         root: "construction",
         image: CsService7,
         title: "Septic Tank Installation",
+    },
+    {
+        id: "land-lot-clearing",
+        root: "construction",
+        image: LsService3,
+        title: "land lot clearing",
+    },
+    {
+        id: "retaining-walls",
+        root: "construction",
+        image: LsService4,
+        title: "retaining walls",
     },
 ]
 

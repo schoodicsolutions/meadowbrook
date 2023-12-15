@@ -14,7 +14,7 @@ function Services() {
 
     const SubServices = GetProducts.replace(/_/g, ' ');
 
-    const serviceTypes = [SubServices, 'landscaping', 'construction', 'stones', 'soil', 'gravel'];
+    const serviceTypes = [SubServices, 'construction', 'stones', 'soil', 'gravel'];
 
     useEffect(() => {
         // Check if the selected service type is "show_all"

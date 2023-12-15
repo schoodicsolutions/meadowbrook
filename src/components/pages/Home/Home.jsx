@@ -1,6 +1,4 @@
-import React from 'react'
 import Hero from './Sections/Hero'
-import Benefits from './Sections/Benefits'
 import Services from './Sections/Services'
 import Materials from './Sections/Materials'
 import Experience from './Sections/Experience'
@@ -12,12 +10,15 @@ function Home() {
     return (
         <>
             <Hero />
-            <Benefits />
-            <Services />
+            <>
+                <div className="w-full h-72 border-b border-slate-300 flex items-center justify-center">
+                    Redi-Mix Concrete Blurb Goes Here
+                </div>
+            </>
             <Materials />
+            <Services />
             <Experience />
             <Gallery />
-            <Brands />
             <Contact_Form />
         </>
     )

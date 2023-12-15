@@ -69,7 +69,7 @@ function Footer() {
                         {/* Third Col */}
                         <div className='px-4 lg:px-0 sm:pb-0 pb-8'>
                             <div>
-                                <h1 className='text-[20px] sm:text-[22px] font-semibold'>PRODUCTS</h1>
+                                <h1 className='text-[20px] sm:text-[22px] font-semibold'>Services</h1>
                             </div>
                             <ul className='list-none flex flex-col pt-4 sm:pt-6 gap-5 sm:gap-6'>
                                 {ProductLinks.map((link) => (
@@ -86,19 +86,26 @@ function Footer() {
                             </ul>
                         </div>
 
-                        {/* Fourth Col */}
-                        <div className='lg:px-0 px-4 sm:pb-0 pb-6'>
+                        {/* Third Col */}
+                        <div className='px-4 lg:px-0 sm:pb-0 pb-8'>
                             <div>
-                                <h1 className='text-[20px] sm:text-[22px] font-semibold'>RECENT BLOGS</h1>
+                                <h1 className='text-[20px] sm:text-[22px] font-semibold'>Products</h1>
                             </div>
-                            <div className='pt-4 sm:pt-6 gap-5 sm:gap-6 flex flex-col'>
-                                {Blogs.map((blog) => (
-                                    <Link to={blog.link} key={blog.id}>
-                                        <p className='hover-textred sm:text-base text-sm transition-colors duration-200 ease-out'>{blog.title}</p>
-                                    </Link>
+                            <ul className='list-none flex flex-col pt-4 sm:pt-6 gap-5 sm:gap-6'>
+                                {ProductLinks.map((link) => (
+                                    <li
+                                        key={link.id}
+                                        className={`${(active === link.id || (active.startsWith(`/products/${link.id}`) && isProductPage()))
+                                            ? 'text-cred font-semibold'
+                                            : 'text-white'} hover-textred w-fit text-sm font-noraml transition`
+                                        }
+                                    >
+                                        <Link to={`/products/${link.id}`}>{link.title}</Link>
+                                    </li>
                                 ))}
-                            </div>
+                            </ul>
                         </div>
+
                     </div>
                 </div>
                 <div className='bg-black'>
