@@ -28,7 +28,7 @@ const navLinks = [
     {
         id: '/products',
         title: "Materials",
-        subMenu: [
+        submenu: [
             {
                 id: '/products/stones',
                 title: "Stones",

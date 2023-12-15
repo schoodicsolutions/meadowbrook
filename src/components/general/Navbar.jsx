@@ -115,7 +115,7 @@ function Navbar() {
                                         } hover-textred text-[14px] md:text-[16px] font-noraml transition`}
                                     onClick={() => setActive(link.id)}
                                 >
-                                    <Link to={`${link.id}`}>{link.title}</Link>
+                                    <Link to={`${link.id}`}>{link.title} {link.submenu ? "\u25BE" : null }</Link>
                                 </li>
 
                             ))}
