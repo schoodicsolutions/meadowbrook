@@ -24,6 +24,7 @@ const navLinks = [
     {
         id: '/construction',
         title: "Construction",
+        submenu: [],
     },
     {
         id: '/products',
@@ -44,7 +45,7 @@ const navLinks = [
         ],
     },
     {
-        id: '/products',
+        id: '/careers',
         title: "Careers",
     },
     {
