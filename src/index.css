@@ -62,6 +62,12 @@ html {
   fill: #f10d0c;
 }
 
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+
 /* Apply 'Source Sans 3' to headings */
 h1,
 h2,

@@ -53,6 +53,16 @@ function Navbar() {
         };
     }, []);
 
+    const [hoveredLink, setHoveredLink] = useState(null);
+
+    const handleLinkHover = (id) => {
+        setHoveredLink(id);
+    };
+
+    const handleLinkLeave = () => {
+        setHoveredLink(null);
+    };
+
     return (
         <>
             {ariaExpanded === true ?
@@ -108,16 +118,35 @@ function Navbar() {
                         </Link>
                         <ul className={`${sticky ? "2xl:pt-0" : "2xl:pt-9"} list-none hidden sm:flex flex-row gap-6 md:gap-10`}>
                             {navLinks.map((link) => (
-
                                 <li
                                     key={link.id}
-                                    className={`${active === link.id || link.id === '/products' && isProductPage() ? 'text-cred font-semibold' : 'text-black'
-                                        } hover-textred text-[14px] md:text-[16px] font-noraml transition`}
+                                    className={`relative ${active === link.id ? 'text-cred font-semibold' : 'text-black'
+                                        } hover-textred text-[14px] md:text-[16px] transition font-normal w-fit pb-6 -mb-8`}
+                                    onMouseEnter={() => handleLinkHover(link.id)}
+                                    onMouseLeave={handleLinkLeave}
                                     onClick={() => setActive(link.id)}
                                 >
-                                    <Link to={`${link.id}`}>{link.title} {link.submenu ? "\u25BE" : null }</Link>
+                                    <Link to={`${link.id}`}
+                                        data-submenu={link.submenu ? true : false}
+                                    >
+                                        {link.title} {link.submenu && "\u25BE"}
+                                    </Link>
+                                    {link.submenu && hoveredLink === link.id && (
+                                        <ul className="absolute -left-2 bg-white border shadow-md w-48 top-full -mt-2 transition-all duration-300 opacity-100 scale-100 transform origin-top">
+                                            {link.submenu.map((subLink) => (
+                                                <li key={subLink.id} className='w-full'>
+                                                    <Link
+                                                        to={subLink.id}
+                                                        data-submenu="sublink"
+                                                        className={`${active === subLink.id ? 'text-cred' : 'text-black hover-textred text-[14px] md:text-[16px] font-normal transition'} block w-full px-2 py-2 border-0 border-b-2 border-b-[#f0f0f0]`}
+                                                    >
+                                                        {subLink.title}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </li>
-
                             ))}
                         </ul>
 

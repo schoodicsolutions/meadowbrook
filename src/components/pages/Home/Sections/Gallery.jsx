@@ -27,11 +27,13 @@ function Gallery() {
                         slidesPerView={4}
                         spaceBetween={10}
                         loop={true}
-                        freeMode={true}
+                        freeMode={false}
+                        grabCursor={true}
+                        speed={10000}
+                        freeModeMomentum={false}
                         autoplay={{
-                            delay: 0,
+                            delay: 1,
                             disableOnInteraction: false,
-
                         }}
                         breakpoints={{
                             0: {
@@ -47,7 +49,6 @@ function Gallery() {
                                 slidesPerView: 4
                             },
                         }}
-                        speed={30000}
                         modules={[Autoplay]}
                         className='flex gap-2 w-full mySwiper overflow-hidden'>
 
@@ -61,9 +62,12 @@ function Gallery() {
                         slidesPerView={3.5}
                         spaceBetween={10}
                         loop={true}
-                        freeMode={true}
+                        freeMode={false}
+                        grabCursor={true}
+                        speed={9000}
+                        freeModeMomentum={false}
                         autoplay={{
-                            delay: 0,
+                            delay: 1,
                             disableOnInteraction: false,
                             reverseDirection: true,
                         }}
@@ -81,7 +85,6 @@ function Gallery() {
                                 slidesPerView: 3.5
                             },
                         }}
-                        speed={30000}
                         modules={[Autoplay]}
                         className='flex gap-2 pt-2 w-full mySwiper overflow-hidden'>
                         {Gallery2.map((imagess) => (

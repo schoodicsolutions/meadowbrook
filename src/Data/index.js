@@ -11,11 +11,11 @@ const navLinks = [
         id: '/concrete',
         title: "Concrete",
         submenu: [
-            { 
+            {
                 id: '/concrete',
                 title: 'Redi-Mix Concrete'
             },
-            { 
+            {
                 id: '/concrete#precast',
                 title: 'Pre-Cast Concrete'
             }
@@ -24,7 +24,28 @@ const navLinks = [
     {
         id: '/construction',
         title: "Construction",
-        submenu: [],
+        submenu: [
+            {
+                id: '/products/construction/driveways',
+                title: 'Driveways'
+            },
+            {
+                id: '/products/construction/culverts',
+                title: 'Culverts'
+            },
+            {
+                id: '/products/construction/dump-trucks',
+                title: 'Dump Trucks'
+            },
+            {
+                id: '/products/construction/excavator-services',
+                title: 'Excavator Services'
+            },
+            {
+                id: '/products/construction/septic-tanks',
+                title: 'Septic Tanks'
+            }
+        ]
     },
     {
         id: '/products',
