@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import { navLinks } from '../../Data';
 import { logo } from '../../assets';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence, easeInOut } from 'framer-motion';
 import MobileNav from './MobileNav';
 
 function Navbar() {
@@ -55,8 +55,8 @@ function Navbar() {
 
     const [hoveredLink, setHoveredLink] = useState(null);
 
-    const handleLinkHover = (id) => {
-        setHoveredLink(id);
+    const handleLinkHover = (title) => {
+        setHoveredLink(title);
     };
 
     const handleLinkLeave = () => {
@@ -122,29 +122,37 @@ function Navbar() {
                                     key={link.id}
                                     className={`relative ${active === link.id ? 'text-cred font-semibold' : 'text-black'
                                         } hover-textred text-[14px] md:text-[16px] transition font-normal w-fit pb-6 -mb-8`}
-                                    onMouseEnter={() => handleLinkHover(link.id)}
+                                    onMouseEnter={() => handleLinkHover(link.title)}
                                     onMouseLeave={handleLinkLeave}
                                     onClick={() => setActive(link.id)}
                                 >
                                     <Link to={`${link.id}`}
-                                        data-submenu={link.submenu ? true : false}
                                     >
                                         {link.title} {link.submenu && "\u25BE"}
                                     </Link>
-                                    {link.submenu && hoveredLink === link.id && (
-                                        <ul className="absolute -left-2 bg-white border shadow-md w-48 top-full -mt-2 transition-all duration-300 opacity-100 scale-100 transform origin-top">
-                                            {link.submenu.map((subLink) => (
-                                                <li key={subLink.id} className='w-full'>
-                                                    <Link
-                                                        to={subLink.id}
-                                                        data-submenu="sublink"
-                                                        className={`${active === subLink.id ? 'text-cred' : 'text-black hover-textred text-[14px] md:text-[16px] font-normal transition'} block w-full px-2 py-2 border-0 border-b-2 border-b-[#f0f0f0]`}
-                                                    >
-                                                        {subLink.title}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                    {link.submenu && hoveredLink === link.title && (
+                                        <AnimatePresence>
+                                            <motion.div
+                                                key={link.id} // Add a unique key
+                                                initial={{ y: 50, opacity: 0 }}
+                                                animate={{ y: 30, opacity: 1 }}
+                                                exit={{ y: 50, opacity: 0 }}  // Add exit animation properties
+                                                transition={{ transition: 0.6, ease: "easeInOut" }}
+                                            >
+                                                <ul className="absolute -left-2 bg-white border shadow-md w-48 top-full -mt-2 transition-all duration-300 opacity-100 scale-100 transform origin-top">
+                                                    {link.submenu.map((subLink) => (
+                                                        <li key={subLink.id} className='w-full'>
+                                                            <Link
+                                                                to={subLink.id}
+                                                                className={`${active === subLink.id ? 'text-cred font-semibold' : 'text-black hover-textred text-[14px] md:text-[16px] font-normal transition'} block w-full px-2 py-2 border-0 border-b-2 border-b-[#f0f0f0]`}
+                                                            >
+                                                                {subLink.title}
+                                                            </Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </motion.div>
+                                        </AnimatePresence>
                                     )}
                                 </li>
                             ))}

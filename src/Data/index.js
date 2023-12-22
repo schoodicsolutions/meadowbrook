@@ -8,7 +8,7 @@ const navLinks = [
         title: "About Us",
     },
     {
-        id: '/concrete',
+        id: '/#',
         title: "Concrete",
         submenu: [
             {
@@ -22,7 +22,7 @@ const navLinks = [
         ]
     },
     {
-        id: '/construction',
+        id: '/#',
         title: "Construction",
         submenu: [
             {
@@ -48,7 +48,7 @@ const navLinks = [
         ]
     },
     {
-        id: '/products',
+        id: '/#',
         title: "Materials",
         submenu: [
             {

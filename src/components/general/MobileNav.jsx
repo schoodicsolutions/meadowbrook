@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Squash as Hamburger } from 'hamburger-react';
-import { navLinks } from '../../Data';
+import { navLinks } from '../../Data'
+import { motion, AnimatePresence, easeInOut, easeOut } from 'framer-motion';;
 
 function MobileNav({ stickyActive, updateAriaExpanded }) {
     const [ariaExpanded, setAriaExpanded] = useState(false);
     const [isHamburgerToggled, setHamburgerToggled] = useState(false);
-
+    const [linkClicked, setLinkClicked] = useState(false);
+    const [hoveredLink, setHoveredLink] = useState(null);
     const location = useLocation();
     const [active, setActive] = useState(location.pathname);
 
     useEffect(() => {
         setActive(location.pathname);
-
     }, [location.pathname]);
-
 
     const isProductPage = () => {
         return active.startsWith('/products');
@@ -23,6 +23,8 @@ function MobileNav({ stickyActive, updateAriaExpanded }) {
     const closeNavigation = () => {
         setAriaExpanded(false);
         setHamburgerToggled(false);
+        setLinkClicked(false);
+        setHoveredLink(null);
     };
 
     useEffect(() => {
@@ -31,19 +33,53 @@ function MobileNav({ stickyActive, updateAriaExpanded }) {
         } else {
             document.documentElement.classList.remove('disable-scroll');
         }
-    });
+    }, [ariaExpanded]);
+
+
+    const handleLinkHover = (title) => {
+        setHoveredLink(title);
+    };
+
+    const handleLinkLeave = () => {
+        setHoveredLink(null);
+    };
+
+    const HandleSubMenu = (title) => {
+        if (hoveredLink === title) {
+            setHoveredLink(null);
+        } else {
+            setHoveredLink(title);
+        }
+    }
+
+    const handleLinkClick = (link) => {
+        setActive(link.id);
+        handleLinkHover(link.title);
+        setLinkClicked(true);
+
+        if (link.id === "/#") {
+            updateAriaExpanded(true);
+        } else {
+            updateAriaExpanded(false);
+            closeNavigation();
+        }
+    };
 
     return (
         <>
-
-            {ariaExpanded === true
-                ? <> <div className='fixed inset-0 z-[9] h-screen w-full flex items-center justify-center' onClick={() => {
-                    closeNavigation();
-                    updateAriaExpanded(false);
-                }}></div> </>
-                :
-                ""
-            }
+            {ariaExpanded === true || linkClicked ? (
+                <>
+                    <div
+                        className='fixed inset-0 z-[9] h-screen w-full flex items-center justify-center'
+                        onClick={() => {
+                            closeNavigation();
+                            updateAriaExpanded(false);
+                        }}
+                    ></div>
+                </>
+            ) : (
+                ''
+            )}
 
             <Hamburger
                 rounded
@@ -55,6 +91,7 @@ function MobileNav({ stickyActive, updateAriaExpanded }) {
                     setAriaExpanded(toggled);
                     setHamburgerToggled(toggled);
                     updateAriaExpanded(toggled);
+                    setLinkClicked(false);
                 }}
                 aria-expanded={ariaExpanded}
                 toggled={isHamburgerToggled}
@@ -62,31 +99,69 @@ function MobileNav({ stickyActive, updateAriaExpanded }) {
 
             <div
                 className={`${ariaExpanded
-                    ? 'scale-100 opacity-100'
-                    : 'scale-0 opacity-0'
-                    } p-6 navBar z-10 backdrop-blur-md bg-white rounded-md absolute ${stickyActive ? "top-[88px]" : "top-[7.5rem]"} left-0 right-0 mx-auto my-2 w-[98%] transition-all`}
+                    ? 'right-0 opacity-100'
+                    : '-right-[100%] opacity-0'
+                    } py-6 navBar z-10 backdrop-blur-md bg-white absolute ${stickyActive ? 'top-[88px]' : 'top-[7.5rem]'
+                    } mx-auto w-full transition-right duration-300 ease-in-out`}
             >
-
-                <ul className='list-none flex justify-end items-center flex-col gap-6'>
-
+                <ul className='list-none flex justify-end items-start flex-col gap-6 py-4'>
                     {navLinks.map((link) => (
                         <li
                             key={link.id}
-                            className={`${active === link.id || link.id === '/products' && isProductPage() ? 'text-cred font-semibold' : 'text-black'
-                                } hover-textred text-[14px] md:text-[16px] font-noraml transition`}
+                            onMouseLeave={handleLinkLeave}
+                            className='w-full'
                             onClick={() => {
-                                setActive(link.id);
-                                closeNavigation();
-                                updateAriaExpanded(false);
+                                handleLinkClick(link);
+                                HandleSubMenu(link.title); // Pass the link.id to HandleSubMenu
                             }}
                         >
-                            <Link to={`${link.id}`}>{link.title}</Link>
+                            <Link
+                                to={`${link.id}`}
+                                data-submenu={link.submenu ? true : false}
+                                className={`${(link.id.endsWith('#')) ? 'text-black font-normal' :
+                                    (active === link.id) ||
+                                        (link.id === '/products' && isProductPage()) ? 'text-cred font-semibold' :
+                                        'text-black'
+                                    } hover-textred text-[16px] font-normal transition px-6`}
+                            >
+                                {link.title} {link.submenu && '\u25BE'}
+                            </Link>
+                            {link.submenu && hoveredLink === link.title && (
+                                <motion.div
+                                    key={link.id}
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0, y: -20 }}
+                                    transition={{ duration: 0.3, ease: easeOut }}
+                                    style={{ overflow: 'hidden' }}
+                                >
+                                    <ul className='w-full top-full transition-all duration-300 opacity-100 scale-100 transform origin-top'>
+                                        {link.submenu.map((subLink) => (
+                                            <li
+                                                key={subLink.id}
+                                                className='w-full border-0 border-b-2 border-b-[#f0f0f0]'
+                                            >
+                                                <Link
+                                                    to={subLink.id}
+                                                    data-submenu='sublink'
+                                                    className={`${active === subLink.id
+                                                        ? 'text-cred'
+                                                        : 'text-black hover-textred text-[16px] font-normal transition'
+                                                        } block w-full ml-2 py-2 pt-3 px-8`}
+                                                >
+                                                    {subLink.title}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            )}
                         </li>
                     ))}
                 </ul>
             </div>
         </>
-    )
+    );
 }
 
-export default MobileNav
+export default MobileNav;
