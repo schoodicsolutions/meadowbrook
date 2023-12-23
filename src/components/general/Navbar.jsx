@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import { navLinks } from '../../Data';
 import { logo } from '../../assets';
-import { motion, AnimatePresence, easeInOut } from 'framer-motion';
+import { motion, AnimatePresence, easeOut } from 'framer-motion';
 import MobileNav from './MobileNav';
 
 function Navbar() {
@@ -63,6 +63,14 @@ function Navbar() {
         setHoveredLink(null);
     };
 
+    // const submenuRef = useRef(null);
+
+    // useEffect(() => {
+    //     if (submenuRef.current) {
+    //         const maxWidth = Math.max(...Array.from(submenuRef.current.children).map(child => child.offsetWidth));
+    //         submenuRef.current.style.width = `${maxWidth}px`;
+    //     }
+    // }, [hoveredLink]);
     return (
         <>
             {ariaExpanded === true ?
@@ -101,6 +109,7 @@ function Navbar() {
                 <nav
                     className={`${sticky ? "sm:py-3" : "sm:py-5"} px-4 md:px-12 w-full flex items-center py-3 z-20 bg-primary`}
                 >
+
                     <div className='w-full flex justify-between items-center max-w-[95rem] mx-auto'>
                         <Link
                             to='/'
@@ -113,38 +122,44 @@ function Navbar() {
                             <img
                                 src={logo}
                                 alt='Logo'
-                                className={`${sticky ? " w-[12rem] md:w-[80%]" : "md:w-full w-[10rem]"} sm:w-[12rem] logo h-full object-contain transition-transform select-none`}
+                                className={`${sticky ? "w-[12rem] md:w-[80%]" : "w-[11rem] sm:w-[13rem] 2xl:w-[16rem]"} logo h-full object-contain transition-transform select-none`}
                             />
                         </Link>
-                        <ul className={`${sticky ? "2xl:pt-0" : "2xl:pt-9"} list-none hidden sm:flex flex-row gap-6 md:gap-10`}>
+                        <ul className={`${sticky ? "2xl:pt-0" : "2xl:pt-9"} list-none hidden lg:flex flex-row gap-4 md:gap-6 2xl:gap-10`}>
                             {navLinks.map((link) => (
                                 <li
                                     key={link.id}
-                                    className={`relative ${active === link.id ? 'text-cred font-semibold' : 'text-black'
-                                        } hover-textred text-[14px] md:text-[16px] transition font-normal w-fit pb-6 -mb-8`}
+                                    className={`relative ${active === link.id || link.id === '/products' && isProductPage() ? 'text-cred font-semibold' : 'text-black'
+                                        } hover-textred text-[14px] md:text-[16px] transition font-normal pb-6 -mb-8`}
                                     onMouseEnter={() => handleLinkHover(link.title)}
                                     onMouseLeave={handleLinkLeave}
                                     onClick={() => setActive(link.id)}
                                 >
                                     <Link to={`${link.id}`}
+                                        className='flex items-center justify-center gap-[2px]'
                                     >
-                                        {link.title} {link.submenu && "\u25BE"}
+                                        {link.title}
+                                        <span className={`${hoveredLink === link.title ? "rotate-0 pt-[2px]" : "rotate-180"} transition-transform duration-150 ease-linear`}>
+                                            {link.submenu && <Icon icon="mi:chevron-up" />}
+                                        </span>
                                     </Link>
                                     {link.submenu && hoveredLink === link.title && (
                                         <AnimatePresence>
                                             <motion.div
-                                                key={link.id} // Add a unique key
-                                                initial={{ y: 50, opacity: 0 }}
-                                                animate={{ y: 30, opacity: 1 }}
-                                                exit={{ y: 50, opacity: 0 }}  // Add exit animation properties
-                                                transition={{ transition: 0.6, ease: "easeInOut" }}
+                                                key={link.id}
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0, y: -20 }}
+                                                transition={{ duration: 0.3, ease: easeOut }}
                                             >
-                                                <ul className="absolute -left-2 bg-white border shadow-md w-48 top-full -mt-2 transition-all duration-300 opacity-100 scale-100 transform origin-top">
+                                                <ul className="absolute -left-4 bg-white top-full w-[220px] -mt-2 transition-all duration-300 opacity-100 mx-2 my-2 scale-100 transform  origin-top" style={{
+                                                    boxShadow: "0px 2px 6.8px 0px rgba(0, 0, 0, 0.25)"
+                                                }}>
                                                     {link.submenu.map((subLink) => (
                                                         <li key={subLink.id} className='w-full'>
                                                             <Link
                                                                 to={subLink.id}
-                                                                className={`${active === subLink.id ? 'text-cred font-semibold' : 'text-black hover-textred text-[14px] md:text-[16px] font-normal transition'} block w-full px-2 py-2 border-0 border-b-2 border-b-[#f0f0f0]`}
+                                                                className={`${active === subLink.id ? 'text-cred font-semibold' : 'text-black hover:bg-[#F9F9F9] w-auto text-[14px] rounded-lg md:text-[16px] font-normal transition'} block w-auto px-2 py-2 my-2 mx-2`}
                                                             >
                                                                 {subLink.title}
                                                             </Link>
@@ -158,7 +173,7 @@ function Navbar() {
                             ))}
                         </ul>
 
-                        <div className='sm:hidden flex justify-end items-center flex-col' ref={navRef}>
+                        <div className='lg:hidden flex justify-end items-center flex-col' ref={navRef}>
                             <MobileNav stickyActive={sticky} updateAriaExpanded={updateAriaExpanded} />
                         </div>
                     </div>

@@ -8,11 +8,11 @@ const navLinks = [
         title: "About Us",
     },
     {
-        id: '/#',
+        id: '/products/concrete',
         title: "Concrete",
         submenu: [
             {
-                id: '/concrete',
+                id: '/products/concrete/redi-mix-concrete',
                 title: 'Redi-Mix Concrete'
             },
             {

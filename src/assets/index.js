@@ -73,6 +73,10 @@ import Inch_4_Screened from './product_assets/material_detail/gravel/gravel_card
 import ScreenedLoam from './product_assets/material_detail/soil/soil_cards/screened-loam.jpg'
 import ScreenedTopSoil from './product_assets/material_detail/soil/soil_cards/screened-top-soil.jpg'
 
+// Material - Soil Images Import
+import RediMix from './product_assets/material_detail/concrete/redi-mix-concrete.jpg'
+import PreCast from './product_assets/material_detail/concrete/pre-cast-concrete.jpg'
+
 export {
     // Commong SVGS Export
     logo,
@@ -147,4 +151,7 @@ export {
     // Materials - Soil Image Export
     ScreenedLoam,
     ScreenedTopSoil,
+
+    RediMix,
+    PreCast
 };

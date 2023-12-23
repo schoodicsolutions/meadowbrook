@@ -35,6 +35,7 @@ function Details() {
             });
 
     }, [serviceName, SubServices]);
+    
 
 
     if (!serviceData) {

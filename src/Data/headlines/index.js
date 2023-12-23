@@ -80,6 +80,10 @@ const headlines = [
     {
         id: "screened-top-soil",
         heading: "Top Soil: The Canvas of Your Landscaping Masterpiece"
+    },
+    {
+        id: "redi-mix-concrete",
+        heading: "Redi Mix Concrete: The Foundation of Strength"
     }
 ];
 

@@ -16,6 +16,8 @@ import {
     Inch_4_Screened,
     ScreenedLoam,
     ScreenedTopSoil,
+    RediMix,
+    PreCast
 
 } from '../../assets'
 
@@ -137,12 +139,28 @@ const soil = [
     }
 ]
 
+const concrete = [
+    {
+        id: "redi-mix-concrete",
+        root: "concrete",
+        image: RediMix,
+        title: "Redi-Mix Concrete",
+    },
+    {
+        id: "pre-cast-concrete",
+        root: "concrete",
+        image: PreCast,
+        title: "Pre-Cast Concrete",
+    }
+]
+
 const showAllServices = [].concat(
     landscaping,
     construction,
     stones,
     gravel,
-    soil
+    soil,
+    concrete
 );
 
 export default {
@@ -151,6 +169,7 @@ export default {
     stones,
     gravel,
     soil,
+    concrete,
     All_Products: {
         showAllServices, // Include the "Show All" option
     },

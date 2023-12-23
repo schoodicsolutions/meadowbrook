@@ -6,6 +6,7 @@ const construction = data.construction;
 const stones = data.stones;
 const gravel = data.gravel;
 const soil = data.soil;
+const concrete = data.concrete;
 
 const serviceData = {
     landscaping,
@@ -13,6 +14,7 @@ const serviceData = {
     stones,
     gravel,
     soil,
+    concrete,
 }
 
 export default serviceData;
