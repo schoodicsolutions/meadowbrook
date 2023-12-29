@@ -8,11 +8,11 @@ const navLinks = [
         title: "About Us",
     },
     {
-        id: '/products/concrete',
+        id: '/concrete',
         title: "Concrete",
         submenu: [
             {
-                id: '/products/concrete/redi-mix-concrete',
+                id: '/concrete/redi-mix-concrete',
                 title: 'Redi-Mix Concrete'
             },
             {
@@ -22,45 +22,45 @@ const navLinks = [
         ]
     },
     {
-        id: '/#',
+        id: '/construction',
         title: "Construction",
         submenu: [
             {
-                id: '/products/construction/driveways',
+                id: '/construction/driveways',
                 title: 'Driveways'
             },
             {
-                id: '/products/construction/culverts',
+                id: '/construction/culverts',
                 title: 'Culverts'
             },
             {
-                id: '/products/construction/dump-trucks',
+                id: '/construction/dump-trucks',
                 title: 'Dump Trucks'
             },
             {
-                id: '/products/construction/excavator-services',
+                id: '/construction/excavator-services',
                 title: 'Excavator Services'
             },
             {
-                id: '/products/construction/septic-tanks',
+                id: '/construction/septic-tanks',
                 title: 'Septic Tanks'
             }
         ]
     },
     {
-        id: '/#',
+        id: '/materials',
         title: "Materials",
-        submenu: [
+        submenu: [  
             {
-                id: '/products/stones',
+                id: '/stones',
                 title: "Stones",
             },
             {
-                id: '/products/gravel',
+                id: '/gravel',
                 title: "Gravel",
             },
             {
-                id: '/products/soil',
+                id: '/soil',
                 title: "Soil",
             },
         ],
@@ -77,24 +77,19 @@ const navLinks = [
 
 const ProductLinks = [
     {
-        id: 'stones',
-        title: "Stone"
+        id: '/stones',
+        title: "Stones"
     },
     {
-        id: 'gravel',
+        id: '/gravel',
         title: "Gravel"
     },
     {
-        id: 'soil',
+        id: '/soil',
         title: "Soil"
     },
     {
-        id: 'landscaping',
-        title: "Landscaping",
-
-    },
-    {
-        id: 'construction',
+        id: '/construction',
         title: "Construction"
     }
 ]

@@ -10,6 +10,8 @@ import About from "./components/pages/About/About";
 import ServiceDetails from "./components/pages/Product/Service_Detail/ServiceDetails";
 import Product_Static from "./components/pages/Product/Product_Static";
 import Popup_Form from "./components/general/Popup_Form";
+import Careers from "./components/pages/Careers/Careers";
+import Contact from "./components/pages/Contact/Contact";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -33,11 +35,15 @@ function App() {
             <Navbar />
             <Popup_Form />
             <Routes>
-              <Route exact path='' element={<Home />} />
-              <Route path="/products/:serviceName" element={<Products />} />
-              <Route path="/products/:serviceName/:serviceDetail" element={<ServiceDetails />} />
-              <Route exact path="/products" element={<Product_Static />} />
+              <Route exact path="/" element={<Home />} />
               <Route exact path="/about-us" element={<About />} />
+              <Route exact path="/careers" element={<Careers />} />
+              <Route exact path="/contact-us" element={<Contact />} />
+              <Route exact path="/products" element={<Product_Static />} />
+              <Route exact path="/products/:serviceName" element={<Products />} />
+              <Route exact path="/products/:serviceName/:serviceDetail" element={<ServiceDetails />} />
+              <Route exact path="/:serviceName" element={<Products />} />
+              <Route exact path="/:serviceName/:serviceDetail" element={<ServiceDetails />} />
             </Routes>
             < Footer />
           </>

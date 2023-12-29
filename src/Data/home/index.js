@@ -85,19 +85,19 @@ const benefits = [
 
 const services = [
     {
-        id: 1,
+        id: "concrete-supply",
         title: "Concrete Supply",
         paragraph: 'We Offer All Varieties of Stones for Your Construction and Landscaping Needs',
         image: stones,
     },
     {
-        id: 2,
+        id: "driveways",
         title: "Driveways",
         paragraph: 'Explore Our Comprehensive Range of Gravel for Construction and Landscaping.',
         image: gravel,
     },
     {
-        id: 3,
+        id: "culverts",
         title: "Culverts",
         paragraph: 'Elevate Your Landscaping with Our Finest Screened Loam and Top Soil Selections.',
         image: soil,

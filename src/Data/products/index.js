@@ -154,13 +154,16 @@ const concrete = [
     }
 ]
 
+const materials = [...stones, ...gravel, ...soil];
+
 const showAllServices = [].concat(
     landscaping,
     construction,
     stones,
     gravel,
     soil,
-    concrete
+    concrete,
+    materials
 );
 
 export default {
@@ -170,6 +173,7 @@ export default {
     gravel,
     soil,
     concrete,
+    materials,
     All_Products: {
         showAllServices, // Include the "Show All" option
     },

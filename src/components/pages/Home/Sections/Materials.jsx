@@ -22,7 +22,7 @@ function Materials() {
                     <div className='flex justify-start flex-wrap md:flex-nowrap items-start gap-6 lg:gap-12 mt-6 image overflow-hidden'>
                         {materials.map((service, index) => (
                             <Link
-                                to={`/products/${service.title.toLowerCase()}`}
+                                to={`/${service.title.toLowerCase()}`}
                                 key={service.id} className='relative overflow-hidden cursor-pointer'
                             >
                                 <div key={service.id} className='relative overflow-hidden cursor-pointer transition-all ease-linear'>

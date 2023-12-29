@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Icon } from '@iconify/react';
+import { useParams } from 'react-router-dom';
 import { navLinks } from '../../Data';
 import { logo } from '../../assets';
 import { motion, AnimatePresence, easeOut } from 'framer-motion';
@@ -12,6 +13,7 @@ function Navbar() {
     const navRef = useRef(null);
     const [sticky, stickyActive] = useState(false);
     const [ariaExpanded, setAriaExpanded] = useState(false);
+    const { serviceName } = useParams();
 
     const updateAriaExpanded = (newAriaExpanded) => {
         setAriaExpanded(newAriaExpanded);
@@ -24,9 +26,8 @@ function Navbar() {
     }, [location.pathname]);
 
     const isProductPage = () => {
-
-        return active.startsWith('/products');
-
+        // Check if the current path starts with any of the top-level product routes
+        return ['/concrete', '/construction', '/materials'].some(route => active.startsWith(route));
     };
 
     const CloseNav = () => {
@@ -129,11 +130,16 @@ function Navbar() {
                             {navLinks.map((link) => (
                                 <li
                                     key={link.id}
-                                    className={`relative ${active === link.id || link.id === '/products' && isProductPage() ? 'text-cred font-semibold' : 'text-black'
+                                    className={`relative ${(link.id === '/' && active === '/') || // Check for the home link
+                                            (active.startsWith(link.id) && link.id !== '/') // Check for other links
+                                            ? 'text-cred font-semibold'
+                                            : 'text-black'
                                         } hover-textred text-[14px] md:text-[16px] transition font-normal pb-6 -mb-8`}
                                     onMouseEnter={() => handleLinkHover(link.title)}
                                     onMouseLeave={handleLinkLeave}
-                                    onClick={() => setActive(link.id)}
+                                    onClick={() => {
+                                        setActive(link.id);
+                                    }}
                                 >
                                     <Link to={`${link.id}`}
                                         className='flex items-center justify-center gap-[2px]'
@@ -159,7 +165,11 @@ function Navbar() {
                                                         <li key={subLink.id} className='w-full'>
                                                             <Link
                                                                 to={subLink.id}
-                                                                className={`${active === subLink.id ? 'text-cred font-semibold' : 'text-black hover:bg-[#F9F9F9] w-auto text-[14px] rounded-lg md:text-[16px] font-normal transition'} block w-auto px-2 py-2 my-2 mx-2`}
+                                                                className={`${active.includes(subLink.id) ? 'text-cred font-semibold' : 'text-black hover:bg-[#F9F9F9] w-auto text-[14px] rounded-lg md:text-[16px] font-normal transition'} block w-auto px-2 py-2 my-2 mx-2`}
+                                                                onClick={() => {
+                                                                    setActive([link.id, subLink.id]);
+                                                                    handleLinkLeave();
+                                                                }}
                                                             >
                                                                 {subLink.title}
                                                             </Link>

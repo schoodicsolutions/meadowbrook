@@ -29,7 +29,7 @@ function Gallery() {
                         loop={true}
                         freeMode={false}
                         grabCursor={true}
-                        speed={10000}
+                        speed={20000}
                         freeModeMomentum={false}
                         autoplay={{
                             delay: 1,
@@ -64,7 +64,7 @@ function Gallery() {
                         loop={true}
                         freeMode={false}
                         grabCursor={true}
-                        speed={9000}
+                        speed={25000}
                         freeModeMomentum={false}
                         autoplay={{
                             delay: 1,

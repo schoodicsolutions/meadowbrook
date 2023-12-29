@@ -9,7 +9,7 @@ function Details() {
     const openedService = serviceDetail.replace(/-/g, ' ');
 
     const SubServices = serviceDetail.replace(/-/g, '_');
-    
+
     const [serviceData, setServiceData] = useState(null);
 
     useEffect(() => {
@@ -35,7 +35,31 @@ function Details() {
             });
 
     }, [serviceName, SubServices]);
-    
+
+    useEffect(() => {
+
+        import(`../../../../../Data/${serviceName}/index.js`)
+            .then((module) => {
+                if (module.default) {
+                    const subServiceData = module.default;
+                    const Services = subServiceData[SubServices];
+
+                    if (Services) {
+                        setServiceData(Services);
+                    } else {
+                        console.error('Sub-service not found.');
+                    }
+                } else {
+                    console.error('Main service data is not properly structured.');
+                }
+            })
+            .catch((error) => {
+
+                console.error('Error loading module:', error);
+            });
+
+    }, [serviceName, SubServices]);
+
 
 
     if (!serviceData) {

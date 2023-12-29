@@ -12,16 +12,15 @@ function Footer() {
         setActive(location.pathname);
     }, [location.pathname]);
 
-    // Function to check if the current route is a "Products" page or under "Products"
     const isProductPage = () => {
-        console.log(active)
-        return active.startsWith('/products');
+        // Check if the current path starts with any of the top-level product routes
+        return ['/concrete', '/construction', '/materials'].some(route => active.startsWith(route));
     };
 
     useEffect(() => {
         window.scrollTo(0, 0);
     });
-    
+
     return (
         <>
             <section className='bg-[#13171B] text-white'>
@@ -55,10 +54,14 @@ function Footer() {
                                 {navLinks.map((link) => (
                                     <li
                                         key={link.id}
-                                        className={`${active === link.id || link.id === '/products' && isProductPage()
+                                        className={`relative ${(link.id === '/' && active === '/') || // Check for the home link
+                                            (active.startsWith(link.id) && link.id !== '/') // Check for other links
                                             ? 'text-cred font-semibold'
-                                            : 'text-white'} hover-textred w-fit text-sm font-noraml transition`
-                                        }
+                                            : 'text-white'
+                                            }  hover-textred w-fit text-sm font-noraml transition`}
+                                        onClick={() => {
+                                            setActive(link.id);
+                                        }}
                                     >
                                         <Link to={`${link.id}`}>{link.title}</Link>
                                     </li>
@@ -75,12 +78,13 @@ function Footer() {
                                 {ProductLinks.map((link) => (
                                     <li
                                         key={link.id}
-                                        className={`${(active === link.id || (active.startsWith(`/products/${link.id}`) && isProductPage()))
+                                        className={`relative ${(link.id === '/' && active === '/') || // Check for the home link
+                                            (active.startsWith(link.id) && link.id !== '/') // Check for other links
                                             ? 'text-cred font-semibold'
-                                            : 'text-white'} hover-textred w-fit text-sm font-noraml transition`
-                                        }
+                                            : 'text-white'
+                                            }  hover-textred w-fit text-sm font-noraml transition`}
                                     >
-                                        <Link to={`/products/${link.id}`}>{link.title}</Link>
+                                        <Link to={`${link.id}`}>{link.title}</Link>
                                     </li>
                                 ))}
                             </ul>
@@ -95,12 +99,13 @@ function Footer() {
                                 {ProductLinks.map((link) => (
                                     <li
                                         key={link.id}
-                                        className={`${(active === link.id || (active.startsWith(`/products/${link.id}`) && isProductPage()))
+                                        className={`relative ${(link.id === '/' && active === '/') || // Check for the home link
+                                            (active.startsWith(link.id) && link.id !== '/') // Check for other links
                                             ? 'text-cred font-semibold'
-                                            : 'text-white'} hover-textred w-fit text-sm font-noraml transition`
-                                        }
+                                            : 'text-white'
+                                            }  hover-textred w-fit text-sm font-noraml transition`}
                                     >
-                                        <Link to={`/products/${link.id}`}>{link.title}</Link>
+                                        <Link to={`${link.id}`}>{link.title}</Link>
                                     </li>
                                 ))}
                             </ul>

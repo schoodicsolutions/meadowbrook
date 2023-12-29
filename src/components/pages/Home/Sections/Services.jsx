@@ -18,46 +18,54 @@ function Services() {
                             we take great pride in being your premier supplier of high-quality construction materials, offering an extensive range of stone, gravel, and soil products to cater to all your project needs.
                         </p>
                     </div>
+                    <div className='flex flex-col justify-center items-center gap-y-12'>
+                        <div className='flex justify-start flex-wrap md:flex-nowrap items-start gap-6 lg:gap-12 mt-6 image overflow-hidden'>
+                            {services.map((service, index) => (
+                                <Link
+                                    to={`/construction/${service.id.toLowerCase()}`}
+                                    key={service.id} className='relative overflow-hidden cursor-pointer'
+                                >
+                                    <div key={service.id} className='relative overflow-hidden cursor-pointer transition-all ease-linear'>
+                                        <div
+                                            className={`${hoveredServiceIndex === index ? 'scale-hover-in' : 'scale-hover-out'
+                                                } overflow-hidden object-cover h-full transition-all ease-in duration-200`}
+                                            onMouseEnter={() => {
+                                                setHoveredServiceIndex(index);
+                                            }}
+                                            onMouseLeave={() => {
+                                                setHoveredServiceIndex(null);
+                                            }}>
 
-                    <div className='flex justify-start flex-wrap md:flex-nowrap items-start gap-6 lg:gap-12 mt-6 image overflow-hidden'>
-                        {services.map((service, index) => (
-                            <Link
-                                to={`/products/${service.title.toLowerCase()}`}
-                                key={service.id} className='relative overflow-hidden cursor-pointer'
-                            >
-                                <div key={service.id} className='relative overflow-hidden cursor-pointer transition-all ease-linear'>
-                                    <div
-                                        className={`${hoveredServiceIndex === index ? 'scale-hover-in' : 'scale-hover-out'
-                                            } overflow-hidden object-cover h-full transition-all ease-in duration-200`}
-                                        onMouseEnter={() => {
-                                            setHoveredServiceIndex(index);
-                                        }}
-                                        onMouseLeave={() => {
-                                            setHoveredServiceIndex(null);
-                                        }}>
-
-                                        <img src={service.image} alt="" />
-                                        {hoveredServiceIndex === index && (
-                                            <div className='absolute inset-0 bg-black bg-opacity-30 transition-all '></div>
-                                        )}
-                                    </div>
-                                    <div className='absolute bottom-0 px-4 sm:px-8 lg:px-12 py-3 sm:py-10 lg:py-14 text-white
+                                            <img src={service.image} alt="" />
+                                            {hoveredServiceIndex === index && (
+                                                <div className='absolute inset-0 bg-black bg-opacity-30 transition-all '></div>
+                                            )}
+                                        </div>
+                                        <div className='absolute bottom-0 px-4 sm:px-8 lg:px-12 py-3 sm:py-10 lg:py-14 text-white
                                     bg-red-600 w-full text-center sm:bg-transparent sm:text-left'
-                                        onMouseEnter={() => {
-                                            setHoveredServiceIndex(index);
-                                        }}
-                                        onMouseLeave={() => {
-                                            setHoveredServiceIndex(null);
-                                        }}>
-                                        <h1 className='text-[18px] sm:text-[20px] lg:text-[24px] pb-0 md:pb-1'>{service.title} <span className='pl-2'>&rarr;</span></h1>
-                                        <p className='text-sm hidden sm:block line-clamp-2 lg:line-clamp-none lg:text-base w-full max-w-full sm:max-w-md lg:max-w-xs'>{service.paragraph}</p>
+                                            onMouseEnter={() => {
+                                                setHoveredServiceIndex(index);
+                                            }}
+                                            onMouseLeave={() => {
+                                                setHoveredServiceIndex(null);
+                                            }}>
+                                            <h1 className='text-[18px] sm:text-[20px] lg:text-[24px] pb-0 md:pb-1'>{service.title} <span className='pl-2'>&rarr;</span></h1>
+                                            <p className='text-sm hidden sm:block line-clamp-2 lg:line-clamp-none lg:text-base w-full max-w-full sm:max-w-md lg:max-w-xs'>{service.paragraph}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </Link>
-                        ))}
-                        <div>
-                            Add &ldquo;See More Products&ldquo; Button Here
+                                </Link>
+                            ))}
                         </div>
+                        <div className='w-full flex flex-col items-center justify-center -mb-3'>
+                            <Link to="/products" className='w-auto block font-base font-semibold'>
+                                <button className='w-full px-16 border-transparent border py-4 text-white bg-[#F10D0C] hover:text-[#F10D0C] hover:bg-transparent hover:border-[#F10D0C] transition duration-150 ease-in'>
+                                    See More Products
+                                </button>
+                            </Link>
+                        </div>
+                        {/* <div>
+                            Add &ldquo;See More Products&ldquo; Button Here
+                        </div> */}
                     </div>
                 </div>
             </section>
