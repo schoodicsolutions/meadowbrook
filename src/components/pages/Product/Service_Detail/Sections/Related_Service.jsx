@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import serviceData from '../../../../../Data/products/serviceDataLoader.js';
 
 function shuffleArray(array) {
@@ -46,7 +46,7 @@ function Related_Service() {
                 </div>
                 <div className="grid md:grid-cols-[repeat(2,_minmax(0,_auto))] gap-4 lg:gap-6 justify-items-start items-center w-fit">
                     {relatedServices.map((service, index) => (
-                        <Link to={`/products/${serviceName}/${service.id}`} key={service.id}>
+                        <Link to={`/${serviceName}/${service.id}`} key={service.id}>
                             <div className='relative overflow-hidden cursor-pointer w-fit'>
                                 <div
                                     className={`${hoveredServiceIndex === index ? 'scale-hover-in' : 'scale-hover-out'} overflow-hidden object-cover h-full`}

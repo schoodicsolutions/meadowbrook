@@ -6,7 +6,7 @@ import { headlines } from '../../../../../Data/headlines';
 function Breadcrumbs({ serviceName, serviceDetail }) {
     const breadcrumbs = [
         { label: 'Home', link: '/' },
-        { label: serviceName, link: `/products/${serviceName}` },
+        { label: serviceName, link: `/${serviceName}` },
         { label: serviceDetail, link: null },
     ];
 
