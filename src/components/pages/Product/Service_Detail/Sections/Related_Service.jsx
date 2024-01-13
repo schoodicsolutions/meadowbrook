@@ -41,7 +41,7 @@ function Related_Service() {
         <>
             <div>
                 <div className="relative mb-3 sm:mb-5">
-                    <h1 className="text-xl sm:text-2xl">Related Services</h1>
+                    <h1 className="text-xl sm:text-2xl capitalize">Related {serviceName}</h1>
                     <span className="w-24 h-[2px] bg-cred hidden sm:block"></span>
                 </div>
                 <div className="grid md:grid-cols-[repeat(2,_minmax(0,_auto))] gap-4 lg:gap-6 justify-items-start items-center w-fit">

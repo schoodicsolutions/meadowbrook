@@ -161,3 +161,7 @@ input[type=number] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
 }
+
+.clipping{
+  clip-path: path("M 159.668 0 H 995 V 407 H 0 L 159.668 0 Z");
+}

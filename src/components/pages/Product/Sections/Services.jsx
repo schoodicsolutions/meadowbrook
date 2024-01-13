@@ -4,7 +4,7 @@ import SideForm from '../../../general/SideForm';
 
 function Services() {
     const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
-    const { serviceName } = useParams();
+    const { serviceName, serviceDetail } = useParams();
     const [servicesArray, setServicesArray] = useState(null);
 
     useEffect(() => {
@@ -41,18 +41,21 @@ function Services() {
     const location = useLocation();
     const { pathname } = location;
 
-    if (pathname.startsWith("/materials")) {
-        console.log("Yes");
-    } else {
-        console.log("NO");
-    }
+    // if (pathname.startsWith("/materials")) {
+    //     console.log("Yes");
+    // } else {
+    //     console.log("NO");
+    // }
 
     return (
         <>
             <section className='relative flex justify-between px-4 pt-6  md:px-16 lg:pt-0 2xl:px-0 mb-10 w-full max-w-custom mx-auto'>
                 <div className='flex-[1 auto]'>
                     <div className='relative mb-6 2xl:mb-8'>
-                        <h1 className='text-[24px] lg:text-[28px] capitalize'>{serviceName} services</h1>
+                        <h1 className='text-[24px] lg:text-[28px] capitalize'>
+                            {`${pathname.startsWith(`/materials/${serviceName}`) ? `Materials / ${serviceName}` : `Our ${serviceName}`}`}
+                        </h1>
+
                         <span className='w-28 h-[2px] bg-cred block'></span>
                     </div>
 

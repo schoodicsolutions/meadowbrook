@@ -12,6 +12,7 @@ import Product_Static from "./components/pages/Product/Product_Static";
 import Popup_Form from "./components/general/Popup_Form";
 import Careers from "./components/pages/Careers/Careers";
 import Contact from "./components/pages/Contact/Contact";
+import Lenis from '@studio-freight/lenis'
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -22,9 +23,22 @@ function App() {
         setLoader(false);
       }, 2500);
     }
+
+    window.scrollTo(0, 0);
   }, [])
 
+  const lenis = new Lenis()
 
+  lenis.on('scroll', (e) => {
+    console.log(e)
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
 
   return (
     <>
@@ -40,12 +54,10 @@ function App() {
               <Route exact path="/careers" element={<Careers />} />
               <Route exact path="/contact-us" element={<Contact />} />
               <Route exact path="/products" element={<Product_Static />} />
-              <Route exact path="/materials/:serviceName" element={<Products />} /> 
-              <Route exact path="/products/:serviceName" element={<Products />} />
-              <Route exact path="/products/:serviceName/:serviceDetail" element={<ServiceDetails />} />
+              <Route exact path="/materials/:serviceName" element={<Products />} />
+              <Route exact path="/materials/:serviceName/:serviceDetail" element={<ServiceDetails />} />
               <Route exact path="/:serviceName" element={<Products />} />
               <Route exact path="/:serviceName/:serviceDetail" element={<ServiceDetails />} />
-              <Route exact path="/materials/:serviceName/:serviceDetail" element={<ServiceDetails />} />
             </Routes>
             < Footer />
           </>

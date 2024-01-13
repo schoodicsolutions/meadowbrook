@@ -5,19 +5,19 @@ import Services from './Sections/Services';
 
 function Products() {
 
-    const { serviceName } = useParams(); // Get the serviceName from the URL
+    const { serviceName, serviceDetail } = useParams(); // Get both serviceName and serviceDetail from the URL
 
     useEffect(() => {
         // Scroll to the top when the page loads
         window.scrollTo(0, 0);
-    }, [serviceName]);
+    }, [serviceName, serviceDetail]);
 
     return (
         <>
             <Hero headline={`${serviceName} service` || "Our Services"} />
-            <Services serviceName={serviceName || "Landscaping / Construction"} />
+            <Services serviceName={serviceName || "Landscaping / Construction"} subService={serviceDetail} />
         </>
     )
 }
 
-export default Products
+export default Products;

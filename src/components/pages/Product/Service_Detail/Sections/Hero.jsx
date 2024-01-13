@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { headlines } from '../../../../../Data/headlines';
+import { Placeholder } from '../../../../../assets';
 
 
 function Breadcrumbs({ serviceName, serviceDetail }) {
@@ -33,6 +34,7 @@ function Breadcrumbs({ serviceName, serviceDetail }) {
 function Hero() {
     const { serviceDetail } = useParams();
     const { serviceName } = useParams();
+    const [isLoading, setIsLoading] = useState(true);
 
     // Replace hyphens with spaces
     const ServiceDetailName = serviceDetail.replace(/-/g, ' ');
@@ -40,13 +42,18 @@ function Hero() {
     const [serviceImage, setServiceImage] = useState(null);
 
     useEffect(() => {
-
-        import(`../../../../../assets/product_assets/service_hero/${serviceName}/${serviceDetail}-hero.jpg`).then((image) => {
-            setServiceImage(image.default);
-        }).catch((error) => {
-            console.log(error)
-        });
-
+        setTimeout(() => {
+            import(`../../../../../assets/product_assets/service_hero/${serviceName}/${serviceDetail}-hero.jpg`)
+                .then((image) => {
+                    setServiceImage(image.default);
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+                .finally(() => {
+                    setIsLoading(false);
+                });
+        }, 2000);
         window.scrollTo(0, 0);
     }, [serviceName, serviceDetail]);
 
@@ -74,13 +81,14 @@ function Hero() {
                 <div className='relative h-auto'>
                     <div className='relative h-full object-cover'>
                         <svg className="absolute lg:block hidden h-full top-0 left-0 -ml-6 fill-scarlet"><path d="M185.261 0H1018V407H0L185.261 0Z"></path></svg>
-                        <img src={serviceImage}  className='relative hidden lg:block h-full object-cover' style={
-                            {
-                                clipPath: 'path("M 159.668 0 H 995 V 407 H 0 L 159.668 0 Z")',
-
-                            }
-                        } />
-                        <img src={serviceImage} className='lg:hidden w-full' />
+                        {isLoading ? (
+                            <img src={Placeholder} alt='Placeholder' className='relative hidden lg:block h-full object-cover clipping' />
+                        ) : (
+                            <>
+                                <img src={serviceImage} alt='Main Image' className='relative hidden lg:block h-full object-cover clipping' />
+                                <img src={serviceImage} alt='Main Image' className='lg:hidden w-full' />
+                            </>
+                        )}
                     </div>
                 </div>
             </section>

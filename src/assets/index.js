@@ -77,6 +77,9 @@ import ScreenedTopSoil from './product_assets/material_detail/soil/soil_cards/sc
 import RediMix from './product_assets/material_detail/concrete/redi-mix-concrete.jpg'
 import PreCast from './product_assets/material_detail/concrete/pre-cast-concrete.jpg'
 
+
+import Placeholder from "./placeholder.jpg";
+
 export {
     // Commong SVGS Export
     logo,
@@ -153,5 +156,7 @@ export {
     ScreenedTopSoil,
 
     RediMix,
-    PreCast
+    PreCast,
+
+    Placeholder,
 };

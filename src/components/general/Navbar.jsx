@@ -131,9 +131,9 @@ function Navbar() {
                                 <li
                                     key={link.id}
                                     className={`relative ${(link.id === '/' && active === '/') || // Check for the home link
-                                            (active.startsWith(link.id) && link.id !== '/') // Check for other links
-                                            ? 'text-cred font-semibold'
-                                            : 'text-black'
+                                        (active.startsWith(link.id) && link.id !== '/') // Check for other links
+                                        ? 'text-cred font-semibold'
+                                        : 'text-black'
                                         } hover-textred text-[14px] md:text-[16px] transition font-normal pb-6 -mb-8`}
                                     onMouseEnter={() => handleLinkHover(link.title)}
                                     onMouseLeave={handleLinkLeave}
@@ -158,14 +158,14 @@ function Navbar() {
                                                 exit={{ height: 0, opacity: 0, y: -20 }}
                                                 transition={{ duration: 0.3, ease: easeOut }}
                                             >
-                                                <ul className="absolute -left-4 bg-white top-full w-[220px] -mt-2 transition-all duration-300 opacity-100 mx-2 my-2 scale-100 transform  origin-top" style={{
+                                                <ul className="absolute -left-4 bg-white top-full w-[230px] -mt-2 transition-all rounded-xl duration-300 opacity-100 mx-2 my-2 scale-100 transform  origin-top" style={{
                                                     boxShadow: "0px 2px 6.8px 0px rgba(0, 0, 0, 0.25)"
                                                 }}>
                                                     {link.submenu.map((subLink) => (
                                                         <li key={subLink.id} className='w-full'>
                                                             <Link
                                                                 to={subLink.id}
-                                                                className={`${active.includes(subLink.id) ? 'text-cred font-semibold' : 'text-black hover:bg-[#F9F9F9] w-auto text-[14px] rounded-lg md:text-[16px] font-normal transition'} block w-auto px-2 py-2 my-2 mx-2`}
+                                                                className={`${active.includes(subLink.id) ? 'text-cred font-semibold' : 'text-black hover:bg-[#F9F9F9] w-auto text-sm rounded-lg md:text-[16px] font-normal transition'} block w-auto px-4 py-3 my-2 mx-2`}
                                                                 onClick={() => {
                                                                     setActive([link.id, subLink.id]);
                                                                     handleLinkLeave();

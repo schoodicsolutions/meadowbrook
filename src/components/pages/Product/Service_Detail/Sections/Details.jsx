@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import SideForm from '../../../../general/SideForm';
 import Related_Service from './Related_Service';
+import Loader from "../../../../../assets/loading.svg";
 
 function Details() {
     const { serviceDetail, serviceName } = useParams();
@@ -9,62 +10,62 @@ function Details() {
     const openedService = serviceDetail.replace(/-/g, ' ');
 
     const SubServices = serviceDetail.replace(/-/g, '_');
-
     const [serviceData, setServiceData] = useState(null);
 
     useEffect(() => {
+        setTimeout(() => {
+            import(`../../../../../Data/products/${serviceName}/index.js`)
+                .then((module) => {
+                    if (module.default) {
+                        const subServiceData = module.default;
+                        const Services = subServiceData[SubServices];
 
-        import(`../../../../../Data/products/${serviceName}/index.js`)
-            .then((module) => {
-                if (module.default) {
-                    const subServiceData = module.default;
-                    const Services = subServiceData[SubServices];
-
-                    if (Services) {
-                        setServiceData(Services);
+                        if (Services) {
+                            setServiceData(Services);
+                        } else {
+                            console.error('Sub-service not found.');
+                        }
                     } else {
-                        console.error('Sub-service not found.');
+                        console.error('Main service data is not properly structured.');
                     }
-                } else {
-                    console.error('Main service data is not properly structured.');
-                }
-            })
-            .catch((error) => {
+                })
+                .catch((error) => {
 
-                console.error('Error loading module:', error);
-            });
-
+                    console.error('Error loading module:', error);
+                });
+        }, 2000);
     }, [serviceName, SubServices]);
 
     useEffect(() => {
+        setTimeout(() => {
+            import(`../../../../../Data/${serviceName}/index.js`)
+                .then((module) => {
+                    if (module.default) {
+                        const subServiceData = module.default;
+                        const Services = subServiceData[SubServices];
 
-        import(`../../../../../Data/${serviceName}/index.js`)
-            .then((module) => {
-                if (module.default) {
-                    const subServiceData = module.default;
-                    const Services = subServiceData[SubServices];
-
-                    if (Services) {
-                        setServiceData(Services);
+                        if (Services) {
+                            setServiceData(Services);
+                        } else {
+                            console.error('Sub-service not found.');
+                        }
                     } else {
-                        console.error('Sub-service not found.');
+                        console.error('Main service data is not properly structured.');
                     }
-                } else {
-                    console.error('Main service data is not properly structured.');
-                }
-            })
-            .catch((error) => {
+                })
+                .catch((error) => {
 
-                console.error('Error loading module:', error);
-            });
-
+                    console.error('Error loading module:', error);
+                });
+        }, 2000);
     }, [serviceName, SubServices]);
 
 
 
     if (!serviceData) {
-        return <div className='text-center mb-10 w-full text-cred text-white'>
-            <h1 className='text-4xl py-3'>No Data Found Related to this Field</h1>
+        return <div className='flex justify-center mb-10 w-full text-cred text-white'>
+            {/* <h1 className='text-4xl py-3'>No Data Found Related to this Field</h1> */}
+            <img src={Loader} alt="Loader" className='flex justify-center items-start w-[150px]' />
         </div>;
     }
 
