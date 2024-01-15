@@ -16,7 +16,7 @@ const navLinks = [
                 title: 'Redi-Mix Concrete'
             },
             {
-                id: '/concrete#precast',
+                id: '/concrete/pre-cast-concrete',
                 title: 'Pre-Cast Concrete'
             }
         ]

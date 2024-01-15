@@ -1,15 +1,16 @@
 import {
-    logo,
     safety,
     skilled,
     support,
     equipment,
-    hero,
     construction,
     landscape,
     stones,
     gravel,
     soil,
+    Excavator,
+    Driveways,
+    SepticTank,
     image1,
     image2,
     image3,
@@ -23,6 +24,8 @@ import {
     cell,
     hyundai,
     motors,
+    Redimix,
+    Precast,
 
 } from '../../assets';
 
@@ -50,7 +53,8 @@ const C_images = [
         images: motors,
     },
 
-]
+];
+
 
 const benefits = [
     {
@@ -83,24 +87,39 @@ const benefits = [
     },
 ];
 
-const services = [
+const concretes = [
     {
-        id: "concrete-supply",
-        title: "Concrete Supply",
-        paragraph: 'We Offer All Varieties of Stones for Your Construction and Landscaping Needs',
-        image: stones,
+        id: 'redi-mix-concrete',
+        title: "Redi-Mix Concrete",
+        paragraph: "Redi-Mix Excellence: Strength Tailored to Perfection",
+        image: Redimix,
     },
+    {
+        id: 'pre-cast-concrete',
+        title: "Pre-Cast Concrete",
+        paragraph: "Pre-cast Concrete: Crafted Off-site, Built to Last On-site.",
+        image: Precast,
+    }
+];
+
+const services = [
     {
         id: "driveways",
         title: "Driveways",
-        paragraph: 'Explore Our Comprehensive Range of Gravel for Construction and Landscaping.',
-        image: gravel,
+        paragraph: 'Crafting durable driveways for lasting first impressions.',
+        image: Driveways,
     },
     {
-        id: "culverts",
-        title: "Culverts",
-        paragraph: 'Elevate Your Landscaping with Our Finest Screened Loam and Top Soil Selections.',
-        image: soil,
+        id: "excavator-services",
+        title: "Excavator Services",
+        paragraph: 'Efficient excavation solutions for seamless construction projects.',
+        image: Excavator,
+    },
+    {
+        id: "septic-tank-installation",
+        title: "Septic Tank Installation",
+        paragraph: 'Expert septic solutions for worry-free installations.',
+        image: SepticTank,
     },
 ];
 
@@ -214,6 +233,7 @@ const Gallery2 = [
 ]
 
 export {
+    concretes,
     services,
     materials,
     benefits,

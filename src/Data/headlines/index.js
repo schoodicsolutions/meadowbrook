@@ -84,6 +84,10 @@ const headlines = [
     {
         id: "redi-mix-concrete",
         heading: "Redi Mix Concrete: The Foundation of Strength"
+    },
+    {
+        id: "pre-cast-concrete",
+        heading: "Pre-Cast Concrete: Crafting Tomorrow's Foundations Today",
     }
 ];
 

@@ -31,6 +31,7 @@ function Statements() {
                         ))}
                     </div>
                 </div>
+                <span className='block w-full max-w-[1500px] m-auto h-[1px] bg-[#D6D6D6]'></span>
             </section>
         </>
     )

@@ -3,20 +3,16 @@ import Services from './Sections/Services'
 import Materials from './Sections/Materials'
 import Experience from './Sections/Experience'
 import Gallery from './Sections/Gallery'
-import Brands from './Sections/Brands'
 import Contact_Form from '../../general/Contact_Form'
+import Concrete from './Sections/Concrete'
 
 function Home() {
     return (
         <>
             <Hero />
-            <>
-                <div className="w-full h-72 border-b border-slate-300 flex items-center justify-center">
-                    Redi-Mix Concrete Blurb Goes Here
-                </div>
-            </>
-            <Materials />
+            <Concrete />
             <Services />
+            <Materials />
             <Experience />
             <Gallery />
             <Contact_Form />

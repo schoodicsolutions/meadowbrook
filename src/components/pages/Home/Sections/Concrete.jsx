@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { services } from '../../../../Data/home'
+import { concretes } from '../../../../Data/home'
 import { Link } from 'react-router-dom';
 
-function Services() {
+function Concrete() {
     const [hoveredServiceIndex, setHoveredServiceIndex] = useState(null);
 
     return (
@@ -10,18 +10,18 @@ function Services() {
             <section>
                 <div className='px-4 md:px-12 2xl:px-0 my-10 w-full max-w-custom mx-auto pt-0 md:pt-5'>
                     <div className='relative'>
-                        <h1 className='text-[26px] md:text-[28px] lg:text-[38px] font-extrabold capitalize'>Construction Services</h1>
+                        <h1 className='text-[26px] md:text-[28px] lg:text-[38px] font-extrabold capitalize'>Concrete</h1>
                     </div>
                     <div>
                         <p className='text-sm sm:text-lg font-normal w-full max-w-full capitalize'>
-                            From Culverts to driveways, we build with precision and reliability, ensuring your projects stand the test of time.
+                            we supply Redi Mix and pre-cast concrete for precision and efficiency in every build.
                         </p>
                     </div>
                     <div className='flex flex-col justify-center items-center gap-y-12'>
                         <div className='flex justify-start flex-wrap md:flex-nowrap items-start gap-6 lg:gap-8 mt-6 image overflow-hidden'>
-                            {services.map((service, index) => (
+                            {concretes.map((service, index) => (
                                 <Link
-                                    to={`/construction/${service.id.toLowerCase()}`}
+                                    to={`/concrete/${service.id.toLowerCase()}`}
                                     key={service.id} className='relative overflow-hidden cursor-pointer'
                                 >
                                     <div key={service.id} className='relative overflow-hidden cursor-pointer transition-all ease-linear'>
@@ -49,7 +49,7 @@ function Services() {
                                                 setHoveredServiceIndex(null);
                                             }}>
                                             <h1 className='text-[18px] sm:text-[20px] lg:text-[24px] pb-0 md:pb-1'>{service.title} <span className='pl-2'>&rarr;</span></h1>
-                                            <p className='text-sm hidden sm:block line-clamp-2 lg:line-clamp-none lg:text-base w-full max-w-full sm:max-w-md lg:max-w-xs'>{service.paragraph}</p>
+                                            <p className='text-sm hidden sm:block'>{service.paragraph}</p>
                                         </div>
                                     </div>
                                 </Link>
@@ -72,4 +72,4 @@ function Services() {
     )
 }
 
-export default Services
+export default Concrete

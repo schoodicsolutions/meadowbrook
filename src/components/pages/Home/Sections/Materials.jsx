@@ -9,17 +9,16 @@ function Materials() {
         <>
             <section>
                 <div className='px-4 md:px-12 2xl:px-0 my-10 w-full max-w-custom mx-auto pt-0 md:pt-5'>
-                    <div className='relative mb-2 sm:mb-5'>
-                        <h1 className='text-[26px] md:text-[28px] lg:text-[38px] font-bold'>Products We Offer</h1>
-                        <span className='w-28 hidden sm:block h-[2px] bg-cred'></span>
+                    <div className='relative'>
+                        <h1 className='text-[26px] md:text-[28px] lg:text-[38px] font-extrabold capitalize'>Materials we provide</h1>
                     </div>
                     <div>
                         <p className='text-sm sm:text-lg font-normal w-full max-w-4xl capitalize'>
-                            we take great pride in being your premier supplier of high-quality construction materials, offering an extensive range of stone, gravel, and soil products to cater to all your project needs.
+                            our materials set the standard for quality construction. From premium stone and gravel to nutrient-rich soils, we provide the essentials for building excellence.
                         </p>
                     </div>
 
-                    <div className='flex justify-start flex-wrap md:flex-nowrap items-start gap-6 lg:gap-12 mt-6 image overflow-hidden'>
+                    <div className='flex justify-start flex-wrap md:flex-nowrap items-start gap-6 lg:gap-8 mt-6 image overflow-hidden'>
                         {materials.map((service, index) => (
                             <Link
                                 to={`/materials/${service.title.toLowerCase()}`}

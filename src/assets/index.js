@@ -10,6 +10,8 @@ import hero from './truck_flipped.jpg';
 import AboutHero from './About/about-hero.jpg';
 
 // Service Images Import
+import Redimix from './Services/redi_mix.jpg';
+import Precast from './Services/pre_cast.jpg';
 import construction from './Services/construction_service.png';
 import landscape from './Services/landscape_service.png';
 
@@ -17,6 +19,9 @@ import landscape from './Services/landscape_service.png';
 import stones from './Materials/stone.png';
 import gravel from './Materials/gravel.png';
 import soil from './Materials/soil.png';
+import Excavator from './Materials/excavator.jpg';
+import Driveways from './Materials/driveways.jpg';
+import SepticTank from './Materials/septic-tank.jpg';
 
 // Gallery Images Import
 import image1 from './gallery/image1.png';
@@ -95,11 +100,16 @@ export {
     // Service Images Export
     construction,
     landscape,
+    Redimix,
+    Precast,
 
     // Product Images Export
     stones,
     gravel,
     soil,
+    Excavator,
+    Driveways,
+    SepticTank,
 
     // Gallery Images Export
     image1,
