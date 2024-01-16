@@ -10,16 +10,13 @@ function Footer() {
     useEffect(() => {
         // Update the active state when the URL changes
         setActive(location.pathname);
+        window.scrollTo(0, 0);
     }, [location.pathname]);
 
     const isProductPage = () => {
         // Check if the current path starts with any of the top-level product routes
         return ['/concrete', '/construction', '/materials'].some(route => active.startsWith(route));
     };
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    });
 
     return (
         <>

@@ -70,7 +70,7 @@ const navLinks = [
         title: "Careers",
     },
     {
-        id: "/contact-us",
+        id: "#ContactUs",
         title: "Contact Us",
     },
 ];

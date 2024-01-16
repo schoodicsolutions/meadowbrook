@@ -22,7 +22,9 @@ function Navbar() {
     useEffect(() => {
 
         setActive(location.pathname);
-
+        if(location.pathname === "careers"){
+            // When click on contact button it should go to the home Contact Us Form
+        }
     }, [location.pathname]);
 
     const isProductPage = () => {
@@ -72,6 +74,20 @@ function Navbar() {
     //         submenuRef.current.style.width = `${maxWidth}px`;
     //     }
     // }, [hoveredLink]);
+
+    const scrollToContactForm = (id) => {
+        const contactFormSection = document.getElementById(id.substring(1)); // Remove the '#'
+
+        if (contactFormSection) {
+            const yOffset = contactFormSection.getBoundingClientRect().top + window.pageYOffset;
+            contactFormSection.style.border = "2px solid red";
+            setTimeout(() => {
+                contactFormSection.style.border = "2px solid transparent";
+            }, 4000);
+            window.scrollTo({ top: yOffset, behavior: 'smooth' });
+        }
+    };
+
     return (
         <>
             {ariaExpanded === true ?
@@ -139,6 +155,7 @@ function Navbar() {
                                     onMouseLeave={handleLinkLeave}
                                     onClick={() => {
                                         setActive(link.id);
+                                        scrollToContactForm(link.id);
                                     }}
                                 >
                                     <Link to={`${link.id}`}

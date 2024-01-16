@@ -61,7 +61,7 @@ function Services() {
 
                     <div className='grid md:grid-cols-[repeat(2,_minmax(0,_auto))] gap-4 lg:gap-6 justify-items-start items-center w-fit'>
                         {servicesArray.map((Service, index) => (
-                            <Link to={pathname.startsWith("/materials") ? `/materials/${serviceName}/${Service.id}` : `/${serviceName}/${Service.id}`} key={Service.id}>
+                            <Link to={pathname.startsWith("/materials") ? `/materials/${Service.root}/${Service.id}` : `/${serviceName}/${Service.id}`} key={Service.id}>
                                 <div className='relative overflow-hidden cursor-pointer w-fit'>
                                     <div
                                         className={`${hoveredServiceIndex === index ? 'scale-hover-in' : 'scale-hover-out'} overflow-hidden object-cover h-full`}
