@@ -10,15 +10,23 @@ function Hero() {
         if (contactForm) {
             const yOffset = contactForm.getBoundingClientRect().top + window.scrollY;
             const targetY = yOffset - 250;
-            
+
             window.scrollTo({
                 top: targetY,
-                behavior: 'smooth', 
+                behavior: 'smooth',
             });
         }
     }
 
+    const scrollToContactForm = () => {
+        const contactFormSection = document.getElementById("ContactUs");
 
+        if (contactFormSection) {
+            const yOffset = contactFormSection.getBoundingClientRect().top + window.pageYOffset - 150;
+
+            window.scrollTo({ top: yOffset, behavior: 'smooth' });
+        }
+    };
     return (
         <>
             <section>
@@ -38,13 +46,18 @@ function Hero() {
                             </p>
                         </div>
                         <div className='flex justify-start w-full flex-wrap sm:flex-nowrap items-center gap-4 font-medium text-sm'>
-                            <Link to='/' className='w-full sm:w-auto' onClick={scrollToBottom}>
-                                <motion.button
+                            <a style={{
+                                scrollBehavior: "smooth",
+                            }} className='w-full sm:w-auto' onClick={() => {
+                                scrollToBottom;
+                                scrollToContactForm();
+                            }}>
+                                <button
                                     whileHover={{ scale: 1.08 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 20, velocity: 2 }}
-                                    className='bg-cred text-white border border-transparent px-4 py-4 sm:py-5 w-full sm:w-[220px] rounded-[56px]'>Contact Us
-                                </motion.button>
-                            </Link>
+                                    className='text-base font-semibold bg-cred hover:bg-red-700 text-white border border-transparent px-4 py-4 sm:py-5 w-full sm:w-[220px] rounded-[56px] transition-colors'>Contact Us
+                                </button>
+                            </a>
                             <Link to='/about-us' className='w-full sm:w-auto'>
                                 <button className='bg-transparent border hover:bg-white hover:text-black transition duration-200 ease-out border-white text-white w-full sm:w-[200px] px-4 py-4 sm:py-5 rounded-[56px]'>Learn More</button>
                             </Link>

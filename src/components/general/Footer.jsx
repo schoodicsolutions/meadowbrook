@@ -18,6 +18,10 @@ function Footer() {
         return ['/concrete', '/construction', '/materials'].some(route => active.startsWith(route));
     };
 
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // });
+
     return (
         <>
             <section className='bg-[#13171B] text-white'>

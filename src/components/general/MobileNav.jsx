@@ -69,6 +69,8 @@ function MobileNav({ stickyActive, updateAriaExpanded }) {
         }
     };
 
+    const filteredNavLinks = navLinks.filter(link => link.title !== 'Contact Us');
+
     return (
         <>
             {ariaExpanded === true ? (
@@ -109,7 +111,7 @@ function MobileNav({ stickyActive, updateAriaExpanded }) {
                     } mx-auto w-full transition-right duration-300 ease-in-out`}
             >
                 <ul className='list-none flex justify-end items-start flex-col gap-6 py-4'>
-                    {navLinks.map((link) => (
+                    {filteredNavLinks.map((link) => (
                         <li
                             key={link.id}
                             onMouseLeave={handleLinkLeave}

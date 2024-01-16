@@ -58,6 +58,7 @@ function Gallery() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    <div id='Contact'></div>
                     <Swiper
                         slidesPerView={3.5}
                         spaceBetween={10}
@@ -94,6 +95,7 @@ function Gallery() {
                         ))}
                     </Swiper>
                 </div>
+
             </section>
 
         </>

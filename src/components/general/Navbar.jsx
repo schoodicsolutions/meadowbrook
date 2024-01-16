@@ -20,11 +20,7 @@ function Navbar() {
     };
 
     useEffect(() => {
-
         setActive(location.pathname);
-        if(location.pathname === "careers"){
-            // When click on contact button it should go to the home Contact Us Form
-        }
     }, [location.pathname]);
 
     const isProductPage = () => {
@@ -76,18 +72,20 @@ function Navbar() {
     // }, [hoveredLink]);
 
     const scrollToContactForm = (id) => {
-        const contactFormSection = document.getElementById(id.substring(1)); // Remove the '#'
+        const contactFormSection = document.getElementById(id.substring(1));
 
         if (contactFormSection) {
-            const yOffset = contactFormSection.getBoundingClientRect().top + window.pageYOffset;
+            const yOffset = contactFormSection.getBoundingClientRect().top + window.pageYOffset - 150; // Adjust the value (e.g., subtract 50px)
             contactFormSection.style.border = "2px solid red";
+
             setTimeout(() => {
                 contactFormSection.style.border = "2px solid transparent";
             }, 4000);
+
             window.scrollTo({ top: yOffset, behavior: 'smooth' });
         }
     };
-
+    const isMobileScreen = window.innerWidth < 600;
     return (
         <>
             {ariaExpanded === true ?
@@ -142,8 +140,10 @@ function Navbar() {
                                 className={`${sticky ? "w-[12rem] md:w-[80%]" : "w-[11rem] sm:w-[13rem] 2xl:w-[16rem]"} logo h-full object-contain transition-transform select-none`}
                             />
                         </Link>
+                        
                         <ul className={`${sticky ? "2xl:pt-0" : "2xl:pt-9"} list-none hidden lg:flex flex-row gap-4 md:gap-6 2xl:gap-10`}>
                             {navLinks.map((link) => (
+
                                 <li
                                     key={link.id}
                                     className={`relative ${(link.id === '/' && active === '/') || // Check for the home link

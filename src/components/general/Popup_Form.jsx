@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Contact_Form from './Contact_Form';
 import { Icon } from '@iconify/react';
 
-function Popup_Form() {
+function Popup_Form({ openPopupForm }) {
     const [isFormVisible, setIsFormVisible] = useState(false);
     const formRef = useRef(null);
     const buttonRef = useRef(null);
@@ -30,6 +30,12 @@ function Popup_Form() {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, []);
+
+    useEffect(() => {
+        if (openPopupForm) {
+            openForm();
+        }
+    }, [openPopupForm]);
 
     return (
         <>
