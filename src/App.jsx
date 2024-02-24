@@ -13,6 +13,8 @@ import Popup_Form from "./components/general/Popup_Form";
 import Careers from "./components/pages/Careers/Careers";
 import Contact from "./components/pages/Contact/Contact";
 import Lenis from '@studio-freight/lenis'
+import Privacy_Policy from "./components/Privacy/Privacy_Policy";
+import Terms from "./components/Terms/Terms";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -54,6 +56,8 @@ function App() {
               <Route exact path="/materials/:serviceName/:serviceDetail" element={<ServiceDetails />} />
               <Route exact path="/:serviceName" element={<Products />} />
               <Route exact path="/:serviceName/:serviceDetail" element={<ServiceDetails />} />
+              <Route exact path="/privacy-policy" element={<Privacy_Policy />} />
+              <Route exact path="/terms-and-conditions" element={<Terms />} />
             </Routes>
             < Footer />
           </>

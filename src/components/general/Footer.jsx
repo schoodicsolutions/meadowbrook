@@ -7,6 +7,18 @@ import { Blogs, ProductLinks, navLinks } from '../../Data';
 function Footer() {
     const location = useLocation();
     const [active, setActive] = useState(location.pathname);
+    const [isPrivacyOrTerms, setIsPrivacyOrTerms] = useState(false);
+
+    useEffect(() => {
+        // Update the active state when the URL changes
+        setActive(location.pathname);
+
+        // Check if the current route is either 'privacy-policy' or 'terms-and-conditions'
+        setIsPrivacyOrTerms(location.pathname === '/privacy-policy' || location.pathname === '/terms-and-conditions');
+
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+
     useEffect(() => {
         // Update the active state when the URL changes
         setActive(location.pathname);
@@ -36,7 +48,7 @@ function Footer() {
                             </div>
                             <div className='px-4 py-4 sm:py-6'>
                                 <p className='text-base w-full max-w-xs'>
-                                    We work on all make/model of trucks. Give us a call when you need us. You'll be back on the road in no time.
+                                    Meadowbrook is here to transform landscapes and build foundations that stand the test of time.
                                 </p>
                             </div>
                             <div className='flex justify-start items-center px-4 gap-4'>
@@ -115,7 +127,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className='bg-black'>
-                    <p className='text-sm sm:text-base py-2 text-center w-full'>Copyright © 2023 Meadow Brook | <Link to='/' className='hover-textred'>Privacy Policy</Link> | <Link to='/' className='hover-textred'>Terms and Conditions</Link> </p>
+                    <p className='text-sm sm:text-base py-2 text-center w-full'>Copyright © 2023 Meadow Brook | <Link to='/privacy-policy' className={`${isPrivacyOrTerms === "/privacy-policy" ? "text-cred" : "text-white"} hover-textred`}>Privacy Policy</Link> | <Link to='/terms-and-conditions' className={`${isPrivacyOrTerms === "/terms-and-conditions" ? "text-cred" : "text-white"} hover-textred`}>Terms and Conditions</Link> </p>
                 </div>
             </section >
 

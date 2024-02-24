@@ -99,7 +99,7 @@ function Navbar() {
                 </>
             }
 
-            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }} className={`${sticky ? 'sticky top-0 backdrop-blur-md bg-white/90 border-b-2 ' : ''} w-full relative bg-white z-[24]`}
+            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }} className={`${sticky ? 'sticky top-0 backdrop-blur-md bg-white/90 border-b-2 ' : ''} w-full relative bg-white z-[24] border border-b-[1px]`}
             >
                 <div className={`${sticky ? "hidden" : "block"} flex w-full bg-cred justify-around text-base font-semibold sm:text-lg 2xl:absolute 2xl:right-0 2xl:top-0 2xl:w-fit`}>
                     <div className="h-0 w-0 border-white border-b-scarlet border-r-scarlet 2xl:border-[22px]"></div>
@@ -140,63 +140,64 @@ function Navbar() {
                                 className={`${sticky ? "w-[12rem] md:w-[80%]" : "w-[11rem] sm:w-[13rem] 2xl:w-[16rem]"} logo h-full object-contain transition-transform select-none`}
                             />
                         </Link>
-                        
+
                         <ul className={`${sticky ? "2xl:pt-0" : "2xl:pt-9"} list-none hidden lg:flex flex-row gap-4 md:gap-6 2xl:gap-10`}>
                             {navLinks.map((link) => (
-
-                                <li
-                                    key={link.id}
-                                    className={`relative ${(link.id === '/' && active === '/') || // Check for the home link
-                                        (active.startsWith(link.id) && link.id !== '/') // Check for other links
-                                        ? 'text-cred font-semibold'
-                                        : 'text-black'
-                                        } hover-textred text-[14px] md:text-[16px] transition font-normal pb-6 -mb-8`}
-                                    onMouseEnter={() => handleLinkHover(link.title)}
-                                    onMouseLeave={handleLinkLeave}
-                                    onClick={() => {
-                                        setActive(link.id);
-                                        scrollToContactForm(link.id);
-                                    }}
-                                >
-                                    <Link to={`${link.id}`}
-                                        className='flex items-center justify-center gap-[2px]'
+                                <>
+                                    <li
+                                        key={link.id}
+                                        className={`relative ${(link.id === '/' && active === '/') || // Check for the home link
+                                            (active.startsWith(link.id) && link.id !== '/') // Check for other links
+                                            ? 'text-cred font-semibold'
+                                            : 'text-black'
+                                            } hover-textred text-[14px] md:text-[16px] transition font-normal pb-6 -mb-8`}
+                                        onMouseEnter={() => handleLinkHover(link.title)}
+                                        onMouseLeave={handleLinkLeave}
+                                        onClick={() => {
+                                            setActive(link.id);
+                                            scrollToContactForm(link.id);
+                                        }}
                                     >
-                                        {link.title}
-                                        <span className={`${hoveredLink === link.title ? "rotate-0 pt-[2px]" : "rotate-180"} transition-transform duration-150 ease-linear`}>
-                                            {link.submenu && <Icon icon="mi:chevron-up" />}
-                                        </span>
-                                    </Link>
-                                    {link.submenu && hoveredLink === link.title && (
-                                        <AnimatePresence>
-                                            <motion.div
-                                                key={link.id}
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0, y: -20 }}
-                                                transition={{ duration: 0.3, ease: easeOut }}
-                                            >
-                                                <ul className="absolute -left-4 bg-white top-full w-[230px] -mt-2 transition-all rounded-xl duration-300 opacity-100 mx-2 my-2 scale-100 transform  origin-top" style={{
-                                                    boxShadow: "0px 2px 6.8px 0px rgba(0, 0, 0, 0.25)"
-                                                }}>
-                                                    {link.submenu.map((subLink) => (
-                                                        <li key={subLink.id} className='w-full'>
-                                                            <Link
-                                                                to={subLink.id}
-                                                                className={`${active.includes(subLink.id) ? 'text-cred font-semibold' : 'text-black hover:bg-[#F9F9F9] w-auto text-sm rounded-lg md:text-[16px] font-normal transition'} block w-auto px-4 py-3 my-2 mx-2`}
-                                                                onClick={() => {
-                                                                    setActive([link.id, subLink.id]);
-                                                                    handleLinkLeave();
-                                                                }}
-                                                            >
-                                                                {subLink.title}
-                                                            </Link>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </motion.div>
-                                        </AnimatePresence>
-                                    )}
-                                </li>
+                                        <Link to={`${link.id}`}
+                                            className='flex items-center justify-center gap-[2px]'
+                                        >
+                                            {link.title}
+                                            <span className={`${hoveredLink === link.title ? "rotate-0 pt-[2px]" : "rotate-180"} transition-transform duration-150 ease-linear`}>
+                                                {link.submenu && <Icon icon="mi:chevron-up" />}
+                                            </span>
+                                        </Link>
+                                        {link.submenu && hoveredLink === link.title && (
+                                            <AnimatePresence>
+                                                <motion.div
+                                                    key={link.id}
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0, y: -20 }}
+                                                    transition={{ duration: 0.3, ease: easeOut }}
+                                                >
+                                                    <ul className="absolute -left-4 bg-white top-full w-[230px] -mt-2 transition-all rounded-xl duration-300 opacity-100 mx-2 my-2 scale-100 transform  origin-top" style={{
+                                                        boxShadow: "0px 2px 6.8px 0px rgba(0, 0, 0, 0.25)"
+                                                    }}>
+                                                        {link.submenu.map((subLink) => (
+                                                            <li key={subLink.id} className='w-full'>
+                                                                <Link
+                                                                    to={subLink.id}
+                                                                    className={`${active.includes(subLink.id) ? 'text-cred font-semibold' : 'text-black hover:bg-[#F9F9F9] w-auto text-sm rounded-lg md:text-[16px] font-normal transition'} block w-auto px-4 py-3 my-2 mx-2`}
+                                                                    onClick={() => {
+                                                                        setActive([link.id, subLink.id]);
+                                                                        handleLinkLeave();
+                                                                    }}
+                                                                >
+                                                                    {subLink.title}
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </motion.div>
+                                            </AnimatePresence>
+                                        )}
+                                    </li>
+                                </>
                             ))}
                         </ul>
 
