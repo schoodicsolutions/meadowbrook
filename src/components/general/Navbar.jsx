@@ -143,7 +143,7 @@ function Navbar() {
                                             (active.startsWith(link.id) && link.id !== '/') // Check for other links
                                             ? 'text-cred font-semibold'
                                             : 'text-black'
-                                            } text-[14px] md:text-[16px] transition font-normal pb-6 -mb-8`}
+                                            } text-[14px] md:text-[16px] transition font-normal pb-8 -mb-10`}
                                         onMouseEnter={() => handleLinkHover(link.title)}
                                         onMouseLeave={handleLinkLeave}
                                         onClick={() => {
@@ -152,7 +152,7 @@ function Navbar() {
                                         }}
                                     >
                                         <Link to={`${link.id}`}
-                                            className='flex items-center justify-center gap-[2px]  hover-textred'
+                                            className='flex items-center justify-center gap-[2px] hover-textred pb-6 -mb-8'
                                             onClick={() => {
                                                 setActive(link.id);
                                                 scrollToContactForm(link.id);
