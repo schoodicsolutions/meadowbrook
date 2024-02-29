@@ -46,12 +46,12 @@ function Hero() {
         import(`../../../../../assets/product_assets/service_hero/${serviceName}/${serviceDetail}-hero.jpg`)
             .then((image) => {
                 setServiceImage(image.default);
-                setTimeout(() => {
-                    setIsLoading(false);
-                }, 500);
             })
             .catch((error) => {
                 console.log(error);
+            })
+            .finally(() => {
+                setIsLoading(false);
             })
         window.scrollTo(0, 0);
     }, [serviceName, serviceDetail]);
