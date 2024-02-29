@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { headlines } from '../../../../../Data/headlines';
-import { Placeholder } from '../../../../../assets';
 
 
 function Breadcrumbs({ serviceName, serviceDetail }) {
@@ -44,7 +43,6 @@ function Hero() {
     };
 
     useEffect(() => {
-        setServiceImage(Placeholder);
 
         const loadImage = async () => {
             try {
