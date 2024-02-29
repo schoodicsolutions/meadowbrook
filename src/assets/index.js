@@ -12,26 +12,26 @@ import AboutHero from './About/about-hero.jpg';
 // Service Images Import
 import Redimix from './Services/redi_mix.jpg';
 import Precast from './Services/pre_cast.jpg';
-import construction from './Services/construction_service.png';
-import landscape from './Services/landscape_service.png';
+import construction from './Services/construction_service.jpg';
+import landscape from './Services/landscape_service.jpg';
 
 // Product Images Import
-import stones from './Materials/stone.png';
-import gravel from './Materials/gravel.png';
-import soil from './Materials/soil.png';
+import stones from './Materials/stone.jpg';
+import gravel from './Materials/gravel.jpg';
+import soil from './Materials/soil.jpg';
 import Excavator from './Materials/excavator.jpg';
 import Driveways from './Materials/driveways.jpg';
 import SepticTank from './Materials/septic-tank.jpg';
 
 // Gallery Images Import
-import image1 from './gallery/image1.png';
-import image2 from './gallery/image2.png';
-import image3 from './gallery/image3.png';
-import image4 from './gallery/image4.png';
-import image6 from './gallery/image6.png';
-import image7 from './gallery/image7.png';
-import image8 from './gallery/image8.png';
-import image9 from './gallery/image9.png';
+import image1 from './gallery/image1.jpg';
+import image2 from './gallery/image2.jpg';
+import image3 from './gallery/image3.jpg';
+import image4 from './gallery/image4.jpg';
+import image6 from './gallery/image6.jpg';
+import image7 from './gallery/image7.jpg';
+import image8 from './gallery/image8.jpg';
+import image9 from './gallery/image9.jpg';
 
 // Company Logo Images Import
 import lg from './logos/lg.svg';
@@ -46,7 +46,7 @@ import Mission from './About/mission-img.jpg';
 import Vision from './About/vision-img.jpg';
 
 // ********* Product Page Images Start ********** // 
-import HeroImage from './product_assets/hero-img.png'
+import HeroImage from './product_assets/hero-img.jpg'
 
 // LandScape Service Imports
 import LsService1 from './product_assets/service_assets/landscape_service/service-1.png'
