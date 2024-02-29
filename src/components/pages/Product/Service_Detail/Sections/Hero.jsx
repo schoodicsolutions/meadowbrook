@@ -89,7 +89,7 @@ function Hero() {
                                 <img
                                     src={serviceImage}
                                     alt='Main Image'
-                                    className='lg:block h-full object-cover clipping'
+                                    className='hidden lg:block h-full object-cover clipping'
                                     onLoad={handleImageLoad} />
                             </>
                         )}
