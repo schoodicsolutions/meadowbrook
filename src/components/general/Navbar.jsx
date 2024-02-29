@@ -152,7 +152,7 @@ function Navbar() {
                                         }}
                                     >
                                         <Link to={`${link.id}`}
-                                            className='flex items-center justify-center gap-[2px] hover-textred pb-6 -mb-6'
+                                            className='flex items-center justify-center px-6 -mx-6 hover-textred pb-6 -mb-6'
                                             onClick={() => {
                                                 setActive(link.id);
                                                 scrollToContactForm(link.id);
