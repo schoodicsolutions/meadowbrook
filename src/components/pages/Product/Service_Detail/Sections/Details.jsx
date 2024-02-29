@@ -89,7 +89,7 @@ function Details() {
                                 <h1 className='text-lg font-bold capitalize text-black'>{item.head}</h1>
                                 <p className='text-base pt-3 pb-5'>{item.para}</p>
                                 {item.list1 && (
-                                    <ul className='text-base marker:text-red-600 -mt-10 pb-14 custom-list pl-4'>
+                                    <ul className='text-base marker:text-red-600 -mt-10 pb-6 lg:pb-14 custom-list pl-4'>
                                         <>
                                             <li dangerouslySetInnerHTML={{ __html: item.list1.replace(/\*(\w+)\*/g, '<span style="font-weight: 700">$1</span>') }} />
                                             <li className='pt-2' dangerouslySetInnerHTML={{ __html: item.list2.replace(/\*(\w+)\*/g, '<span style="font-weight: 700">$1</span>') }} />
