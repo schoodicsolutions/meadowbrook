@@ -105,10 +105,10 @@ function MobileNav({ stickyActive, updateAriaExpanded }) {
 
             <div
                 className={`${ariaExpanded
-                    ? 'right-0 opacity-100'
+                    ? '-right-[1px] opacity-100'
                     : '-right-[100%] opacity-0'
-                    } py-6 navBar z-10 backdrop-blur-md bg-white absolute ${stickyActive ? 'top-[5.8rem] sm:top-[6.4rem]' : 'top-[7.8rem] sm:top-[9.8rem]'
-                    } mx-auto w-full transition-right duration-300 ease-in-out`}
+                    } py-6 navBar z-10 backdrop-blur-md bg-white absolute ${stickyActive ? 'top-[5.8rem] sm:top-[6.4rem]' : 'top-[5.8rem] sm:top-[6.5rem]'
+                    } mx-auto w-[101%] transition-right duration-300 ease-in-out`}
             >
                 <ul className='list-none flex justify-end items-start flex-col gap-6 py-4'>
                     {filteredNavLinks.map((link) => (

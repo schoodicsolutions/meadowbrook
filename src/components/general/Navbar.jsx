@@ -6,6 +6,7 @@ import { navLinks } from '../../Data';
 import { logo } from '../../assets';
 import { motion, AnimatePresence, easeOut } from 'framer-motion';
 import MobileNav from './MobileNav';
+import debounce from 'lodash/debounce';
 
 function Navbar() {
     const location = useLocation();
@@ -62,15 +63,6 @@ function Navbar() {
         setHoveredLink(null);
     };
 
-    // const submenuRef = useRef(null);
-
-    // useEffect(() => {
-    //     if (submenuRef.current) {
-    //         const maxWidth = Math.max(...Array.from(submenuRef.current.children).map(child => child.offsetWidth));
-    //         submenuRef.current.style.width = `${maxWidth}px`;
-    //     }
-    // }, [hoveredLink]);
-
     const scrollToContactForm = (id) => {
         const contactFormSection = document.getElementById(id.substring(1));
 
@@ -86,6 +78,7 @@ function Navbar() {
         }
     };
     const isMobileScreen = window.innerWidth < 600;
+
     return (
         <>
             {ariaExpanded === true ?
@@ -99,30 +92,30 @@ function Navbar() {
                 </>
             }
 
-            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }} className={`${sticky ? 'sticky top-0 backdrop-blur-md bg-white/90 border-b-2 ' : ''} w-full relative bg-white z-[24] border border-b-[1px]`}
-            >
-                <div className={`${sticky ? "hidden" : "block"} flex w-full bg-cred justify-around text-base font-semibold sm:text-lg 2xl:absolute 2xl:right-0 2xl:top-0 2xl:w-fit`}>
-                    <div className="h-0 w-0 border-white border-b-scarlet border-r-scarlet 2xl:border-[22px]"></div>
-                    <div className='flex justify-center 2xl:justify-between items-center px-2 sm:px-6 2xl:pr-[210px] gap-4 sm:gap-20 py-2 w-full'>
-                        <a href="https://maps.apple.com/?address=Meadowbrook+Materials,888,Main+St,East+Machias,Maine" target='_blank'>
-                            <div className='text-white flex justify-center items-center gap-1 sm:gap-2 '>
-                                <Icon icon="fluent:location-20-regular" className='text-xl sm:text-2xl' />
-                                <h5 className='text-[16px] sm:text-[18px] font-semibold flex items-center justify-center'> <span className='hidden md:block text-[18px] source pr-1' style={{ fontWeight: "600" }}>888 Main Street, </span> East Machias, ME 04630</h5>
-                            </div>
-                        </a>
-                        <a href="tel:(207) 259-6068">
-                            <div className='text-white flex justify-center items-center gap-1 sm:gap-3 '>
-                                <Icon icon="teenyicons:phone-outline" className='text-md sm:text-xl' />
-                                <h5 className=' text-[16px] sm:text-[18px] font-semibold'>(207) 259-6068</h5>
-                            </div>
-                        </a>
-                    </div>
+            <div className={` redBar relative z-[35] flex w-full bg-cred justify-around text-base font-semibold sm:text-lg 2xl:absolute 2xl:right-0 2xl:top-0 2xl:w-fit`}>
+                <div className="h-0 w-0 border-white border-b-scarlet border-r-scarlet 2xl:border-[22px]"></div>
+                <div className='flex justify-center 2xl:justify-between items-center px-2 sm:px-6 2xl:pr-[210px] gap-4 sm:gap-20 py-2 w-full'>
+                    <a href="https://maps.apple.com/?address=Meadowbrook+Materials,888,Main+St,East+Machias,Maine" target='_blank'>
+                        <div className='text-white flex justify-center items-center gap-1 sm:gap-2 '>
+                            <Icon icon="fluent:location-20-regular" className='text-xl sm:text-2xl' />
+                            <h5 className='text-[16px] sm:text-[18px] font-semibold flex items-center justify-center'> <span className='hidden md:block text-[18px] source pr-1' style={{ fontWeight: "600" }}>888 Main Street, </span> East Machias, ME 04630</h5>
+                        </div>
+                    </a>
+                    <a href="tel:(207) 259-6068">
+                        <div className='text-white flex justify-center items-center gap-1 sm:gap-3 '>
+                            <Icon icon="teenyicons:phone-outline" className='text-md sm:text-xl' />
+                            <h5 className=' text-[16px] sm:text-[18px] font-semibold'>(207) 259-6068</h5>
+                        </div>
+                    </a>
                 </div>
+            </div>
+            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }} className={`${sticky ? ' backdrop-blur-md bg-white/90 border-b-2 ' : ''} sticky top-0 w-full bg-white z-[24] border border-b-[1px]`}
+            >
 
                 {/* NavBar Starts here */}
 
                 <nav
-                    className={`${sticky ? "sm:py-3" : "sm:py-5"} px-4 md:px-12 w-full flex items-center py-3 z-20 bg-primary`}
+                    className={`${sticky ? "active" : ""} px-4 md:px-12 py-4 w-full flex items-center z-20 bg-primary`}
                 >
 
                     <div className='w-full flex justify-between items-center max-w-[95rem] mx-auto'>
@@ -137,11 +130,11 @@ function Navbar() {
                             <img
                                 src={logo}
                                 alt='Logo'
-                                className={`${sticky ? "w-[12rem] md:w-[80%]" : "w-[11rem] sm:w-[13rem] 2xl:w-[16rem]"} logo h-full object-contain transition-transform select-none`}
+                                className={`${sticky ? "active" : ""} logo h-full w-[11rem] sm:w-[13rem] object-contain transition-transform select-none`}
                             />
                         </Link>
 
-                        <ul className={`${sticky ? "2xl:pt-0" : "2xl:pt-9"} list-none hidden lg:flex flex-row gap-4 md:gap-6 2xl:gap-10`}>
+                        <ul className={`${sticky ? "active" : ""} list-none hidden lg:flex flex-row gap-4 md:gap-6 2xl:gap-10`}>
                             {navLinks.map((link) => (
                                 <>
                                     <li
@@ -150,7 +143,7 @@ function Navbar() {
                                             (active.startsWith(link.id) && link.id !== '/') // Check for other links
                                             ? 'text-cred font-semibold'
                                             : 'text-black'
-                                            } hover-textred text-[14px] md:text-[16px] transition font-normal pb-6 -mb-8`}
+                                            } text-[14px] md:text-[16px] transition font-normal pb-6 -mb-8`}
                                         onMouseEnter={() => handleLinkHover(link.title)}
                                         onMouseLeave={handleLinkLeave}
                                         onClick={() => {
@@ -159,7 +152,11 @@ function Navbar() {
                                         }}
                                     >
                                         <Link to={`${link.id}`}
-                                            className='flex items-center justify-center gap-[2px]'
+                                            className='flex items-center justify-center gap-[2px]  hover-textred'
+                                            onClick={() => {
+                                                setActive(link.id);
+                                                scrollToContactForm(link.id);
+                                            }}
                                         >
                                             {link.title}
                                             <span className={`${hoveredLink === link.title ? "rotate-0 pt-[2px]" : "rotate-180"} transition-transform duration-150 ease-linear`}>
@@ -182,7 +179,7 @@ function Navbar() {
                                                             <li key={subLink.id} className='w-full'>
                                                                 <Link
                                                                     to={subLink.id}
-                                                                    className={`${active.includes(subLink.id) ? 'text-cred font-semibold' : 'text-black hover:bg-[#F9F9F9] w-auto text-sm rounded-lg md:text-[16px] font-normal transition'} block w-auto px-4 py-3 my-2 mx-2`}
+                                                                    className={`${active.includes(subLink.id) ? 'text-cred font-semibold' : 'text-black '} block w-auto px-4 py-3 my-2 mx-2 hover:bg-[#F9F9F9] text-sm rounded-lg md:text-[16px] font-normal transition`}
                                                                     onClick={() => {
                                                                         setActive([link.id, subLink.id]);
                                                                         handleLinkLeave();

@@ -53,7 +53,7 @@ function Hero() {
                 .finally(() => {
                     setIsLoading(false);
                 });
-        }, 2000);
+        }, 0);
         window.scrollTo(0, 0);
     }, [serviceName, serviceDetail]);
 

@@ -24,6 +24,55 @@ html {
   color: #fff;
 }
 
+@media only screen and (min-width: 640px) {
+
+  nav {
+    padding: 20px 0;
+    transition: all 200ms linear;
+  }
+
+  nav.active {
+    padding: 18px 46px;
+
+  }
+
+}
+
+.redBar {
+  opacity: 1;
+  visibility: visible;
+  transition: all 100ms ease;
+}
+
+.redBar.active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media only screen and (min-width: 1536px) {
+  nav .logo {
+    width: 256px;
+    transition: all 200ms linear;
+  }
+
+  ul {
+    margin-bottom: -36px;
+    transition: all 200ms ease;
+  }
+
+  ul.active {
+    margin-bottom: 0px;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+  nav.active .logo {
+    width: 220px;
+  }
+}
+
 .bg-cred {
   background-color: #F10D0C;
 }
@@ -162,6 +211,6 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.clipping{
+.clipping {
   clip-path: path("M 159.668 0 H 995 V 407 H 0 L 159.668 0 Z");
 }

@@ -42,7 +42,7 @@ const headlines = [
         heading: "Unearthing the Potential of Excavator Services",
     },
     {
-        id: 'septic-tank-installation',
+        id: 'septic-tanks',
         heading: "Septic Tank Installation: A Cleaner, Greener Way Forward",
     },
     {

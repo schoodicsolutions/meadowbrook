@@ -33,7 +33,7 @@ function Details() {
 
                     console.error('Error loading module:', error);
                 });
-        }, 2000);
+        }, 500);
     }, [serviceName, SubServices]);
 
     useEffect(() => {
@@ -57,7 +57,7 @@ function Details() {
 
                     console.error('Error loading module:', error);
                 });
-        }, 2000);
+        }, 500);
     }, [serviceName, SubServices]);
 
 

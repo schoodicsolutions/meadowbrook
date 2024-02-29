@@ -15,7 +15,7 @@ function Contact_Form() {
                         </div>
                         <div className='text-center w-full'>
                             <p className='text-base sm:text-lg w-full max-w-[18rem] sm:max-w-md mx-auto'>
-                                We work on all make/model of trucks. Give us a call when you need us. You'll be back on the road in no time.
+                            Meadowbrook is here to transform landscapes and build foundations that stand the test of time.
                             </p>
                         </div>
                     </div>

@@ -57,16 +57,10 @@ const construction = [
         title: "Excavator Services",
     },
     {
-        id: 'septic-tank-installation',
+        id: 'septic-tanks',
         root: "construction",
         image: CsService7,
         title: "Septic Tank Installation",
-    },
-    {
-        id: "land-lot-clearing",
-        root: "construction",
-        image: LsService3,
-        title: "land lot clearing",
     },
     {
         id: "retaining-walls",

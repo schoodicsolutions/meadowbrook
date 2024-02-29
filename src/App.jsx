@@ -29,14 +29,14 @@ function App() {
     window.scrollTo(0, 0);
   }, [])
 
-  const lenis = new Lenis()
+  // const lenis = new Lenis()
 
-  function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
+  // function raf(time) {
+  //   lenis.raf(time)
+  //   requestAnimationFrame(raf)
+  // }
 
-  requestAnimationFrame(raf)
+  // requestAnimationFrame(raf)
 
   return (
     <>

@@ -18,8 +18,8 @@ function Form({ label, id, type, required }) {
             <label
                 htmlFor={id}
                 className={`absolute px-4 transition-all pointer-events-none ${isLabelFloating
-                        ? '-top-4 left-0 text-[#5E6771] text-xs'
-                        : 'top-0 left-0 text-[#343434] text-[15px]'
+                    ? '-top-4 left-0 text-[#5E6771] text-xs'
+                    : 'top-0 left-0 text-[#343434] text-[15px]'
                     }`}
             >
                 {label}{required && <span className='text-cred'>*</span>}
@@ -31,7 +31,7 @@ function Form({ label, id, type, required }) {
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                     rows="1"
-                    className='w-full text-[15px] bg-transparent border border-x-0 border-t-0 border-b-[#5E6771] outline-none px-4 py-1 sm:py-0 transition-all duration-300'
+                    className='w-full text-[15px] bg-transparent border border-x-0 border-t-0 border-b-[#5E6771] outline-none px-4 py-1 sm:py-1 transition-all duration-300'
                 />
             ) : (
                 <input

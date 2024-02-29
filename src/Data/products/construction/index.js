@@ -236,7 +236,7 @@ const excavator_services = [
     }
 ]
 
-const septic_tank_installation = [
+const septic_tanks = [
     {
         id: 2_07,
         para: "In the world of construction, where foundations are laid and structures take shape, there's an often unseen but vital element of every property - the septic tank. These underground systems provide a cleaner and greener way of managing wastewater. In this article, we'll explore the importance of professional septic tank installation and how it contributes to a more eco-friendly future.",
@@ -277,5 +277,5 @@ export default{
     culverts,
     dump_trucks,
     excavator_services,
-    septic_tank_installation,
+    septic_tanks,
 }
