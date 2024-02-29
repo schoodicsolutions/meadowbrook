@@ -34,17 +34,17 @@ function Breadcrumbs({ serviceName, serviceDetail }) {
 function Hero() {
     const { serviceDetail } = useParams();
     const { serviceName } = useParams();
-    const [loading, setLoading] = useState(true);
-    // Replace hyphens with spaces
     const ServiceDetailName = serviceDetail.replace(/-/g, ' ');
 
     const [serviceImage, setServiceImage] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    const handleImageLoad = () => {
+        setLoading(false);
+    };
 
     useEffect(() => {
-
-        if (!serviceImage) {
-            setServiceImage(Placeholder);
-        }
+        setServiceImage(Placeholder);
 
         const loadImage = async () => {
             try {
@@ -52,23 +52,20 @@ function Hero() {
                 setServiceImage(imageModule.default);
             } catch (error) {
                 console.log(error);
-            } finally {
-                setLoading(false);
             }
         };
 
         loadImage();
 
         window.scrollTo(0, 0);
-    }, [serviceName, serviceDetail, serviceImage]);
-
-
+    }, [serviceName, serviceDetail]);
 
     const selectedHeadline = headlines.find(head => head.id === serviceDetail);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [serviceDetail]);
+
 
     return (
         <>
@@ -91,10 +88,18 @@ function Hero() {
                             <div className="shimmer-image clipping"></div>
                         ) : (
                             <>
-                                <img src={serviceImage} alt='Main Image' className='lg:block h-full object-cover clipping' />
-                                <img src={serviceImage} alt='Main Image' className='lg:hidden w-full' />
+                                <img
+                                    src={serviceImage}
+                                    alt='Main Image'
+                                    className='lg:block h-full object-cover clipping'
+                                    onLoad={handleImageLoad} />
                             </>
                         )}
+                        <img
+                            src={serviceImage}
+                            alt='Main Image'
+                            className='lg:hidden w-full'
+                            onLoad={handleImageLoad} />
 
                     </div>
                 </div>
