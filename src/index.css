@@ -218,14 +218,14 @@ input[type=number] {
 .shimmer-image {
   background: linear-gradient(to right, #1a1a1a 0%, #333 20%, #1a1a1a 40%, #1a1a1a 100%);
   background-size: 200% 100%;
-  width: 100%;
-  height: 100%;
+  width: 995px;
+  height: 405px;
   border-radius: 10px;
   animation: shimmer 1.5s infinite;
 }
 
 @keyframes shimmer {
   to {
-    background-position: -200% 0;
+      background-position: -200% 0;
   }
 }
