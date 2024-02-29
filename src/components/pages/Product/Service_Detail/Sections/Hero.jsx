@@ -34,8 +34,7 @@ function Breadcrumbs({ serviceName, serviceDetail }) {
 function Hero() {
     const { serviceDetail } = useParams();
     const { serviceName } = useParams();
-    const [isLoading, setIsLoading] = useState(true);
-
+    const [loading, setLoading] = useState(true);
     // Replace hyphens with spaces
     const ServiceDetailName = serviceDetail.replace(/-/g, ' ');
 
@@ -43,20 +42,25 @@ function Hero() {
 
     useEffect(() => {
 
-        import(`../../../../../assets/product_assets/service_hero/${serviceName}/${serviceDetail}-hero.jpg`)
-            .then((image) => {
-                setServiceImage(image.default);
-            })
-            .catch((error) => {
+        if (!serviceImage) {
+            setServiceImage(Placeholder);
+        }
+
+        const loadImage = async () => {
+            try {
+                const imageModule = await import(`../../../../../assets/product_assets/service_hero/${serviceName}/${serviceDetail}-hero.jpg`);
+                setServiceImage(imageModule.default);
+            } catch (error) {
                 console.log(error);
-            })
-            .finally(() => {
-                setTimeout(() => {
-                    setIsLoading(false);
-                }, 500);
-            })
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        loadImage();
+
         window.scrollTo(0, 0);
-    }, [serviceName, serviceDetail]);
+    }, [serviceName, serviceDetail, serviceImage]);
 
 
 
@@ -82,14 +86,16 @@ function Hero() {
                 <div className='relative h-auto'>
                     <div className='relative h-full object-cover'>
                         <svg className="absolute lg:block hidden h-full top-0 left-0 -ml-6 fill-scarlet"><path d="M185.261 0H1018V407H0L185.261 0Z"></path></svg>
-                        {isLoading ? (
-                            <img src={Placeholder} alt='Placeholder' className='relative hidden lg:block h-full object-cover clipping' />
+
+                        {loading ? (
+                            <div className="shimmer-image clipping"></div>
                         ) : (
                             <>
-                                <img src={serviceImage} alt='Main Image' className='relative hidden lg:block h-full object-cover clipping' />
+                                <img src={serviceImage} alt='Main Image' className='lg:block h-full object-cover clipping' />
                                 <img src={serviceImage} alt='Main Image' className='lg:hidden w-full' />
                             </>
                         )}
+
                     </div>
                 </div>
             </section>

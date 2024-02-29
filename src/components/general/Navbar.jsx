@@ -109,7 +109,7 @@ function Navbar() {
                     </a>
                 </div>
             </div>
-            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }} className={`${sticky ? ' backdrop-blur-md bg-white/90 border-b-2 ' : ''} sticky top-0 w-full bg-white z-[24] border border-b-[1px]`}
+            <motion.header initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ transition: 0.3 }} className={`${sticky ? ' backdrop-blur-lg bg-white/90 border-b-2 ' : ''} sticky top-0 w-full bg-white z-[24] border border-b-[1px]`}
             >
 
                 {/* NavBar Starts here */}
@@ -152,7 +152,7 @@ function Navbar() {
                                         }}
                                     >
                                         <Link to={`${link.id}`}
-                                            className='flex items-center justify-center gap-[2px] hover-textred pb-6 -mb-8'
+                                            className='flex items-center justify-center gap-[2px] hover-textred pb-6 -mb-6'
                                             onClick={() => {
                                                 setActive(link.id);
                                                 scrollToContactForm(link.id);
@@ -172,7 +172,7 @@ function Navbar() {
                                                     exit={{ height: 0, opacity: 0, y: -20 }}
                                                     transition={{ duration: 0.3, ease: easeOut }}
                                                 >
-                                                    <ul className="absolute -left-4 bg-white top-full w-[230px] -mt-2 transition-all rounded-xl duration-300 opacity-100 mx-2 my-2 scale-100 transform  origin-top" style={{
+                                                    <ul className="absolute -left-4 bg-white top-full w-[230px] -mt-4 transition-all rounded-xl duration-300 opacity-100 mx-2 my-2 scale-100 transform  origin-top" style={{
                                                         boxShadow: "0px 2px 6.8px 0px rgba(0, 0, 0, 0.25)"
                                                     }}>
                                                         {link.submenu.map((subLink) => (

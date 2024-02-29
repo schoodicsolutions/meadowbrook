@@ -11,62 +11,65 @@ function Details() {
 
     const SubServices = serviceDetail.replace(/-/g, '_');
     const [serviceData, setServiceData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => {
-            import(`../../../../../Data/products/${serviceName}/index.js`)
-                .then((module) => {
-                    if (module.default) {
-                        const subServiceData = module.default;
-                        const Services = subServiceData[SubServices];
+        const fetchData = async () => {
+            try {
+                const module = await import(`../../../../../Data/products/${serviceName}/index.js`);
+                if (module.default) {
+                    const subServiceData = module.default;
+                    const Services = subServiceData[SubServices];
 
-                        if (Services) {
-                            setServiceData(Services);
-                        } else {
-                            console.error('Sub-service not found.');
-                        }
+                    if (Services) {
+                        setServiceData(Services);
                     } else {
-                        console.error('Main service data is not properly structured.');
+                        console.error('Sub-service not found.');
                     }
-                })
-                .catch((error) => {
+                } else {
+                    console.error('Main service data is not properly structured.');
+                }
+            } catch (error) {
+                console.error('Error loading module:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-                    console.error('Error loading module:', error);
-                });
-        }, 500);
+        fetchData();
     }, [serviceName, SubServices]);
 
-    useEffect(() => {
-        setTimeout(() => {
-            import(`../../../../../Data/${serviceName}/index.js`)
-                .then((module) => {
-                    if (module.default) {
-                        const subServiceData = module.default;
-                        const Services = subServiceData[SubServices];
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         import(`../../../../../Data/${serviceName}/index.js`)
+    //             .then((module) => {
+    //                 if (module.default) {
+    //                     const subServiceData = module.default;
+    //                     const Services = subServiceData[SubServices];
 
-                        if (Services) {
-                            setServiceData(Services);
-                        } else {
-                            console.error('Sub-service not found.');
-                        }
-                    } else {
-                        console.error('Main service data is not properly structured.');
-                    }
-                })
-                .catch((error) => {
+    //                     if (Services) {
+    //                         setServiceData(Services);
+    //                     } else {
+    //                         console.error('Sub-service not found.');
+    //                     }
+    //                 } else {
+    //                     console.error('Main service data is not properly structured.');
+    //                 }
+    //             })
+    //             .catch((error) => {
 
-                    console.error('Error loading module:', error);
-                });
-        }, 500);
-    }, [serviceName, SubServices]);
+    //                 console.error('Error loading module:', error);
+    //             });
+    //     }, 500);
+    // }, [serviceName, SubServices]);
 
 
-
-    if (!serviceData) {
-        return <div className='flex justify-center mb-10 w-full text-cred text-white'>
-            {/* <h1 className='text-4xl py-3'>No Data Found Related to this Field</h1> */}
-            <img src={Loader} alt="Loader" className='flex justify-center items-start w-[150px]' />
-        </div>;
+    if (loading || !serviceData) {
+        return (
+            <div className='flex justify-center mb-10 w-full text-cred text-white'>
+                <img src={Loader} alt="Loader" className='flex justify-center items-start w-[150px]' />
+            </div>
+        );
     }
 
     return (
@@ -86,7 +89,7 @@ function Details() {
                                 <h1 className='text-lg font-bold capitalize text-black'>{item.head}</h1>
                                 <p className='text-base pt-3 pb-5'>{item.para}</p>
                                 {item.list1 && (
-                                    <ul className='text-base marker:text-red-600 -mt-10 pb-5 custom-list pl-4'>
+                                    <ul className='text-base marker:text-red-600 -mt-10 pb-14 custom-list pl-4'>
                                         <>
                                             <li dangerouslySetInnerHTML={{ __html: item.list1.replace(/\*(\w+)\*/g, '<span style="font-weight: 700">$1</span>') }} />
                                             <li className='pt-2' dangerouslySetInnerHTML={{ __html: item.list2.replace(/\*(\w+)\*/g, '<span style="font-weight: 700">$1</span>') }} />

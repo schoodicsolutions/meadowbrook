@@ -32,7 +32,7 @@ html {
   }
 
   nav.active {
-    padding: 18px 46px;
+    padding: 10px 46px;
 
   }
 
@@ -61,7 +61,7 @@ html {
   }
 
   ul.active {
-    margin-bottom: 0px;
+    margin-bottom: 8px;
   }
 
 }
@@ -213,4 +213,19 @@ input[type=number] {
 
 .clipping {
   clip-path: path("M 159.668 0 H 995 V 407 H 0 L 159.668 0 Z");
+}
+
+.shimmer-image {
+  background: linear-gradient(to right, #1a1a1a 0%, #333 20%, #1a1a1a 40%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
 }

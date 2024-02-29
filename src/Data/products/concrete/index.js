@@ -1,7 +1,7 @@
 const redi_mix_concrete = [
     {
         id: 4_01,
-        para: "In the realm of construction, the cornerstone of a robust structure is laid with precision and strength. At [Your Company Name], we take pride in offering Redi Mix Concrete services that redefine excellence. Our cutting-edge facilities and seasoned professionals collaborate to produce concrete mixes tailored to the exacting needs of your project, be it a residential venture or a large-scale construction endeavor.",
+        para: "In the realm of construction, the cornerstone of a robust structure is laid with precision and strength. At Meadowbrook, we take pride in offering Redi Mix Concrete services that redefine excellence. Our cutting-edge facilities and seasoned professionals collaborate to produce concrete mixes tailored to the exacting needs of your project, be it a residential venture or a large-scale construction endeavor.",
     },
     {
         id: 4_02,

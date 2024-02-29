@@ -62,12 +62,6 @@ const construction = [
         image: CsService7,
         title: "Septic Tank Installation",
     },
-    {
-        id: "retaining-walls",
-        root: "construction",
-        image: LsService4,
-        title: "retaining walls",
-    },
 ]
 
 const stones = [

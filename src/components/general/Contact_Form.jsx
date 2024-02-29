@@ -14,8 +14,8 @@ function Contact_Form() {
                             <h1 className='text-[22px] md:text-[26px] lg:text-[28px] font-bold capitalize'>contact us now</h1>
                         </div>
                         <div className='text-center w-full'>
-                            <p className='text-base sm:text-lg w-full max-w-[18rem] sm:max-w-md mx-auto'>
-                            Meadowbrook is here to transform landscapes and build foundations that stand the test of time.
+                            <p className='text-base sm:text-lg w-full max-w-[12rem] sm:max-w-[22rem] mx-auto'>
+                               Reach out to us by filling the form below.
                             </p>
                         </div>
                     </div>
