@@ -51,7 +51,9 @@ function Hero() {
                 console.log(error);
             })
             .finally(() => {
-                setIsLoading(false);
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 500);
             })
         window.scrollTo(0, 0);
     }, [serviceName, serviceDetail]);
