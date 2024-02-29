@@ -91,7 +91,8 @@ function Hero() {
                             <div className="shimmer-image clipping"></div>
                         ) : (
                             <>
-                                <img src={serviceImage} alt='Main Image' className='lg:block h-full object-cover clipping' />
+                                <div className="shimmer-image clipping absolute"></div>
+                                <img src={serviceImage} alt='Main Image' className='lg:block z-10 h-full object-cover clipping' />
                                 <img src={serviceImage} alt='Main Image' className='lg:hidden w-full' />
                             </>
                         )}
