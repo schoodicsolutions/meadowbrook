@@ -27,8 +27,8 @@ function Info() {
                                 </p>
                             </div>
                         </div>
-                        <div className='flex-shrink-0 lg:ml-12 lg:pt-0 pt-6 '>
-                            <img src={Erik} alt="Erik Profile Picture" className='w-[300px] sm:max-w-full max-w-[300px]'/>
+                        <div className='flex-shrink-0 lg:ml-12 lg:pt-0 pt-6 max-w-full'>
+                            <img src={Erik} alt="Erik Profile Picture" className='max-w-full w-full lg:w-[300px]'/>
                         </div>
                     </div>
                 </div>
