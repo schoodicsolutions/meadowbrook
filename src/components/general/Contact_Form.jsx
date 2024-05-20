@@ -1,6 +1,3 @@
-import React, { useState } from 'react';
-import Form from './FormTemplate';
-
 function Contact_Form() {
 
 
@@ -20,15 +17,19 @@ function Contact_Form() {
                         </div>
                     </div>
                     <div className='w-full max-w-full sm:max-w-[450px] m-auto pb-8'>
-                        <form className='w-full'>
-                            <div className='w-full sm:px-5'>
-                                <Form label="Name" id="name" type="text" required />
-                                <Form label="Email" id="email" type="email" required />
-                                <Form label="Phone Number" id="number" type="number" required />
-                                <Form label="Your Message" id="message" type="textarea" required />
-                                <input type="submit" value='Book Your Slot' className='-mt-2 sm:-mt-0 w-full rounded-[57px] bg-cred text-white py-4 cursor-pointer hover:bg-red-700 transition-colors' />
-                            </div>
-                        </form>
+
+                    <div style={{position: 'relative', overflow: 'hidden'}} className="h-[700px] sm:h-[680px]">
+                    <iframe
+      id="JotFormIFrame-241405445661150"
+      title="General Inquiry Contact Form"
+      src="https://form.jotform.com/241405445661150"
+      scrolling="no"
+      onLoad="window.parent.scrollTo(0,0)"
+      style={{minWidth: '100%', maxWidth: '100%', height: '1000px', border: 'none', outline: 'none', top: '-60px', position: 'absolute', overflow: 'hidden'}}></iframe>
+    
+                    </div>
+
+    
                     </div>
                 </div>
 

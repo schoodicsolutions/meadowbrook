@@ -1,5 +1,3 @@
-import React from 'react'
-import SideFormTemplate from './SideFormTemplate'
 
 function SideForm() {
     return (
@@ -11,15 +9,7 @@ function SideForm() {
                     </div>
                 </div>
                 <div className='w-full max-w-full sm:max-w-full m-auto pb-8'>
-                    <form className='w-full'>
-                        <div className='w-full sm:px-5'>
-                            <SideFormTemplate label="Full Name" id="name" type="text" required />
-                            <SideFormTemplate label="Phone Number" id="number" type="number" required />
-                            <SideFormTemplate label="Email Address" id="email" type="email" required />
-                            <SideFormTemplate label="Message" id="message" type="textarea" required />
-                            <input type="submit" value='SUBMIT' className='-mt-2 sm:-mt-0 w-full rounded-[57px] bg-cred text-white py-[14px] cursor-pointer hover:bg-red-700 transition-colors' />
-                        </div>
-                    </form>
+                <script type="text/javascript" src="https://form.jotform.com/jsform/241405445661150"></script>
                 </div>
             </div>
 
