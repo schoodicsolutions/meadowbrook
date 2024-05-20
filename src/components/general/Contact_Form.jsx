@@ -18,7 +18,7 @@ function Contact_Form() {
                     </div>
                     <div className='w-full max-w-full sm:max-w-[450px] m-auto pb-8'>
 
-                    <div style={{position: 'relative', overflow: 'hidden'}} className="h-[700px] sm:h-[680px]">
+                    <div style={{position: 'relative', overflow: 'hidden'}} className="h-[820px] sm:h-[790px]">
                     <iframe
       id="JotFormIFrame-241405445661150"
       title="General Inquiry Contact Form"
