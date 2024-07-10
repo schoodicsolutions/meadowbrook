@@ -50,10 +50,10 @@ const navLinks = [
     {
         id: '/materials',
         title: "Materials",
-        submenu: [  
+        submenu: [
             {
                 id: '/materials/stones',
-                title: "Stones",
+                title: "Stone",
             },
             {
                 id: '/materials/gravel',
@@ -78,7 +78,7 @@ const navLinks = [
 const ProductLinks = [
     {
         id: '/materials/stones',
-        title: "Stones"
+        title: "Stone"
     },
     {
         id: '/materials/gravel',

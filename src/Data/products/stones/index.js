@@ -38,7 +38,7 @@ const inch_3_4 = [
     },
     {
         id: 3_01_05,
-        head: "Small Stones, Significant Impact",
+        head: "Small Stone, Significant Impact",
         para: "In the world of construction, every component matters. 3/4 inch stone may be small, but its impact is substantial. It's a testament to the importance of even the tiniest details in creating durable and resilient structures.",
     }
 ];
@@ -194,7 +194,7 @@ const concrete_waste_blocks = [
     },
 ]
 
-export default{
+export default {
     inch_3_4,
     inch_1_12,
     rip_rap,

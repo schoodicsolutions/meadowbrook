@@ -126,8 +126,8 @@ const services = [
 const materials = [
     {
         id: 1,
-        title: "Stones",
-        paragraph: 'We Offer All Varieties of Stones for Your Construction and Landscaping Needs',
+        title: "Stone",
+        paragraph: 'We Offer All Varieties of Stone for Your Construction and Landscaping Needs',
         image: stones,
     },
     {

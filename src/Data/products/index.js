@@ -69,13 +69,13 @@ const stones = [
         id: "inch-3-4",
         root: "stones",
         image: Inch_0_25,
-        title: "3/4 Inch Stones",
+        title: "3/4 Inch Stone",
     },
     {
         id: 'inch-1-12',
         root: "stones",
         image: Inch_1_25,
-        title: "1 1/2 Inch Stones",
+        title: "1 1/2 Inch Stone",
     },
     {
         id: "rip-rap",

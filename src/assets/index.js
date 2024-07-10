@@ -150,7 +150,7 @@ export {
     CsService6,
     CsService7,
 
-    // Material - Stones Image Export
+    // Material - Stone Image Export
     Inch_0_25,
     Inch_1_25,
     BrickBlock,
