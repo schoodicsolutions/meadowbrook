@@ -17,7 +17,7 @@ const redi_mix_concrete = [
     {
         id: 4_03,
         head: "Applications in Construction Excellence",
-        para: "Redi Mix Concrete from MeadowBrook Materials finds its application in various construction domains:"
+        para: "Redi Mix Concrete from Meadowbrook Materials finds its application in various construction domains:"
     },
     {
         id: 4_03_01,
@@ -39,7 +39,7 @@ const redi_mix_concrete = [
     {
         id: 4_05,
         head: "Building Tomorrow, Today",
-        para: "At MeadowBrook Materials, we understand that the foundation of a strong future is laid today. With our Redi Mix Concrete services, we contribute to the construction of a resilient and enduring tomorrow. Say goodbye to compromises in construction materials, and say hello to strength, precision, and excellence."
+        para: "At Meadowbrook Materials, we understand that the foundation of a strong future is laid today. With our Redi Mix Concrete services, we contribute to the construction of a resilient and enduring tomorrow. Say goodbye to compromises in construction materials, and say hello to strength, precision, and excellence."
     }
 ];
 

@@ -34,6 +34,8 @@ function Footer() {
     //     window.scrollTo(0, 0);
     // });
 
+    const year = new Date().getFullYear();
+
     return (
         <>
             <section className='bg-[#13171B] text-white'>
@@ -43,7 +45,7 @@ function Footer() {
                         <div className='sm:pb-0 pb-8'>
                             <div>
                                 <Link to='/'>
-                                    <img src={logoWhite} alt="MeadowBrook Logo" className='w-full max-w-[250px] sm:w-auto sm:max-w-auto' />
+                                    <img src={logoWhite} alt="Meadowbrook Logo" className='w-full max-w-[250px] sm:w-auto sm:max-w-auto' />
                                 </Link>
                             </div>
                             <div className='px-4 py-4 sm:py-6'>
@@ -127,7 +129,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className='bg-black'>
-                    <p className='text-sm sm:text-base py-2 text-center w-full'>Copyright © 2023 Meadow Brook | <Link to='/privacy-policy' className={`${isPrivacyOrTerms === "/privacy-policy" ? "text-cred" : "text-white"} hover-textred`}>Privacy Policy</Link> | <Link to='/terms-and-conditions' className={`${isPrivacyOrTerms === "/terms-and-conditions" ? "text-cred" : "text-white"} hover-textred`}>Terms and Conditions</Link> </p>
+                    <p className='text-sm sm:text-base py-2 text-center w-full'>Copyright © { year } Meadowbrook Materials | <Link to='/privacy-policy' className={`${isPrivacyOrTerms === "/privacy-policy" ? "text-cred" : "text-white"} hover-textred`}>Privacy Policy</Link> | <Link to='/terms-and-conditions' className={`${isPrivacyOrTerms === "/terms-and-conditions" ? "text-cred" : "text-white"} hover-textred`}>Terms and Conditions</Link> </p>
                 </div>
             </section >
 
