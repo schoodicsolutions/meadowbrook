@@ -75,7 +75,6 @@ function Hero() {
                         <h1 className='leading-normal text-[26px] sm:text-[36px] lg:text-[38px] 2xl:text-[46px] font-black w-full max-w-md sm:max-w-lg lg:max-w-full capitalize'>
                             {selectedHeadline ? selectedHeadline.heading : "Default Headline"}
                         </h1>
-                        <p className='text-base md:text-lg pt-1'>A {serviceName} Service from meadowbrook</p>
                     </div>
                 </div>
                 <div className='relative h-auto'>
