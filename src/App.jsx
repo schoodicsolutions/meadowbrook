@@ -42,26 +42,27 @@ function App() {
     <>
       {loader ?
         (<Preloader />) :
-        (
-          <>
-            <Navbar />
-            <Popup_Form />
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/about-us" element={<About />} />
-              <Route exact path="/careers" element={<Careers />} />
-              <Route exact path="/contact-us" element={<Contact />} />
-              <Route exact path="/products" element={<Product_Static />} />
-              <Route exact path="/materials/:serviceName" element={<Products />} />
-              <Route exact path="/materials/:serviceName/:serviceDetail" element={<ServiceDetails />} />
-              <Route exact path="/:serviceName" element={<Products />} />
-              <Route exact path="/:serviceName/:serviceDetail" element={<ServiceDetails />} />
-              <Route exact path="/privacy-policy" element={<Privacy_Policy />} />
-              <Route exact path="/terms-and-conditions" element={<Terms />} />
-            </Routes>
-            < Footer />
-          </>
-        )}
+      null}
+      
+      <>
+        <Navbar />
+        <Popup_Form />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about-us" element={<About />} />
+          <Route exact path="/careers" element={<Careers />} />
+          <Route exact path="/contact-us" element={<Contact />} />
+          <Route exact path="/products" element={<Product_Static />} />
+          <Route exact path="/materials/:serviceName" element={<Products />} />
+          <Route exact path="/materials/:serviceName/:serviceDetail" element={<ServiceDetails />} />
+          <Route exact path="/:serviceName" element={<Products />} />
+          <Route exact path="/:serviceName/:serviceDetail" element={<ServiceDetails />} />
+          <Route exact path="/privacy-policy" element={<Privacy_Policy />} />
+          <Route exact path="/terms-and-conditions" element={<Terms />} />
+        </Routes>
+        < Footer />
+      </>
+        
     </>
   )
 }
