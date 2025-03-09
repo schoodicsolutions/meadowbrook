@@ -3,7 +3,7 @@ import Hero from './Sections/Hero'
 import Statements from './Sections/Statements'
 import Qualities from './Sections/Qualities'
 import Brands from '../Home/Sections/Brands'
-import Contact_Form from '../../general/Contact_Form'
+import Contact_Form from '../../general/Contact_Form_Container'
 import Info from './Sections/Info'
 
 function About() {
@@ -14,7 +14,7 @@ function About() {
             <Qualities />
             <Statements />
             <Brands />
-            <Contact_Form />
+            <Contact_Form_Container />
         </>
     )
 }
