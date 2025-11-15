@@ -1,8 +1,9 @@
 "use client"
 
 import { useForm } from "@tanstack/react-form"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Loader2 } from "lucide-react"
+import Turnstile from "@marsidev/react-turnstile"
 
 function FieldError({ field }) {
   return (
@@ -20,6 +21,8 @@ function ContactForm() {
     message: "",
     errors: {},
   })
+  const [turnstileToken, setTurnstileToken] = useState("")
+  const turnstileRef = useRef(null)
 
   const form = useForm({
     defaultValues: {
@@ -37,8 +40,9 @@ function ContactForm() {
         formData.append("name", `${value.firstName} ${value.lastName}`)
         formData.append("email", value.email)
         formData.append("phone", value.phone)
-        formData.append("subject", "Contact Form Submission") 
+        formData.append("subject", "Contact Form Submission")
         formData.append("message", value.message)
+        formData.append("cf-turnstile-response", turnstileToken)
 
         const response = await fetch("https://forms.schoodic.io/submit/aa6e5999-a1d3-4d61-8120-edc5cb4578f0", {
           method: "POST",
@@ -54,6 +58,10 @@ function ContactForm() {
             errors: {},
           })
           form.reset()
+          setTurnstileToken("")
+          if (turnstileRef.current) {
+            turnstileRef.current.reset()
+          }
         } else {
           setFormStatus({
             status: "error",
@@ -63,7 +71,7 @@ function ContactForm() {
 
           if (result.errors) {
             const fieldMapping = {
-              name: "firstName", 
+              name: "firstName",
               email: "email",
               phone: "phone",
               message: "message",
@@ -289,13 +297,23 @@ function ContactForm() {
           </form.Field>
         </div>
 
+        <div className="flex justify-center">
+          <Turnstile
+            ref={turnstileRef}
+            siteKey="0x4AAAAAACBFvIBdUMzQzeaA"
+            onSuccess={(token) => setTurnstileToken(token)}
+            onError={() => setTurnstileToken("")}
+            onExpire={() => setTurnstileToken("")}
+          />
+        </div>
+
         <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
           {([canSubmit, isSubmitting]) => (
             <div>
               <button
                 type="submit"
-                disabled={!canSubmit || isSubmitting}
-                className="w-full p-3 bg-black hover:bg-gray-800 text-white font-medium rounded-md"
+                disabled={!canSubmit || isSubmitting || !turnstileToken}
+                className="w-full p-3 bg-black hover:bg-gray-800 text-white font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
