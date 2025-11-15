@@ -3,7 +3,7 @@
 import { useForm } from "@tanstack/react-form"
 import { useState, useRef } from "react"
 import { Loader2 } from "lucide-react"
-import Turnstile from "@marsidev/react-turnstile"
+import { Turnstile } from "@marsidev/react-turnstile"
 
 function FieldError({ field }) {
   return (
