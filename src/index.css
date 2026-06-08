@@ -55,12 +55,12 @@ html {
     transition: all 200ms linear;
   }
 
-  ul {
+  nav ul {
     margin-bottom: -36px;
     transition: all 200ms ease;
   }
 
-  ul.active {
+  nav ul.active {
     margin-bottom: 8px;
   }
 
